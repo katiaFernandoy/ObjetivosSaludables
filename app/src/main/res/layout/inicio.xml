@@ -19,7 +19,7 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            tools:srcCompat="@drawable/logo_principal" />
+            android:src="@drawable/logo_principal" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

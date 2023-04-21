@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.objetivossaludables.R;
 
+
 public class Inicio extends AppCompatActivity {
 
     @Override
@@ -14,7 +15,7 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
 
-        //new HiloEsperaCount().start();
+        new HiloEsperaCount().start();
     }
 
     class HiloEsperaCount extends Thread {
