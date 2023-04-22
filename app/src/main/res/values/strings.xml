@@ -11,6 +11,7 @@
     <string name="Appellido">apellido</string>
     <string name="email">email</string>
     <string name="password">password</string>
+    <string name="crearCuenta">Crear Cuenta</string>
         <!--ERRORES-->
         <string name="errorFaltaCampo">Debes insertar un </string>
         <string name="errorMaxChars">debe tener menos de 28 caracteres</string>
