@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 app:counterEnabled="true"
                 app:counterMaxLength="28">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ed_Nombre"
                     android:layout_width="match_parent"
@@ -46,24 +47,25 @@
                     android:ems="10"
                     android:hint="@string/nameHint"
                     android:inputType="text|textAutoCorrect"
+                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    />
+                    android:paddingEnd="12dp" />
+
                 <TextView
                     android:id="@+id/nameError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
-                    android:gravity="center_vertical"
-                    android:visibility="gone"
-                    android:textSize="12sp"
-                    android:textColor="#FF0000"
-                    app:drawableStartCompat="@drawable/baseline_error"
                     android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
                     android:shadowColor="@color/grayInfo"
                     android:shadowDx="0"
                     android:shadowDy="-0.2"
-                    android:shadowRadius="0.2"/>
+                    android:shadowRadius="0.2"
+                    android:textColor="#FF0000"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/baseline_error" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -79,6 +81,7 @@
                 android:layout_height="wrap_content"
                 app:counterEnabled="true"
                 app:counterMaxLength="28">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ed_Appelido"
                     android:layout_width="match_parent"
@@ -89,9 +92,9 @@
                     android:ems="10"
                     android:hint="@string/AppellidoHint"
                     android:inputType="text|textAutoCorrect"
+                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    />
+                    android:paddingEnd="12dp" />
                 <TextView
                     android:id="@+id/apellidoError"
                     android:layout_width="match_parent"
@@ -120,6 +123,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ed_email"
                     android:layout_width="match_parent"
@@ -130,9 +134,9 @@
                     android:ems="10"
                     android:hint="@string/emailHint"
                     android:inputType="text"
+                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    />
+                    android:paddingEnd="12dp" />
                 <TextView
                     android:id="@+id/emailError"
                     android:layout_width="match_parent"
@@ -175,6 +179,7 @@
                     android:ems="10"
                     android:hint="@string/passwordHint"
                     android:inputType="textPassword"
+                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp" />
 
@@ -205,10 +210,11 @@
 
             <Button
                 android:id="@+id/btRegistrar"
+                style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/crearCuenta"
-                style="@style/BotonPrincipal"/>
+                android:onClick="clickCrearCuenta"
+                android:text="@string/crearCuenta" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
