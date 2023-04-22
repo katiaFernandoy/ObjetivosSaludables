@@ -14,7 +14,7 @@
     <string name="crearCuenta">Crear Cuenta</string>
         <!--ERRORES-->
         <string name="errorFaltaCampo">Debes insertar un </string>
-        <string name="errorMaxChars">debe tener menos de 28 caracteres</string>
+        <string name="errorMaxChars">Debe tener menos de 28 caracteres</string>
         <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
         <string name="errorPass">Tu contraseña debe tener al 8 caracteres e incluir un número o caracter especial</string>
         <!--HINTS-->
