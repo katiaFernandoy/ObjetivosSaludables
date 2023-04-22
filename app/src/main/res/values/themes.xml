@@ -16,6 +16,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
     <style name="BotonPrincipal" parent="@style/Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_style</item>
         <item name="android:gravity">center</item>

@@ -4,5 +4,25 @@
     <!--PORTADA-->
     <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu comportamiento.</string>
     <string name="btn_iniciarSesion">Iniciar Sesión</string>
-    <string name="btnCrearCuenta">Crear cuenta</string>
+    <string name="btnCrearCuenta">Crear Cuenta</string>
+
+    <!--CREAR CUENTA-->
+    <string name="name">nombre</string>
+    <string name="Appellido">apellido</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="crearCuenta">Crear Cuenta</string>
+        <!--ERRORES-->
+        <string name="errorFaltaCampo">Debes insertar un </string>
+        <string name="errorMaxChars">debe tener menos de 28 caracteres</string>
+        <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
+        <string name="errorPass">Tu contraseña debe tener al 8 caracteres e incluir un número o caracter especial</string>
+        <!--HINTS-->
+        <string name="nameHint">Nombre</string>
+        <string name="AppellidoHint">Apellido</string>
+        <string name="emailHint">Email</string>
+        <string name="passwordHint">Password</string>
+
+    <!--TOOLBAR-->
+    <string name="titleToolBar">Be Healthy</string>
 </resources>
