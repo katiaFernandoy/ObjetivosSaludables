@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ObjetivosSaludables</string>
+
+    <!--PORTADA-->
+    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu comportamiento.</string>
+    <string name="btn_iniciarSesion">Iniciar Sesión</string>
+    <string name="btnCrearCuenta">Crear cuenta</string>
 </resources>
