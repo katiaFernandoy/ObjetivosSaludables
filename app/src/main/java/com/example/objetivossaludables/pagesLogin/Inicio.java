@@ -28,7 +28,7 @@ public class Inicio extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Intent intent = new Intent(Inicio.this, Login.class);
+            Intent intent = new Intent(Inicio.this, Portada.class);
             startActivity(intent);
             finish();
         }
