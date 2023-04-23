@@ -12,13 +12,16 @@
         android:theme="@style/Theme.ObjetivosSaludables"
         tools:targetApi="31">
         <activity
+            android:name=".pagesLogin.PantallaCarga"
+            android:exported="false" />
+        <activity
+            android:name=".pagesLogin.IniciarSesion"
+            android:exported="false" />
+        <activity
             android:name=".pagesLogin.CrearCuenta"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.Registro"
-            android:exported="false" />
-        <activity
-            android:name=".pagesLogin.Login"
+            android:name=".pagesLogin.Portada"
             android:exported="false" />
         <activity
             android:name=".pagesLogin.Inicio"
