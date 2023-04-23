@@ -13,68 +13,65 @@ import android.widget.TextView;
 
 import com.example.objetivossaludables.R;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class CrearCuenta extends AppCompatActivity {
 
-    private EditText ed_nombre;
-    private EditText ed_apellido;
-    private EditText ed_mail;
-    private EditText ed_passWord;
-    private Button btRegistrar;
+    private EditText txt_nombreLogin;
+    private EditText txt_apellidoLogin;
+    private EditText txt_mailLogin;
+    private EditText txt_passLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cuenta);
 
-        ed_nombre = findViewById(R.id.ed_Nombre);
-        ed_apellido = findViewById(R.id.ed_Appelido);
-        ed_mail = findViewById(R.id.ed_email);
-        ed_passWord = findViewById(R.id.ed_Password);
-        btRegistrar = findViewById(R.id.btRegistrar);
+        txt_nombreLogin = findViewById(R.id.txt_nombreLogin);
+        txt_apellidoLogin = findViewById(R.id.txt_apellidoLogin);
+        txt_mailLogin = findViewById(R.id.txt_mailLogin);
+        txt_passLogin = findViewById(R.id.txt_passLogin);
 
-
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void clickCrearCuenta(View view){
-
         if(!verificarCampos()){
-
             return;
         }
 
     }
 
     public boolean verificarCampos(){
-        if(ed_nombre.getText() == null || ed_nombre.getText().toString().equals("")){
-            resaltarError(R.id.nameError,getResources().getString(R.string.errorFaltaCampo) +" "+ getResources().getString(R.string.name));
+        if(txt_nombreLogin.getText() == null || txt_nombreLogin.getText().toString().equals("")){
+            resaltarError(R.id.lbNameError,getResources().getString(R.string.errorFaltaCampo) +" "+ getResources().getString(R.string.name));
             return false;
         }
-        else if(ed_nombre.getText().toString().length() > 28){
-            resaltarError(R.id.nameError, getResources().getString(R.string.errorMaxChars));
+        else if(txt_nombreLogin.getText().toString().length() > 28){
+            resaltarError(R.id.lbNameError, getResources().getString(R.string.errorMaxChars));
             return false;
         }
-        if(ed_apellido.getText() == null || ed_apellido.getText().toString().equals("")){
-            resaltarError(R.id.apellidoError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.Appellido));
+        if(txt_apellidoLogin.getText() == null || txt_apellidoLogin.getText().toString().equals("")){
+            resaltarError(R.id.lbApellidoError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.Appellido));
             return false;
         }
-        else if(ed_apellido.getText().toString().length() > 28){
-            resaltarError(R.id.apellidoError, getResources().getString(R.string.errorMaxChars));
+        else if(txt_apellidoLogin.getText().toString().length() > 28){
+            resaltarError(R.id.lbApellidoError, getResources().getString(R.string.errorMaxChars));
             return false;
         }
-        if(ed_mail.getText() == null || ed_mail.getText().toString().equals("")){
-            resaltarError(R.id.emailError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.email));
+        if(txt_mailLogin.getText() == null || txt_mailLogin.getText().toString().equals("")){
+            resaltarError(R.id.lbEmailError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.email));
             return false;
         }
        else if(!verificarMail()){
-            resaltarError(R.id.emailError, getResources().getString(R.string.errorBadEmail));
+            resaltarError(R.id.lbEmailError, getResources().getString(R.string.errorBadEmail));
             return false;
         }
        if(!verificarPassword()){
-           ((TextView) findViewById(R.id.passwordInfo)).setTextColor(Color.RED);
+           ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(Color.RED);
            return false;
        }
 
@@ -84,17 +81,17 @@ public class CrearCuenta extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void limpiarErrores(View view){
         switch (view.getId()){
-            case R.id.ed_Nombre:
-                findViewById(R.id.nameError).setVisibility(View.GONE);
+            case R.id.txt_nombreLogin:
+                findViewById(R.id.lbNameError).setVisibility(View.GONE);
                 break;
-            case R.id.ed_Appelido:
-                findViewById(R.id.apellidoError).setVisibility(View.GONE);
+            case R.id.txt_apellidoLogin:
+                findViewById(R.id.lbApellidoError).setVisibility(View.GONE);
                 break;
-            case R.id.ed_email:
-                findViewById(R.id.emailError).setVisibility(View.GONE);
+            case R.id.txt_mailLogin:
+                findViewById(R.id.lbEmailError).setVisibility(View.GONE);
                 break;
-            case R.id.ed_Password:
-                ((TextView) findViewById(R.id.passwordInfo)).setTextColor(getResources().getColor(R.color.grayInfo));
+            case R.id.txt_passLogin:
+                ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(getResources().getColor(R.color.grayInfo));
                 break;
         }
 
@@ -108,13 +105,12 @@ public class CrearCuenta extends AppCompatActivity {
 
     public boolean verificarMail(){
         Pattern patron = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
-        return patron.matcher(ed_mail.getText().toString()).find();
+        return patron.matcher(txt_mailLogin.getText().toString()).find();
     }
 
     public boolean verificarPassword(){
         Pattern patron = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$");
-        return patron.matcher(ed_passWord.getText().toString()).find();
+        return patron.matcher(txt_passLogin.getText().toString()).find();
     }
-
 
 }
