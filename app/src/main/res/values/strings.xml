@@ -12,16 +12,17 @@
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="crearCuenta">Crear Cuenta</string>
-        <!--ERRORES-->
-        <string name="errorFaltaCampo">Debes insertar un </string>
-        <string name="errorMaxChars">Debe tener menos de 28 caracteres</string>
-        <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
-        <string name="errorPass">Tu contraseña debe tener al 8 caracteres e incluir un número o caracter especial</string>
-        <!--HINTS-->
-        <string name="nameHint">Nombre</string>
-        <string name="AppellidoHint">Apellido</string>
-        <string name="emailHint">Email</string>
-        <string name="passwordHint">Password</string>
+
+    <!--ERRORES-->
+    <string name="errorFaltaCampo">Debes insertar un </string>
+    <string name="errorMaxChars">Debe tener menos de 28 caracteres</string>
+    <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
+    <string name="errorPass">Tu contraseña debe tener de 4 a 8 caracteres e incluir un número o caracter especial</string>
+    <!--HINTS-->
+    <string name="nameHint">Nombre</string>
+    <string name="AppellidoHint">Apellido</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
