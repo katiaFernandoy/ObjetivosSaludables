@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degraded_background"
-    tools:context=".pagesLogin.Login">
+    tools:context=".pagesLogin.Portada">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                 android:layout_height="50dp" />
 
             <Button
-                android:id="@+id/bt_iniciarSession"
+                android:id="@+id/bt_iniciarSesionPortada"
                 style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:id="@+id/bt_crearCuenta"
+                android:id="@+id/bt_crearCuentaPortada"
                 style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
