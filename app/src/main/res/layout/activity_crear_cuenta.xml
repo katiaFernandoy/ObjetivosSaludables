@@ -38,7 +38,7 @@
                 app:counterMaxLength="28">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_Nombre"
+                    android:id="@+id/txt_nombreLogin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/edittext_rounded"
@@ -52,7 +52,7 @@
                     android:paddingEnd="12dp" />
 
                 <TextView
-                    android:id="@+id/nameError"
+                    android:id="@+id/lbNameError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
@@ -83,7 +83,7 @@
                 app:counterMaxLength="28">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_Appelido"
+                    android:id="@+id/txt_apellidoLogin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/edittext_rounded"
@@ -96,7 +96,7 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp" />
                 <TextView
-                    android:id="@+id/apellidoError"
+                    android:id="@+id/lbApellidoError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_email"
+                    android:id="@+id/txt_mailLogin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/edittext_rounded"
@@ -138,7 +138,7 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp" />
                 <TextView
-                    android:id="@+id/emailError"
+                    android:id="@+id/lbEmailError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
@@ -170,7 +170,7 @@
                 app:passwordToggleTint="#4CAF50">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_Password"
+                    android:id="@+id/txt_passLogin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/edittext_rounded"
@@ -184,7 +184,7 @@
                     android:paddingEnd="12dp" />
 
                 <TextView
-                    android:id="@+id/passwordInfo"
+                    android:id="@+id/lbPasswordInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
@@ -209,7 +209,7 @@
                 android:layout_height="55dp" />
 
             <Button
-                android:id="@+id/btRegistrar"
+                android:id="@+id/bt_crearCuenta"
                 style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
