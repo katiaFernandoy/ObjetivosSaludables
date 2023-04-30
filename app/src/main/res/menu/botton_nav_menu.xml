@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="news"
+        android:icon="@drawable/noticia_img"
+        android:id="@+id/newsNav"/>
+
+    <item android:title="home"
+        android:icon="@drawable/home_img"
+        android:id="@+id/homeNav"/>
+
+
+    <item android:title="trophy"
+        android:icon="@drawable/trofeo_img"
+        android:id="@+id/trophyNav"/>
+
+    <item android:title="profile"
+        android:icon="@drawable/perfil_img"
+        android:id="@+id/profileNav" />
+</menu>
