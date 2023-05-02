@@ -2,7 +2,7 @@
     <string name="app_name">ObjetivosSaludables</string>
 
     <!--PORTADA-->
-    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu comportamiento.</string>
+    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu estilo de vida.</string>
     <string name="btn_iniciarSesion">Iniciar Sesión</string>
     <string name="btnCrearCuenta">Crear Cuenta</string>
 
@@ -26,4 +26,6 @@
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
