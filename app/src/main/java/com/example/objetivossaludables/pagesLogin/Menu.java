@@ -21,19 +21,20 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        findViewById(R.id.bt_iniciarSesion);
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
         binding.navigationBar.setOnItemSelectedListener(item -> {
 
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.homeNav:
                     replaceFragment(new HomeFragment());
                     break;
-                    case R.id.newsNav:
-                        replaceFragment(new NoticiasFrangment());
-                        break;
+                case R.id.newsNav:
+                    replaceFragment(new NoticiasFrangment());
+                    break;
                 case R.id.trophyNav:
                     replaceFragment(new TrofeosFragemt());
                     break;
@@ -46,11 +47,11 @@ public class Menu extends AppCompatActivity {
         });
     }
 
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
 
     }

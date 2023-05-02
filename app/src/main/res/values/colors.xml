@@ -11,4 +11,5 @@
     <color name="borderColor">#5A9092</color>
     <color name="centerColor">#A2C2C3</color>
     <color name="grayInfo">#FF555252</color>
+    <color name="underline">#D8D6D6</color>
 </resources>

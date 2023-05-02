@@ -24,6 +24,11 @@
     <string name="emailHint">Email</string>
     <string name="passwordHint">Password</string>
 
+    <!--NOTICIAS-->
+
+    <string name="correr">Beneficios de correr a diario, para la salud.</string>
+
+
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
