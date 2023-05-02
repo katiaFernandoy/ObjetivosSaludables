@@ -1,16 +1,57 @@
 package com.example.objetivossaludables.pagesLogin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.objetivossaludables.HomeFragment;
+import com.example.objetivossaludables.NoticiasFrangment;
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.SettingsFragemt;
+import com.example.objetivossaludables.TrofeosFragemt;
+import com.example.objetivossaludables.databinding.ActivityMenuBinding;
 
 public class Menu extends AppCompatActivity {
+
+    ActivityMenuBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        binding = ActivityMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new HomeFragment());
+
+        binding.navigationBar.setOnItemSelectedListener(item -> {
+
+            switch (item.getItemId()){
+                case R.id.homeNav:
+                    replaceFragment(new HomeFragment());
+                    break;
+                    case R.id.newsNav:
+                        replaceFragment(new NoticiasFrangment());
+                        break;
+                case R.id.trophyNav:
+                    replaceFragment(new TrofeosFragemt());
+                    break;
+                case R.id.profileNav:
+                    replaceFragment(new SettingsFragemt());
+                    break;
+            }
+
+            return true;
+        });
+    }
+
+    private void replaceFragment(Fragment fragment){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.commit();
+
     }
 }
