@@ -2,6 +2,7 @@ package com.example.objetivossaludables.pagesLogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,6 +15,7 @@ public class Portada extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_portada);
 
         findViewById(R.id.bt_crearCuentaPortada).setOnClickListener(v -> {
