@@ -1,9 +1,12 @@
 package com.example.objetivossaludables.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +44,12 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
         Noticias noticias = listaNoticias.get(position);
         holder.tvTitulo.setText(noticias.getTitulo());
         holder.tituloImagen.setImageResource(noticias.getTitleImage());
+        holder.btn_noticiasItem.setOnClickListener(v -> {
+            Intent intentWeb = new Intent();
+            intentWeb.setAction(Intent.ACTION_VIEW);
+            intentWeb.setData(Uri.parse(noticias.getLink_btn()));
+            context.startActivity(intentWeb);
+        });
     }
 
     @Override
@@ -50,13 +59,15 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-           TextView tvTitulo;
-           ImageView tituloImagen;
+        TextView tvTitulo;
+        ImageView tituloImagen;
+        Button btn_noticiasItem;
 
         public MyViewHolder(@NonNull View view) {
             super(view);
             tvTitulo = itemView.findViewById(R.id.txt_noticiasItem);
             tituloImagen = itemView.findViewById(R.id.img_noticiasItem);
+            btn_noticiasItem = itemView.findViewById(R.id.btn_noticiasItem);
 
         }
     }

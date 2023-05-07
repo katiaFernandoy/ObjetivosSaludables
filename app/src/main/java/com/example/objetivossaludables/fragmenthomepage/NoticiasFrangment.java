@@ -2,7 +2,6 @@ package com.example.objetivossaludables.fragmenthomepage;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,13 +15,14 @@ import com.example.objetivossaludables.adapters.AdapterNoticias;
 import com.example.objetivossaludables.modelo.Noticias;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class NoticiasFrangment extends Fragment {
 
     RecyclerView rvNoticias;
     ArrayList<Noticias> listaNoticias;
     AdapterNoticias adapterNoticias ;
-    String[] newsTitulos;
+    String[] titulosNoticias, enlacesNoticias;
     int [] imagenesResourceId;
 
 
@@ -34,9 +34,11 @@ public class NoticiasFrangment extends Fragment {
 
     private void getData() {
 
-        for(int i = 0; i< newsTitulos.length; i++){
-
-            Noticias noticias = new Noticias(newsTitulos[i],imagenesResourceId[i]);
+        for(int i = 0; i< titulosNoticias.length; i++){
+            Noticias noticias = new Noticias(
+                    titulosNoticias[i],
+                    imagenesResourceId[i],
+                    enlacesNoticias[i]);
             listaNoticias.add(noticias);
         }
         adapterNoticias.notifyDataSetChanged();
@@ -54,24 +56,18 @@ public class NoticiasFrangment extends Fragment {
 
         listaNoticias = new ArrayList<>();
         adapterNoticias = new AdapterNoticias(getContext(), listaNoticias);
+
         rvNoticias.setAdapter(adapterNoticias);
 
-        newsTitulos = new String[]{
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
-                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»"
-        };
         imagenesResourceId = new int[]{
                 R.drawable.run,
-                R.drawable.run,
-                R.drawable.run,
-                R.drawable.run,
-                R.drawable.run,
-                R.drawable.run
+                R.drawable.calentamiento,
+                R.drawable.ejercicios_casa,
+                R.drawable.consejos_comidas
         };
+        titulosNoticias = getResources().getStringArray(R.array.titulo_noticias);
+        enlacesNoticias = getResources().getStringArray(R.array.enlace_noticias);
+
         getData();
         return root;
     }
