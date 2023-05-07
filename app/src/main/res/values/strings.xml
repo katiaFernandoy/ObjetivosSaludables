@@ -26,19 +26,8 @@
 
     <!--NOTICIAS-->
 
-    <string-array name="titulo_noticias">
-        <item>Beneficios de correr a diario, para la salud.</item>
-        <item>Calentamiento antes de empezar</item>
-        <item>Ejercicio sin salir de casa</item>
-        <item>Consejos para comer mas sano</item>
-    </string-array>
+    <string name="correr">Beneficios de correr a diario, para la salud.</string>
 
-    <string-array name="enlace_noticias">
-        <item>https://www.runnersworld.com/es/salud-lesiones-runner/a40141551/beneficios-correr/</item>
-        <item>https://www.nike.com/es/a/consejos-calentamiento-entrenamiento</item>
-        <item>https://www.runnersworld.com/es/training/g25549809/ejercicios-con-peso-corporal-en-casa/</item>
-        <item>https://findyoureverest.es/consejos-para-comer-mas-sano/</item>
-    </string-array>
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
