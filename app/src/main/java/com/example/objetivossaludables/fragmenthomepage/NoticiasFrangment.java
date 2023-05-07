@@ -1,4 +1,4 @@
-package com.example.objetivossaludables;
+package com.example.objetivossaludables.fragmenthomepage;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.adapters.AdapterNoticias;
 import com.example.objetivossaludables.modelo.Noticias;
 
@@ -56,12 +57,12 @@ public class NoticiasFrangment extends Fragment {
         rvNoticias.setAdapter(adapterNoticias);
 
         newsTitulos = new String[]{
-                "kfjvglfdjkglfghj",
-                "kfjvglfdjkglfghj",
-                "kfjvglfdjkglfghj",
-                "kfjvglfdjkglfghj",
-                "kfjvglfdjkglfghj",
-                "kfjvglfdjkglfghj"
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»",
+                "El deporte, la medicina perfecta: «No basta con decirlo en la consulta, hay que facilitarlo»"
         };
         imagenesResourceId = new int[]{
                 R.drawable.run,
