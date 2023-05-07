@@ -7,12 +7,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.objetivossaludables.HomeFragment;
-import com.example.objetivossaludables.NoticiasFrangment;
-import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.SettingsFragemt;
-import com.example.objetivossaludables.TrofeosFragemt;
 import com.example.objetivossaludables.databinding.ActivityMenuBinding;
+import com.example.objetivossaludables.fragmenthomepage.HomeFragment;
+import com.example.objetivossaludables.fragmenthomepage.NoticiasFrangment;
+import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.fragmenthomepage.SettingsFragemt;
+import com.example.objetivossaludables.fragmenthomepage.TrofeosFragemt;
 
 public class Menu extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class Menu extends AppCompatActivity {
         findViewById(R.id.bt_iniciarSesion);
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
+        replaceFragment(new NoticiasFrangment());
 
         binding.navigationBar.setOnItemSelectedListener(item -> {
 
