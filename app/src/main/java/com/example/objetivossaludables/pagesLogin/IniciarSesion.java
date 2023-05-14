@@ -189,8 +189,7 @@ public class IniciarSesion extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(IniciarSesion.this, Menu.class);
                             startActivity(intent);
-                        }
-                            else
+                        } else
                             Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
                     } catch (JSONException e) {
                         e.printStackTrace();
