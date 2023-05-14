@@ -47,9 +47,9 @@
                     android:ems="10"
                     android:hint="@string/emailHint"
                     android:inputType="text"
-                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp" />
+                    android:paddingEnd="12dp"
+                    tools:ignore="OnClick" />
 
                 <TextView
                     android:id="@+id/emailError"
@@ -95,9 +95,9 @@
                     android:ems="10"
                     android:hint="@string/passwordHint"
                     android:inputType="textPassword"
-                    android:onClick="limpiarErrores"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp" />
+                    android:paddingEnd="12dp"
+                    tools:ignore="OnClick" />
 
                 <TextView
                     android:id="@+id/passwordInfo"
@@ -129,6 +129,7 @@
                 style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="login"
                 android:text="@string/btn_iniciarSesion" />
         </LinearLayout>
     </LinearLayout>
