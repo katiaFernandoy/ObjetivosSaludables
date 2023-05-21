@@ -206,14 +206,32 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="55dp" />
+                android:layout_height="26dp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_passLogin2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_rounded"
+                android:drawableStart="@drawable/baseline_key"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/passwordHint"
+                android:inputType="textPassword"
+                android:onClick="limpiarErrores"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="26dp" />
 
             <Button
                 android:id="@+id/bt_crearCuenta"
                 style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="clickCrearCuenta"
+                android:onClick="registro"
                 android:text="@string/crearCuenta" />
         </LinearLayout>
     </LinearLayout>
