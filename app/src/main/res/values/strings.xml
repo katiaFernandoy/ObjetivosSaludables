@@ -40,6 +40,16 @@
         <item>https://findyoureverest.es/consejos-para-comer-mas-sano/</item>
     </string-array>
 
+    <!--AJUSTES-->
+
+    <string name="confiPersonal">Configuración personal</string>
+    <string name="verInfo">Modifica aquí tu información personal</string>
+    <string name="cuenta">Cuenta:</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="sobre">Sobre</string>
+    <string name="valora">Valora nuestra App y danos tu opinión</string>
+
+
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
