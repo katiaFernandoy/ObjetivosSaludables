@@ -25,6 +25,7 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -56,16 +57,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
-                    android:gravity="center_vertical"
-                    android:visibility="gone"
-                    android:textSize="12sp"
-                    android:textColor="#FF0000"
-                    app:drawableStartCompat="@drawable/baseline_error"
                     android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
                     android:shadowColor="@color/grayInfo"
                     android:shadowDx="0"
                     android:shadowDy="-0.2"
-                    android:shadowRadius="0.2"/>
+                    android:shadowRadius="0.2"
+                    android:textColor="#FF0000"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/baseline_error" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
