@@ -82,14 +82,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sobre"
+                    android:text="@string/preferencias"
                     android:textStyle="bold"
                     style="@style/textviewGeneral"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/valora"
+                    android:text="@string/prefeSonidos"
                     style="@style/textviewGeneral"
                     android:textSize="14sp"/>
 
@@ -126,14 +126,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sobre"
+                    android:text="@string/notificaciones"
                     android:textStyle="bold"
                     style="@style/textviewGeneral"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/valora"
+                    android:text="@string/notiInfo"
                     style="@style/textviewGeneral"
                     android:textSize="14sp"/>
 
@@ -170,14 +170,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sobre"
+                    android:text="@string/seguridad"
                     android:textStyle="bold"
                     style="@style/textviewGeneral"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/valora"
+                    android:text="@string/seguLicencias"
                     style="@style/textviewGeneral"
                     android:textSize="14sp"/>
 
@@ -195,10 +195,59 @@
                 android:background="@drawable/image_button_style1"/>
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="@style/container_info_settings">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/textviewGeneral"
+                    android:textStyle="bold"
+                    android:text="@string/sobre" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/textviewGeneral"
+                    android:textSize="14sp"
+                    android:text="@string/valora" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_chevron_right_black_24dp"
+                android:background="@drawable/image_button_style1"/>
+
+        </LinearLayout>
+
+
+
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="80dp"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,10 +255,11 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/bt_cerrarSesion"
+                style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/BotonPrincipal"
-                android:text="@string/cerrarSesion"/>
+                android:text="@string/cerrarSesion" />
 
         </LinearLayout>
 
