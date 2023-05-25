@@ -1,16 +1,16 @@
 package com.example.objetivossaludables.pagesLogin;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-
+import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.databinding.ActivityMenuBinding;
 import com.example.objetivossaludables.fragmenthomepage.HomeFragment;
 import com.example.objetivossaludables.fragmenthomepage.NoticiasFrangment;
-import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.fragmenthomepage.SettingsFragemt;
 import com.example.objetivossaludables.fragmenthomepage.TrofeosFragemt;
 

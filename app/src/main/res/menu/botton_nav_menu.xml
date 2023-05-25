@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="news"
+    <item
+        android:id="@+id/newsNav"
         android:icon="@drawable/noticia_img"
-        android:id="@+id/newsNav"/>
+        android:title="news" />
 
-    <item android:title="home"
+    <item
+        android:id="@+id/homeNav"
         android:icon="@drawable/home_img"
-        android:id="@+id/homeNav"/>
+        android:title="home" />
 
 
-    <item android:title="trophy"
+    <item
+        android:id="@+id/trophyNav"
         android:icon="@drawable/trofeo_img"
-        android:id="@+id/trophyNav"/>
+        android:title="trophy" />
 
-    <item android:title="profile"
+    <item
+        android:id="@+id/profileNav"
         android:icon="@drawable/perfil_img"
-        android:id="@+id/profileNav" />
+        android:title="profile" />
 </menu>
