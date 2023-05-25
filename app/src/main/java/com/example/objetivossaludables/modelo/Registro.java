@@ -28,12 +28,10 @@ public class Registro extends AsyncTask<Void, Void, String> {
     private final String password2;
     private final String nombre;
     private final String apellido;
-    ProgressDialog pdLoading;
-
-    SharedPreferences sharedPreferences;
-
     @SuppressLint("StaticFieldLeak")
     private final Context context;
+    ProgressDialog pdLoading;
+    SharedPreferences sharedPreferences;
 
     public Registro(String email, String password, String password2, String nombre, String apellido, Context context, ProgressDialog pdLoading) {
         this.email = email;
@@ -45,7 +43,6 @@ public class Registro extends AsyncTask<Void, Void, String> {
         this.pdLoading = pdLoading;
         sharedPreferences = context.getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
     }
-
 
 
     @Override

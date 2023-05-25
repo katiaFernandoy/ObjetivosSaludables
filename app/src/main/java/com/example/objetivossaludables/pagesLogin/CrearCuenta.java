@@ -3,8 +3,6 @@ package com.example.objetivossaludables.pagesLogin;
 import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
 import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,9 +11,10 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.modelo.Registro;
@@ -25,20 +24,14 @@ import java.util.regex.Pattern;
 
 public class CrearCuenta extends AppCompatActivity {
 
+    SharedPreferences sharedPreferences;
+    ProgressDialog pdLoading;
     private EditText txt_nombreLogin;
     private EditText txt_apellidoLogin;
     private EditText txt_mailLogin;
     private EditText txt_passLogin;
-
     private EditText txt_passLogin2;
-
-
-    SharedPreferences sharedPreferences;
     private boolean status;
-
-    ProgressDialog pdLoading;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +50,7 @@ public class CrearCuenta extends AppCompatActivity {
 
         status = sharedPreferences.getBoolean(STATUS, false);
 
-        if (status){
+        if (status) {
             finish();
             Intent intent = new Intent(CrearCuenta.this, IniciarSesion.class);
             startActivity(intent);
@@ -65,43 +58,39 @@ public class CrearCuenta extends AppCompatActivity {
     }
 
 
-
-    public boolean verificarCampos(){
-        if(txt_nombreLogin.getText() == null || txt_nombreLogin.getText().toString().equals("")){
-            resaltarError(R.id.lbNameError,getResources().getString(R.string.errorFaltaCampo) +" "+ getResources().getString(R.string.name));
+    public boolean verificarCampos() {
+        if (txt_nombreLogin.getText() == null || txt_nombreLogin.getText().toString().equals("")) {
+            resaltarError(R.id.lbNameError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.name));
             return false;
-        }
-        else if(txt_nombreLogin.getText().toString().length() > 28){
+        } else if (txt_nombreLogin.getText().toString().length() > 28) {
             resaltarError(R.id.lbNameError, getResources().getString(R.string.errorMaxChars));
             return false;
         }
-        if(txt_apellidoLogin.getText() == null || txt_apellidoLogin.getText().toString().equals("")){
+        if (txt_apellidoLogin.getText() == null || txt_apellidoLogin.getText().toString().equals("")) {
             resaltarError(R.id.lbApellidoError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.Appellido));
             return false;
-        }
-        else if(txt_apellidoLogin.getText().toString().length() > 28){
+        } else if (txt_apellidoLogin.getText().toString().length() > 28) {
             resaltarError(R.id.lbApellidoError, getResources().getString(R.string.errorMaxChars));
             return false;
         }
-        if(txt_mailLogin.getText() == null || txt_mailLogin.getText().toString().equals("")){
+        if (txt_mailLogin.getText() == null || txt_mailLogin.getText().toString().equals("")) {
             resaltarError(R.id.lbEmailError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.email));
             return false;
-        }
-       else if(!verificarMail()){
+        } else if (!verificarMail()) {
             resaltarError(R.id.lbEmailError, getResources().getString(R.string.errorBadEmail));
             return false;
         }
-       if(!verificarPassword()){
-           ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(Color.RED);
-           return false;
-       }
+        if (!verificarPassword()) {
+            ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(Color.RED);
+            return false;
+        }
 
         return true;
     }
 
     @SuppressLint("NonConstantResourceId")
-    public void limpiarErrores(View view){
-        switch (view.getId()){
+    public void limpiarErrores(View view) {
+        switch (view.getId()) {
             case R.id.txt_nombreLogin:
                 findViewById(R.id.lbNameError).setVisibility(View.GONE);
                 break;
@@ -118,24 +107,24 @@ public class CrearCuenta extends AppCompatActivity {
 
     }
 
-    public void resaltarError(int txt, String texto){
+    public void resaltarError(int txt, String texto) {
         TextView txtError = findViewById(txt);
         txtError.setVisibility(View.VISIBLE);
         txtError.setText(texto);
     }
 
-    public boolean verificarMail(){
+    public boolean verificarMail() {
         Pattern patron = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
         return patron.matcher(txt_mailLogin.getText().toString()).find();
     }
 
-    public boolean verificarPassword(){
+    public boolean verificarPassword() {
         Pattern patron = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$");
         return patron.matcher(txt_passLogin.getText().toString()).find();
     }
 
 
-    public void registro(View view){
+    public void registro(View view) {
         final String email = txt_mailLogin.getText().toString();
         final String password = txt_passLogin.getText().toString();
         final String password2 = txt_passLogin2.getText().toString();
@@ -143,12 +132,12 @@ public class CrearCuenta extends AppCompatActivity {
         final String apellido = txt_apellidoLogin.getText().toString();
         pdLoading = new ProgressDialog(CrearCuenta.this);
 
-        if(verificarCampos()){
-            Registro registro = new Registro(email,password,password2,nombre,apellido, CrearCuenta.this , pdLoading);
+        if (verificarCampos()) {
+            Registro registro = new Registro(email, password, password2, nombre, apellido, CrearCuenta.this, pdLoading);
             registro.execute();
         }
-        }
-
-
     }
+
+
+}
 
