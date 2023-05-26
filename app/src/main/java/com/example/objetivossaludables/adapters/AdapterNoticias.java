@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.modelo.Noticias;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.ArrayList;
 
@@ -32,9 +33,9 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     @Override
     public AdapterNoticias.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolder(view) ;
     }
 
     @Override

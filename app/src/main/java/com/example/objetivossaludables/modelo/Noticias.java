@@ -2,10 +2,10 @@ package com.example.objetivossaludables.modelo;
 
 public class Noticias {
     private String titulo;
-    private int titleImage;
+    private  int titleImage;
     private String link_btn;
 
-    public Noticias(String titulo, int titleImage, String link_btn) {
+    public Noticias(String titulo, int titleImage,String link_btn) {
         this.titulo = titulo;
         this.titleImage = titleImage;
         this.link_btn = link_btn;

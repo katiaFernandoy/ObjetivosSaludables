@@ -29,16 +29,16 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/headerPortada"
+                android:textAlignment="center"
+                android:textSize="18sp"
                 android:fontFamily="sans-serif-medium"
+                android:textColor="#494747"
+                android:textStyle="bold"
                 android:shadowColor="@color/grayInfo"
                 android:shadowDx="0"
                 android:shadowDy="-1"
-                android:shadowRadius="0.2"
-                android:text="@string/headerPortada"
-                android:textAlignment="center"
-                android:textColor="#494747"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:shadowRadius="0.2"/>
 
             <Space
                 android:layout_width="match_parent"

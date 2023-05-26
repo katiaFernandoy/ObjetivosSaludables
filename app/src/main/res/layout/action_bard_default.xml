@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="#00000000">
@@ -10,21 +11,16 @@
         android:id="@+id/backNavigationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back" />
+        app:srcCompat="@drawable/baseline_arrow_back"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:fontFamily="sans-serif-medium"
         android:padding="5dp"
-        android:shadowColor="#9A9595"
-        android:shadowDx="0"
-        android:shadowDy="-1"
-        android:shadowRadius="0.2"
         android:text="@string/titleToolBar"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -32,6 +28,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="sans-serif-medium"
+        android:shadowColor="#9A9595"
+        android:shadowDx="0"
+        android:shadowDy="-1"
+        android:shadowRadius="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
