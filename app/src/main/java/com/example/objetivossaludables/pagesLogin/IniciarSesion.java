@@ -1,8 +1,5 @@
 package com.example.objetivossaludables.pagesLogin;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.*;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_LOGIN;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -13,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +32,18 @@ public class IniciarSesion extends AppCompatActivity {
     private Button bt_iniciarLogin;
     SharedPreferences sharedPreferences;
 
-    /*    @Override
+    public static final String MY_PREFERENCES = "MyPrefs";
+    public static final String EMAIL = "email";
+    public static final String STATUS = "status";
+    public static final String USERNAME = "username";
+    public static final String ID = "id";
+    public static String sId_usuario;
+    public static String username;
+
+    private boolean status;
+    public static final String URL_LOGIN = "https://objetivossaludablesks.000webhostapp.com/login.php";
+
+/*    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
@@ -66,7 +75,7 @@ public class IniciarSesion extends AppCompatActivity {
 
             sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
-            boolean status = sharedPreferences.getBoolean(STATUS, false);
+            status = sharedPreferences.getBoolean(STATUS, false);
 
             if (status & verificarCampos()){
                 finish();
@@ -154,8 +163,8 @@ public class IniciarSesion extends AppCompatActivity {
 
                     //creating request parameters
                     HashMap<String, String> params = new HashMap<>();
-                    params.put(EMAIL, email);
-                    params.put(PASSWORD, password);
+                    params.put("email", email);
+                    params.put("password", password);
 
                     //returning the response
                     return requestHandler.sendPostRequest(URL_LOGIN, params);
