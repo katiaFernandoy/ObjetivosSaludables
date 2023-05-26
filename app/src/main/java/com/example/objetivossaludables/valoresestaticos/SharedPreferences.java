@@ -1,5 +1,7 @@
 package com.example.objetivossaludables.valoresestaticos;
 
+import java.security.PublicKey;
+
 public class SharedPreferences {
 
     public static final String MY_PREFERENCES = "MyPrefs";
