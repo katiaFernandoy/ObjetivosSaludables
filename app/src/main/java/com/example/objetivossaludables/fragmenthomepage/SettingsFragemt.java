@@ -1,65 +1,61 @@
 package com.example.objetivossaludables.fragmenthomepage;
 
+
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragemt#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SettingsFragemt extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SettingsFragemt() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragemt.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SettingsFragemt newInstance(String param1, String param2) {
-        SettingsFragemt fragment = new SettingsFragemt();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public static final String STATUS = "status";
+    private Button bt_cerrar;
+    private SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
+        View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
+
+        bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+
+        bt_cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarSesion();
+            }
+        });
+
+        return root;
     }
+
+    public void cerrarSesion() {
+
+        sharedPreferences = getContext().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(STATUS, false);
+        editor.putString(EMAIL, "");
+        editor.apply();
+
+        ((Activity) getContext()).finish();
+        Intent intent = new Intent(getContext(), IniciarSesion.class);
+        startActivity(intent);
+
+    }
+
 }
