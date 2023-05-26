@@ -1,29 +1,27 @@
 package com.example.objetivossaludables.fragmenthomepage;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.adapters.AdapterNoticias;
 import com.example.objetivossaludables.modelo.Noticias;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class NoticiasFrangment extends Fragment {
 
     RecyclerView rvNoticias;
     ArrayList<Noticias> listaNoticias;
-    AdapterNoticias adapterNoticias ;
+    AdapterNoticias adapterNoticias;
     String[] titulosNoticias, enlacesNoticias;
-    int [] imagenesResourceId;
+    int[] imagenesResourceId;
 
 
     @Override
@@ -34,7 +32,7 @@ public class NoticiasFrangment extends Fragment {
 
     private void getData() {
 
-        for(int i = 0; i< titulosNoticias.length; i++){
+        for (int i = 0; i < titulosNoticias.length; i++) {
             Noticias noticias = new Noticias(
                     titulosNoticias[i],
                     imagenesResourceId[i],
@@ -50,7 +48,7 @@ public class NoticiasFrangment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_noticias_frangment, container, false);
 
-        rvNoticias= root.findViewById(R.id.recyclerView);
+        rvNoticias = root.findViewById(R.id.recyclerView);
         rvNoticias.setLayoutManager(new LinearLayoutManager(getContext()));
         rvNoticias.setHasFixedSize(true);
 
