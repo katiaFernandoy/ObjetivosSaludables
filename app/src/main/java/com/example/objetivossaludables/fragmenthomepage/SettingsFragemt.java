@@ -1,7 +1,8 @@
 package com.example.objetivossaludables.fragmenthomepage;
 
-import static com.example.objetivossaludables.pagesLogin.IniciarSesion.EMAIL;
-import static com.example.objetivossaludables.pagesLogin.IniciarSesion.MY_PREFERENCES;
+
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,33 +18,32 @@ import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.pagesLogin.Menu;
 
 public class SettingsFragemt extends Fragment {
 
+    public static final String STATUS = "status";
     private Button bt_cerrar;
     private SharedPreferences sharedPreferences;
-    public static final String STATUS = "status";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
+        View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
-      bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+        bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
 
-      bt_cerrar.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              cerrarSesion();
-          }
-      });
+        bt_cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarSesion();
+            }
+        });
 
-      return root;
+        return root;
     }
 
-    public void cerrarSesion(){
+    public void cerrarSesion() {
 
         sharedPreferences = getContext().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"/>
+        android:layout_marginEnd="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,57 +21,57 @@
         android:orientation="vertical">
 
         <LinearLayout
+            style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/container_info_settings">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView"
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/textviewGeneral"
-                    android:textStyle="bold"
-                    android:text="@string/confiPersonal" />
+                    android:text="@string/confiPersonal"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView3"
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/textviewGeneral"
-                    android:textSize="14sp"
-                    android:text="@string/verInfo" />
+                    android:text="@string/verInfo"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_chevron_right_black_24dp"
-                android:background="@drawable/image_button_style1"/>
+                android:background="@drawable/image_button_style1"
+                android:src="@drawable/baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
 
         <LinearLayout
+            style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/container_info_settings">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -79,43 +79,43 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/preferencias"
-                    android:textStyle="bold"
-                    style="@style/textviewGeneral"/>
+                    android:textStyle="bold" />
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prefeSonidos"
-                    style="@style/textviewGeneral"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_chevron_right_black_24dp"
-                android:background="@drawable/image_button_style1"/>
+                android:background="@drawable/image_button_style1"
+                android:src="@drawable/baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
 
         <LinearLayout
+            style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/container_info_settings">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -123,43 +123,43 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notificaciones"
-                    android:textStyle="bold"
-                    style="@style/textviewGeneral"/>
+                    android:textStyle="bold" />
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notiInfo"
-                    style="@style/textviewGeneral"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_chevron_right_black_24dp"
-                android:background="@drawable/image_button_style1"/>
+                android:background="@drawable/image_button_style1"
+                android:src="@drawable/baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
 
         <LinearLayout
+            style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/container_info_settings">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -167,85 +167,82 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/seguridad"
-                    android:textStyle="bold"
-                    style="@style/textviewGeneral"/>
+                    android:textStyle="bold" />
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/seguLicencias"
-                    style="@style/textviewGeneral"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_chevron_right_black_24dp"
-                android:background="@drawable/image_button_style1"/>
+                android:background="@drawable/image_button_style1"
+                android:src="@drawable/baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
 
         <LinearLayout
+            style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/container_info_settings">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/textviewGeneral"
-                    android:textStyle="bold"
-                    android:text="@string/sobre" />
+                    android:text="@string/sobre"
+                    android:textStyle="bold" />
 
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/textviewGeneral"
-                    android:textSize="14sp"
-                    android:text="@string/valora" />
+                    android:text="@string/valora"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_chevron_right_black_24dp"
-                android:background="@drawable/image_button_style1"/>
+                android:background="@drawable/image_button_style1"
+                android:src="@drawable/baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 
 
-
-
         <Space
             android:layout_width="match_parent"
-            android:layout_height="80dp"/>
-
+            android:layout_height="80dp" />
 
 
         <LinearLayout
