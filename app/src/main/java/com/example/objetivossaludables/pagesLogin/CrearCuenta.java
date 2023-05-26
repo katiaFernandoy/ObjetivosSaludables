@@ -1,7 +1,8 @@
 package com.example.objetivossaludables.pagesLogin;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
+
+import static com.example.objetivossaludables.pagesLogin.IniciarSesion.MY_PREFERENCES;
+import static com.example.objetivossaludables.pagesLogin.IniciarSesion.STATUS;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,15 +12,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.modelo.Registro;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 
@@ -33,6 +40,7 @@ public class CrearCuenta extends AppCompatActivity {
     private EditText txt_passLogin2;
 
 
+    private Button bt_crearCuenta;
     SharedPreferences sharedPreferences;
     private boolean status;
 
@@ -51,6 +59,7 @@ public class CrearCuenta extends AppCompatActivity {
         txt_mailLogin = findViewById(R.id.txt_mailLogin);
         txt_passLogin = findViewById(R.id.txt_passLogin);
         txt_passLogin2 = findViewById(R.id.txt_passLogin2);
+        bt_crearCuenta = findViewById(R.id.bt_crearCuenta);
 
 
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
