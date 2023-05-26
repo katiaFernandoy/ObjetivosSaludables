@@ -71,7 +71,7 @@ public class IniciarSesion extends AppCompatActivity {
 
         boolean status = sharedPreferences.getBoolean(STATUS, false);
 
-        if (status & verificarCampos()) {
+        if (status) {
             finish();
             Intent intent = new Intent(IniciarSesion.this, Menu.class);
             startActivity(intent);
