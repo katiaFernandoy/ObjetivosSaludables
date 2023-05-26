@@ -1,10 +1,8 @@
 package com.example.objetivossaludables.modelo;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
+import static com.example.objetivossaludables.pagesLogin.IniciarSesion.MY_PREFERENCES;
+import static com.example.objetivossaludables.pagesLogin.IniciarSesion.STATUS;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,17 +21,16 @@ import java.util.HashMap;
 
 public class Registro extends AsyncTask<Void, Void, String> {
 
-    private final String email;
-    private final String password;
-    private final String password2;
-    private final String nombre;
-    private final String apellido;
+    private String email;
+    private String password;
+    private String password2;
+    private String nombre;
+    private String apellido;
     ProgressDialog pdLoading;
 
+    public static final String URL_LOGIN = "https://objetivossaludablesks.000webhostapp.com/registro.php";
     SharedPreferences sharedPreferences;
-
-    @SuppressLint("StaticFieldLeak")
-    private final Context context;
+    Context context;
 
     public Registro(String email, String password, String password2, String nombre, String apellido, Context context, ProgressDialog pdLoading) {
         this.email = email;
@@ -72,7 +69,7 @@ public class Registro extends AsyncTask<Void, Void, String> {
         params.put("apellido", apellido);
 
         //returning the response
-        return requestHandler.sendPostRequest(URL_REGISTRO, params);
+        return requestHandler.sendPostRequest(URL_LOGIN, params);
     }
 
     @Override
