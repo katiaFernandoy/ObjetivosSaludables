@@ -6,12 +6,26 @@
     android:background="@drawable/second_background"
     tools:context=".fragmenthomepage.TrofeosFragemt">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <include
+        layout="@layout/action_bard_default"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Trofeos"
-        android:textSize="26sp"
-        android:layout_gravity="center"/>
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="35dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
 
 </FrameLayout>
