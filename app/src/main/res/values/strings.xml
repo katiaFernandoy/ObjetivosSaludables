@@ -70,6 +70,29 @@
 
 
 
+    <!--OBJETIVOS-->
+
+    <string name="definObj">Define tus objetivos</string>
+    <string name="verObj">¿Hasta dónde quieres llegar?</string>
+    <string name="consultaSem">Consulta tu plan semanal</string>
+    <string name="planning">Dieta y entrenamiento personalizado</string>
+    <string name="entrenamiento">Entrenamiento</string>
+    <string name="horasEnt">Introduce tus tiempos de entrenamiento</string>
+    <string name="suenio">Horas de sueño</string>
+    <string name="horasSue">¿Cuánto has dormido hoy?</string>
+    <string name="pasos">Número de pasos</string>
+    <string name="numPasos">Registra los pasos de hoy</string>
+
+    <!--SUENIO-->
+
+    <string name="suenioHoy">¿Cuánto has dormido hoy?</string>
+    <string name="Puntuacion">Tu puntuación de hoy ha sido:</string>
+    <string name="mediaSemanal">Tu media de horas para esta semana es:</string>
+    <string name="humorEsperado">Según tu descanso es normal que te sientas:</string>
+    <string name="estas">Estás a un</string>
+    <string name="objetivo">de conseguir tu objetivo</string>
+
+
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
