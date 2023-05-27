@@ -1,7 +1,7 @@
 package com.example.objetivossaludables.fragmenthomepage;
 
-import static com.example.objetivossaludables.pagesLogin.IniciarSesion.EMAIL;
-import static com.example.objetivossaludables.pagesLogin.IniciarSesion.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,14 +15,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 import com.example.objetivossaludables.pagesLogin.Menu;
 
 public class SettingsFragemt extends Fragment {
 
     private Button bt_cerrar;
+    private ImageButton imgButtonConfPersonal;
     private SharedPreferences sharedPreferences;
     public static final String STATUS = "status";
 
@@ -33,6 +37,16 @@ public class SettingsFragemt extends Fragment {
       View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
       bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+      imgButtonConfPersonal = root.findViewById(R.id.imgButtonConfPersonal);
+
+      imgButtonConfPersonal.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent = new Intent(getContext(), ConfgPersonal.class);
+              startActivity(intent);
+          }
+      });
+
 
       bt_cerrar.setOnClickListener(new View.OnClickListener() {
           @Override
@@ -42,6 +56,9 @@ public class SettingsFragemt extends Fragment {
       });
 
       return root;
+
+
+
     }
 
     public void cerrarSesion(){
