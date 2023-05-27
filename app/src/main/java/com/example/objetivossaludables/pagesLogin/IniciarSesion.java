@@ -23,6 +23,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.modelo.Login;
+import com.example.objetivossaludables.modelo.Registro;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,28 +38,8 @@ public class IniciarSesion extends AppCompatActivity {
     private EditText txt_mail;
     private EditText txt_passLogin;
     private Button bt_iniciarLogin;
+    ProgressDialog pdLoading;
 
-    /*    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iniciar_sesion);
-
-        txt_mail = findViewById(R.id.txt_mailLogin);
-        txt_passLogin = findViewById(R.id.txt_passLogin);
-        bt_iniciarLogin = findViewById(R.id.bt_iniciarSesion);
-
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> {
-            finish();
-        });
-
-       bt_iniciarLogin.setOnClickListener(v -> {
-
-            if(!verificarCampos()){
-            Intent intent = new Intent(IniciarSesion.this, Menu.class);
-            startActivity(intent);}
-
-
-        });*/
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,66 +112,10 @@ public class IniciarSesion extends AppCompatActivity {
     public void login(View view) {
         final String email = txt_mail.getText().toString();
         final String password = txt_passLogin.getText().toString();
+        pdLoading = new ProgressDialog(IniciarSesion.this);
 
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Por favor rellena todos los campos", Toast.LENGTH_SHORT).show();
-        } else {
-            class Login extends AsyncTask<Void, Void, String> {
-                ProgressDialog pdLoading = new ProgressDialog(IniciarSesion.this);
-
-                @Override
-                protected void onPreExecute() {
-                    super.onPreExecute();
-
-                    //this method will be running on UI thread
-                    pdLoading.setMessage("\tLoading...");
-                    pdLoading.setCancelable(false);
-                    pdLoading.show();
-                }
-
-                @Override
-                protected String doInBackground(Void... voids) {
-                    //creating request handler object
-                    RequestHandler requestHandler = new RequestHandler();
-
-                    //creating request parameters
-                    HashMap<String, String> params = new HashMap<>();
-                    params.put(EMAIL, email);
-                    params.put(PASSWORD, password);
-
-                    //returning the response
-                    return requestHandler.sendPostRequest(URL_LOGIN, params);
-                }
-
-                @Override
-                protected void onPostExecute(String s) {
-                    super.onPostExecute(s);
-                    pdLoading.dismiss();
-
-                    try {
-                        //converting response to json object
-                        JSONObject obj = new JSONObject(s);
-                        //if no error in response
-                        if (!obj.getBoolean("error")) {
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString(EMAIL, email);
-                            editor.putBoolean(STATUS, true);
-                            editor.apply();
-
-                            finish();
-                            Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(IniciarSesion.this, Menu.class);
-                            startActivity(intent);
-                        } else
-                            Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(IniciarSesion.this, "Exception: " + e, Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-
-            Login login = new Login();
+        if (verificarCampos()) {
+            Login login = new Login(email, password, IniciarSesion.this, pdLoading);
             login.execute();
         }
     }
