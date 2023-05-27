@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.fragmenthomepage;
 
+
 import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
 import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
 
@@ -8,60 +9,41 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.pagesLogin.Menu;
 
 public class SettingsFragemt extends Fragment {
 
-    private Button bt_cerrar;
-    private ImageButton imgButtonConfPersonal;
-    private SharedPreferences sharedPreferences;
     public static final String STATUS = "status";
+    private Button bt_cerrar;
+    private SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
+        View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
-      bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
-      imgButtonConfPersonal = root.findViewById(R.id.imgButtonConfPersonal);
+        bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
 
-      imgButtonConfPersonal.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              Intent intent = new Intent(getContext(), ConfgPersonal.class);
-              startActivity(intent);
-          }
-      });
+        bt_cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarSesion();
+            }
+        });
 
-
-      bt_cerrar.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              cerrarSesion();
-          }
-      });
-
-      return root;
-
-
-
+        return root;
     }
 
-    public void cerrarSesion(){
+    public void cerrarSesion() {
 
         sharedPreferences = getContext().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
