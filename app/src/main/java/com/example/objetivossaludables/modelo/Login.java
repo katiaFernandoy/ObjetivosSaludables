@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
@@ -28,6 +29,8 @@ public class Login extends AsyncTask<Void, Void, String> {
 
     private final String email;
     private final String password;
+    public static final String ID = "id";
+    public static String sId_usuario;
     private final Context context;
     private final SharedPreferences sharedPreferences;
     ProgressDialog pdLoading;
@@ -74,14 +77,17 @@ public class Login extends AsyncTask<Void, Void, String> {
                 JSONObject obj = new JSONObject(s);
                 //if no error in response
                 if (!obj.getBoolean("error")) {
+                    sId_usuario = obj.getString("ID");
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(EMAIL, email);
+                    editor.putString(ID, sId_usuario);
                     editor.putBoolean(STATUS, true);
                     editor.apply();
                     ((Activity) context).finish();
                     Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(context, Menu.class);
                     context.startActivity(intent);
+
                 } else
                     Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
             } catch (JSONException e) {

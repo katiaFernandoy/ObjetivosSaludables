@@ -39,6 +39,7 @@ public class IniciarSesion extends AppCompatActivity {
     private EditText txt_passLogin;
     private Button bt_iniciarLogin;
     ProgressDialog pdLoading;
+    public static String usuLog;
 
 
     protected void onCreate(Bundle savedInstanceState) {
