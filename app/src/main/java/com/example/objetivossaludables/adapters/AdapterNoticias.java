@@ -32,7 +32,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     @Override
     public AdapterNoticias.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item_card_noticias, parent, false);
 
         return new MyViewHolder(view);
     }
