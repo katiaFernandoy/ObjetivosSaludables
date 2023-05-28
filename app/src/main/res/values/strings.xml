@@ -61,13 +61,23 @@
     <string name="fechaNacimiento">Fecha de nacimiento</string>
     <string name="fecha">fecha</string>
     <string name="TuPerfil">Tu perfil</string>
-    <string name="Tugenero">Tu genero</string>
+    <string name="Tugenero">Tu género</string>
     <string name="genero">genero</string>
     <string name="mujer">Mujer</string>
     <string name="hombre">Hombre</string>
+    <string name="TuAltura">Tu altura</string>
+    <string name="altura">cm</string>
     <string name="NoIndicado">Prefiero no indicarlo</string>
-
-
+    <string name="confDeLaApp">Configuración de la app</string>
+    <string name="recordatorio">Recordatorios</string>
+    <string name="desactivado">Desactivado</string>
+    <string name="activado">Activado</string>
+    <string name="sonido">Sonido-vibración</string>
+    <string-array name="spinnerGenero">
+        <item>Mujer</item>
+        <item>Hombre</item>
+        <item>Prefiero no contestar</item>
+    </string-array>
 
 
     <!--OBJETIVOS-->
