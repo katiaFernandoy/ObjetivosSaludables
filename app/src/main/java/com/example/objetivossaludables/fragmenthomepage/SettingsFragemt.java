@@ -13,16 +13,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 
 public class SettingsFragemt extends Fragment {
 
     public static final String STATUS = "status";
     private Button bt_cerrar;
+    private ImageButton imgButtonConfPersonal;
+    private ImageButton imgButtonPreferencias;
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -32,6 +36,16 @@ public class SettingsFragemt extends Fragment {
         View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
         bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+        imgButtonConfPersonal = root.findViewById(R.id.imgButtonConfPersonal);
+        imgButtonPreferencias = root.findViewById(R.id.imgButtonPreferencias);
+
+        imgButtonConfPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ConfgPersonal.class);
+                startActivity(intent);
+            }
+        });
 
         bt_cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
