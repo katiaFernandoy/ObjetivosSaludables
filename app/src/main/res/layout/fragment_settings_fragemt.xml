@@ -100,6 +100,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
+                android:id="@+id/imgButtonPreferencias"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:background="@drawable/image_button_style1"
