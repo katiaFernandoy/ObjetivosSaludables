@@ -30,7 +30,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="35dp" />
+            android:layout_height="10dp" />
 
         <LinearLayout
             style="@style/container_info_settings"
@@ -47,8 +47,8 @@
                     style="@style/textviewGeneral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="@string/correo" />
+                    android:text="@string/correo"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/confCorreoPersonal"
@@ -89,12 +89,12 @@
                     android:background="@drawable/edittext_rounded"
                     android:drawableEnd="@drawable/baseline_edit_24"
                     android:drawablePadding="12dp"
-                    android:text="katia"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
                     android:inputType="text"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp"/>
+                    android:paddingEnd="12dp"
+                    android:text="katia"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
