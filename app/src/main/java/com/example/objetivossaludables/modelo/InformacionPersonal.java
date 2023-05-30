@@ -8,15 +8,17 @@ public class InformacionPersonal {
      private  double peso;
      private Date fechaNacimiento;
      private String genero;
-     private double altura;
+     private int altura;
 
-    public InformacionPersonal(String nombre, double peso, Date fechaNacimiento, String genero, double altura) {
+    public InformacionPersonal(String nombre, double peso, Date fechaNacimiento, String genero, int altura) {
         this.nombre = nombre;
         this.peso = peso;
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
         this.altura = altura;
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -50,11 +52,11 @@ public class InformacionPersonal {
         this.genero = genero;
     }
 
-    public double getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 }
