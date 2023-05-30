@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
@@ -25,8 +26,8 @@ public class SettingsFragemt extends Fragment {
 
     public static final String STATUS = "status";
     private Button bt_cerrar;
-    private ImageButton imgButtonConfPersonal;
-    private ImageButton imgButtonPreferencias;
+    private LinearLayout linearLayoutConfPersonal;
+    private LinearLayout linearLayoutPreferencias;
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -36,16 +37,26 @@ public class SettingsFragemt extends Fragment {
         View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
         bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
-        imgButtonConfPersonal = root.findViewById(R.id.imgButtonConfPersonal);
-        imgButtonPreferencias = root.findViewById(R.id.imgButtonPreferencias);
+        linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
+        linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
 
-        imgButtonConfPersonal.setOnClickListener(new View.OnClickListener() {
+        linearLayoutConfPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ConfgPersonal.class);
                 startActivity(intent);
             }
         });
+
+        linearLayoutPreferencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ConfgPreferencias.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         bt_cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
