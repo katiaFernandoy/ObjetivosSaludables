@@ -30,14 +30,102 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/textView5"
-            style="@style/textviewGeneral"
-            android:textStyle="bold"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/confDeLaApp" />
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/preferencias"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/sonido"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/btSonidoActivar"
+                style="@style/BotonPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activado"
+                android:textAlignment="viewStart" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/btSonidoDesactivar"
+                style="@style/BotonPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desactivado"
+                android:textAlignment="viewStart" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/textVie"
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/idiomas"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text"
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/cambiarIdioma"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Spinner
+            android:id="@+id/spinnerIdioma"
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_rounded"
+            android:popupBackground="@drawable/style_spinner_items_container"
+            android:layout_height="60dp"
+            android:paddingHorizontal="9dp"/>
+
+
+
+    </LinearLayout>
+
+
     </LinearLayout>
 
 
