@@ -6,6 +6,7 @@
     <string name="btn_iniciarSesion">Iniciar Sesión</string>
     <string name="btnCrearCuenta">Crear Cuenta</string>
 
+
     <!--CREAR CUENTA-->
     <string name="name">Nombre</string>
     <string name="Appellido">Apellido</string>
@@ -70,14 +71,24 @@
     <string name="NoIndicado">Prefiero no indicarlo</string>
     <string name="confDeLaApp">Configuración de la app</string>
     <string name="recordatorio">Recordatorios</string>
-    <string name="desactivado">Desactivado</string>
-    <string name="activado">Activado</string>
+    <string name="desactivado">Desactivar</string>
+    <string name="activado">Activar</string>
+    <string name="botonSonido">Sonido</string>
+    <string name="botonVolver">Volver</string>
     <string name="sonido">Sonido-vibración</string>
+    <string name="idiomas">Idiomas</string>
+    <string name="cambiarIdioma">Cambiar Idioma</string>
+
+    <!--SPINNERS-->
+
     <string-array name="spinnerGenero">
         <item>Mujer</item>
         <item>Hombre</item>
         <item>Prefiero no contestar</item>
     </string-array>
+
+
+
 
 
     <!--OBJETIVOS-->
