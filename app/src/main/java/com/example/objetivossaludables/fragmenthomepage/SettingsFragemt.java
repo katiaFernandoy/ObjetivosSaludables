@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.fragmenthomepage.pagesLogin.ConfgPreferencias;
 import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 

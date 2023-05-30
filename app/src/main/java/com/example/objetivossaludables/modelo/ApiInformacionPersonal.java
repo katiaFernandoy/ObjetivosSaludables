@@ -14,8 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.fragmenthomepage.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.fragmenthomepage.pagesLogin.RequestHandler;
+import com.example.objetivossaludables.pagesLogin.RequestHandler;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
