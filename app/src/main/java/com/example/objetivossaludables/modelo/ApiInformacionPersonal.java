@@ -80,7 +80,7 @@ public class ApiInformacionPersonal extends AsyncTask <Void, Void, String> {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
             InformacionPersonal infoPersonal = new InformacionPersonal(
-                    "Diego",
+                    "katia",
                     json.getDouble("peso"),
                     dateFormat.parse(json.getString("f_nacimiento")),
                     json.getString("genero"),
