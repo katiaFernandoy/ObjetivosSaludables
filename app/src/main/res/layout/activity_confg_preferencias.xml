@@ -37,8 +37,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView4"
@@ -48,85 +47,111 @@
                 android:text="@string/preferencias"
                 android:textStyle="bold" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <Switch
+                android:id="@+id/switchVibracionSonido"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/sonido" />
+
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+        </LinearLayout>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textVie"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="@string/sonido"
+                android:text="@string/idiomas"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/cambiarIdioma"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <Button
-                android:id="@+id/btSonidoActivar"
-                style="@style/BotonPrincipal"
+            <Spinner
+                android:id="@+id/spinnerIdioma"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activado"
-                android:textAlignment="viewStart" />
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_rounded"
+                android:paddingHorizontal="9dp"
+                android:popupBackground="@drawable/style_spinner_items_container" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textVi"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/general"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/colorPrefe"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/tuColorPreferido"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <Button
-                android:id="@+id/btSonidoDesactivar"
-                style="@style/BotonPrincipal"
+            <Spinner
+                android:id="@+id/spinnercolorPreferido"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/desactivado"
-                android:textAlignment="viewStart" />
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_rounded"
+                android:paddingHorizontal="9dp"
+                android:popupBackground="@drawable/style_spinner_items_container" />
 
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <TextView
-            android:id="@+id/textVie"
-            style="@style/textviewGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="@string/idiomas"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text"
-            style="@style/textviewGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="@string/cambiarIdioma"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <Spinner
-            android:id="@+id/spinnerIdioma"
-            android:layout_width="match_parent"
-            android:background="@drawable/edittext_rounded"
-            android:popupBackground="@drawable/style_spinner_items_container"
-            android:layout_height="60dp"
-            android:paddingHorizontal="9dp"/>
-
-
 
     </LinearLayout>
 
 
-    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
