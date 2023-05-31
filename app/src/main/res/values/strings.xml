@@ -81,6 +81,9 @@
     <string name="cambiarIdioma">Cambiar Idioma</string>
     <string name="general">General</string>
     <string name="tuColorPreferido">Tu color preferido</string>
+    <string name="objetivosSaludables">Objetivos Saludables</string>
+    <string name="app">App</string>
+    <string name="modificarUsu">Modificar usuario</string>
 
     <!--SPINNERS-->
 

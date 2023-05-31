@@ -83,6 +83,9 @@
     <string name="cambiarIdioma">change language</string>
     <string name="general">General</string>
     <string name="tuColorPreferido">Your favorite color</string>
+    <string name="objetivosSaludables">Healthy goals</string>
+    <string name="app">App</string>
+    <string name="modificarUsu">modify user</string>
 
     <!--SPINNERS-->
 
