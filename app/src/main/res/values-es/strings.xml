@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">ObjetivosSaludables</string>
 
@@ -8,8 +9,9 @@
     <string name="btSaberMas">Saber más</string>
 
 
+
     <!--CREAR CUENTA-->
-    <string name="name">Nombre</string>
+    <string name="name">Nombre</string>idioma
     <string name="Appellido">Apellido</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -26,6 +28,7 @@
     <string name="emailHint">Email</string>
     <string name="passwordHint">Password</string>
 
+
     <!--NOTICIAS-->
 
     <string-array name="titulo_noticias">
@@ -33,6 +36,7 @@
         <item>Calentamiento antes de empezar</item>
         <item>Ejercicio sin salir de casa</item>
         <item>Consejos para comer mas sano</item>
+
     </string-array>
 
     <string-array name="enlace_noticias">
@@ -73,7 +77,7 @@
     <string name="confDeLaApp">Configuración de la app</string>
     <string name="recordatorio">Recordatorios</string>
     <string name="desactivado">Desactivar</string>
-    <string name="activado">Activar</string>
+    <string name="activado">Activar ES</string>
     <string name="botonSonido">Sonido</string>
     <string name="botonVolver">Volver</string>
     <string name="sonido">Sonido-vibración</string>
