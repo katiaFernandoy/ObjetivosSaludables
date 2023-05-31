@@ -131,6 +131,7 @@ public class ConfgPreferencias extends AppCompatActivity {
     }
 
     private void iniciarSpinner() {
+
         spinnerIdioma = findViewById(R.id.spinnerIdioma);
 
         CustomSpinnerAdapters adapters = new CustomSpinnerAdapters(
