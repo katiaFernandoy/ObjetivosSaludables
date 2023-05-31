@@ -18,7 +18,7 @@
     </style>
 
     <style name="BotonPrincipal" parent="@style/Widget.AppCompat.Button">
-        <item name="android:background">@drawable/button_style</item>
+        <item name="android:background">@drawable/button_style_green</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">2dip</item>
         <item name="android:paddingLeft">10dip</item>
@@ -31,6 +31,10 @@
         <item name="android:shadowDy">-1</item>
         <item name="android:shadowRadius">0.2</item>
     </style>
+
+
+
+
 
     <style name="RoundCorner" parent="">
         <item name="cornerFamily">rounded</item>

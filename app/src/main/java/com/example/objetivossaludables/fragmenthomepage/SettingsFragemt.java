@@ -13,14 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.fragmenthomepage.pagesLogin.ConfgPreferencias;
 import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
+import com.example.objetivossaludables.pagesLogin.ConfgPreferencias;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 
 public class SettingsFragemt extends Fragment {
