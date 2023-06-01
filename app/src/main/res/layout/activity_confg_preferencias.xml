@@ -49,16 +49,29 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="40dp" />
 
 
             <Switch
-                android:id="@+id/switchVibracionSonido"
+                android:id="@+id/switchSonido"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="@string/sonido" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Switch
+                android:id="@+id/switchVibracion"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/vibracion" />
 
 
 
@@ -72,7 +85,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,8 +105,7 @@
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="@string/cambiarIdioma"
-                android:textStyle="bold" />
+                android:text="@string/cambiarIdioma"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -110,7 +122,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,20 +142,48 @@
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="@string/tuColorPreferido"
-                android:textStyle="bold" />
+                android:text="@string/tuColorPreferido"/>
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <Spinner
-                android:id="@+id/spinnercolorPreferido"
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/edittext_rounded"
-                android:paddingHorizontal="9dp"
-                android:popupBackground="@drawable/style_spinner_items_container" />
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonRosa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorVerde"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/verde"
+                    android:textStyle="bold"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonVerde"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorRosa"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/rosa"
+                    android:textStyle="bold"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonAzul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorAzul"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/azul"
+                    android:textStyle="bold
+"/>
+            </RadioGroup>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
 
         </LinearLayout>
