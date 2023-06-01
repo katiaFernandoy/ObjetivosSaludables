@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/second_background"
-    tools:context=".pagesLogin.ConfgPreferencias">
+    tools:context=".pages.configuracion.ConfgPreferencias">
 
     <include
         layout="@layout/action_bard_default"

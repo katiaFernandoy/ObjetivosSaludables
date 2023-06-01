@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/second_background"
-    tools:context=".pagesLogin.ConfgPersonal">
+    tools:context=".pages.configuracion.ConfgPersonal">
 
     <LinearLayout
         android:id="@+id/container"
@@ -312,7 +312,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_modifUsu"
+                    android:id="@+id/bt_modificarInfoUsu"
                     style="@style/BotonPrincipal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

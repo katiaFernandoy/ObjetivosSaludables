@@ -1,14 +1,13 @@
-package com.example.objetivossaludables.modelo;
+package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_INFO_PERSONAL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.USER_ID;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
-import com.example.objetivossaludables.pagesLogin.RequestHandler;
+import com.example.objetivossaludables.modelo.InformacionPersonal;
+import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +42,7 @@ public class ApiModificarInfoPersonal extends ConfgPersonal {
             }
 
             HashMap<String, String> params = new HashMap<>();
-            params.put("userId", getInfoPersonal().getUserID());
+            params.put(USER_ID, getInfoPersonal().getUserID());
             params.put("nombre", compararAntiguoValorConNuevo(getInfoPersonal().getNombre(), modInfoPersonal.getNombre()));
             params.put("peso", compararAntiguoValorConNuevo(getInfoPersonal().getPeso(), modInfoPersonal.getPeso()));
             params.put("altura", compararAntiguoValorConNuevo(getInfoPersonal().getAltura(), modInfoPersonal.getAltura()));
