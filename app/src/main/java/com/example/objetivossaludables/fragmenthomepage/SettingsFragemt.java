@@ -18,8 +18,10 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.pagesLogin.ConfgNotificaciones;
 import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
 import com.example.objetivossaludables.pagesLogin.ConfgPreferencias;
+import com.example.objetivossaludables.pagesLogin.ConfgSeguridad;
 import com.example.objetivossaludables.pagesLogin.IniciarSesion;
 
 public class SettingsFragemt extends Fragment {
@@ -28,6 +30,9 @@ public class SettingsFragemt extends Fragment {
     private Button bt_cerrar;
     private LinearLayout linearLayoutConfPersonal;
     private LinearLayout linearLayoutPreferencias;
+    private LinearLayout linearLayoutSeguridad;
+    private LinearLayout linearLayoutNotificaciones;
+
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -39,6 +44,8 @@ public class SettingsFragemt extends Fragment {
         bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
         linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
         linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
+        linearLayoutNotificaciones = root.findViewById(R.id.linearLayoutNotificaciones);
+        linearLayoutSeguridad = root.findViewById(R.id.linearLayoutSeguridad);
 
         linearLayoutConfPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +59,22 @@ public class SettingsFragemt extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ConfgPreferencias.class);
+                startActivity(intent);
+            }
+        });
+
+        linearLayoutNotificaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ConfgNotificaciones.class);
+                startActivity(intent);
+            }
+        });
+
+        linearLayoutSeguridad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ConfgSeguridad.class);
                 startActivity(intent);
             }
         });

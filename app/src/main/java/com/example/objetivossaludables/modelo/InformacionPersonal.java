@@ -2,16 +2,15 @@ package com.example.objetivossaludables.modelo;
 
 import java.util.Date;
 
-public class InformacionPersonal {
+public class InformacionPersonal extends Usuario{
 
-     private String nombre;
      private  double peso;
      private Date fechaNacimiento;
      private String genero;
      private int altura;
 
-    public InformacionPersonal(String nombre, double peso, Date fechaNacimiento, String genero, int altura) {
-        this.nombre = nombre;
+    public InformacionPersonal(String userId, String nombre, double peso, int altura, String genero, Date fechaNacimiento) {
+        super(userId,nombre);
         this.peso = peso;
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
@@ -20,13 +19,6 @@ public class InformacionPersonal {
 
 
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public double getPeso() {
         return peso;
