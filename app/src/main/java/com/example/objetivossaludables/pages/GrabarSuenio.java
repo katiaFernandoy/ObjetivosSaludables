@@ -1,6 +1,6 @@
 package com.example.objetivossaludables.pages;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,9 +44,8 @@ public class GrabarSuenio extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
-
-
     }
+
     public String GetDay(){
         Calendar c = Calendar.getInstance();
         int dia =  c.get(Calendar.DAY_OF_WEEK);

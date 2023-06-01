@@ -3,6 +3,7 @@ package com.example.objetivossaludables.pages.fragmenthomepage;
 
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 
 import android.app.Activity;
 import android.content.Context;
@@ -26,7 +27,6 @@ import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 
 public class SettingsFragemt extends Fragment {
 
-    public static final String STATUS = "status";
     private Button bt_cerrar;
     private LinearLayout linearLayoutConfPersonal;
     private LinearLayout linearLayoutPreferencias;
