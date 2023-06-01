@@ -78,7 +78,8 @@
     <string name="activado">Activate</string>
     <string name="botonSonido">Sound</string>
     <string name="botonVolver">Back</string>
-    <string name="sonido">Sounds, vibration...</string>
+    <string name="sonido">Sounds</string>
+    <string name="vibracion">vibration</string>
     <string name="idiomas">Lenguage</string>
     <string name="cambiarIdioma">change language</string>
     <string name="general">General</string>
@@ -86,6 +87,21 @@
     <string name="objetivosSaludables">Healthy goals</string>
     <string name="app">App</string>
     <string name="modificarUsu">modify user</string>
+    <string name="colorRosa">Pink</string>
+    <string name="colorVerde">Green</string>
+    <string name="colorAzul">Blue</string>
+    <string name="tituloCambioPassWord">you can change your password</string>
+    <string name="passWordActual">Current password </string>
+    <string name="nuevaPassWord">New Password </string>
+    <string name="repeNuevaPassWord">Repeat password</string>
+    <string name="btModifPassWord">modify</string>
+
+    <!--SEGURIDAD-->
+    <string name="errorContraseña">password error </string>
+
+    <!--NOTIFICACIONES-->
+
+    <string name="recordatorios">reminders</string>
 
     <!--SPINNERS-->
 

@@ -77,10 +77,11 @@
     <string name="confDeLaApp">Configuración de la app</string>
     <string name="recordatorio">Recordatorios</string>
     <string name="desactivado">Desactivar</string>
-    <string name="activado">Activar ES</string>
+    <string name="activado">Activar </string>
     <string name="botonSonido">Sonido</string>
     <string name="botonVolver">Volver</string>
-    <string name="sonido">Sonido-vibración</string>
+    <string name="sonido">Sonido</string>
+    <string name="vibracion">Vibración</string>
     <string name="idiomas">Idiomas</string>
     <string name="cambiarIdioma">Cambiar Idioma</string>
     <string name="general">General</string>
@@ -88,6 +89,21 @@
     <string name="objetivosSaludables">Objetivos Saludables</string>
     <string name="app">App</string>
     <string name="modificarUsu">Modificar Usuario</string>
+    <string name="colorRosa">Rosa</string>
+    <string name="colorVerde">Verde</string>
+    <string name="colorAzul">Azul</string>
+    <string name="tituloCambioPassWord">Modifica tu contraseña</string>
+    <string name="passWordActual">Contraseña Actual</string>
+    <string name="nuevaPassWord">Nueva contraseña</string>
+    <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
+    <string name="btModifPassWord">Modificar</string>
+
+    <!--SEGURIDAD-->
+    <string name="errorContraseña">Error contraseña</string>
+
+    <!--NOTIFICACIONES-->
+
+    <string name="recordatorios">Recordatorios</string>
 
     <!--SPINNERS-->
 

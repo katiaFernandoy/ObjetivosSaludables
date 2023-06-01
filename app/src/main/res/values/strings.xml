@@ -55,7 +55,7 @@
     <string name="notificaciones">Notificaciones</string>
     <string name="notiInfo">Personaliza tus notificaciones</string>
     <string name="seguridad">Seguridad</string>
-    <string name="seguLicencias">Licencias</string>
+    <string name="seguLicencias">Contraseñas</string>
     <string name="tuCuenta">Tu cuenta</string>
     <string name="correo">Dirección de correo electrónico:</string>
     <string name="tuPeso">Tu peso</string>
@@ -76,7 +76,8 @@
     <string name="activado">Activar</string>
     <string name="botonSonido">Sonido</string>
     <string name="botonVolver">Volver</string>
-    <string name="sonido">Sonido-vibración</string>
+    <string name="sonido">Sonido</string>
+    <string name="vibracion">Vibración</string>
     <string name="idiomas">Idiomas</string>
     <string name="cambiarIdioma">Cambiar Idioma</string>
     <string name="general">General</string>
@@ -84,6 +85,22 @@
     <string name="objetivosSaludables">Objetivos Saludables</string>
     <string name="app">App</string>
     <string name="modificarUsu">Modificar usuario</string>
+    <string name="colorRosa">Rosa</string>
+    <string name="colorVerde">Verde</string>
+    <string name="colorAzul">Azul</string>
+    <string name="tituloCambioPassWord">Modifica tu contraseña</string>
+    <string name="passWordActual">Contraseña Actual</string>
+    <string name="nuevaPassWord">Nueva contraseña</string>
+    <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
+    <string name="btModifPassWord">Modificar</string>
+
+    <!--SEGURIDAD-->
+    <string name="errorContraseña">Error contraseña</string>
+
+
+    <!--NOTIFICACIONES-->
+
+    <string name="recordatorios">Crear recordatorio</string>
 
     <!--SPINNERS-->
 
@@ -92,9 +109,6 @@
         <item>Hombre</item>
         <item>Prefiero no contestar</item>
     </string-array>
-
-
-
 
 
     <!--OBJETIVOS-->
