@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,31 +14,37 @@
         android:theme="@style/Theme.ObjetivosSaludables"
         tools:targetApi="31">
         <activity
-            android:name=".pagesLogin.ConfgPreferencias"
+            android:name=".pages.configuracion.ConfgNotificaciones"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.ConfgPersonal"
+            android:name=".pages.configuracion.ConfgSeguridad"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.GrabarSuenio"
+            android:name=".pages.configuracion.ConfgPreferencias"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.Menu"
+            android:name=".pages.configuracion.ConfgPersonal"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.PantallaCarga"
+            android:name=".pages.GrabarSuenio"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.IniciarSesion"
+            android:name=".pages.Menu"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.CrearCuenta"
+            android:name=".pages.inicioapp.PantallaCarga"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.Portada"
+            android:name=".pages.inicioapp.IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".pagesLogin.Inicio"
+            android:name=".pages.inicioapp.CrearCuenta"
+            android:exported="false" />
+        <activity
+            android:name=".pages.inicioapp.Portada"
+            android:exported="false" />
+        <activity
+            android:name=".pages.inicioapp.Inicio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
