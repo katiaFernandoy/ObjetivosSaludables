@@ -1,95 +1,88 @@
-package com.example.objetivossaludables.pagesLogin;
+package com.example.objetivossaludables.pages.configuracion;
 
-import static android.os.VibrationEffect.*;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.res.Configuration;
-import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.adapters.CustomSpinnerAdapters;
+import com.example.objetivossaludables.manager.media.MediaManager;
+import com.example.objetivossaludables.manager.sharedpreferences.SettingPreferences;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
 
 public class ConfgPreferencias extends AppCompatActivity {
 
-    private MediaPlayer sonido;
-    private Switch switchVibracionSonido;
-
+    private Switch switchSonido;
+    private Switch switchVibracion;
+    private Button btPruebaSonido;
     private Spinner spinnerIdioma;
-    private Spinner spinner;
+    private SettingPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_preferencias);
 
-        sonido = MediaPlayer.create(this, R.raw.sonido1);
         spinnerIdioma = findViewById(R.id.spinnerIdioma);
-        switchVibracionSonido = findViewById(R.id.switchVibracionSonido);
-        spinner = findViewById(R.id.spinner);
+        switchSonido = findViewById(R.id.switchSonido);
+        switchVibracion = findViewById(R.id.switchVibracion);
 
+        preferences = new SettingPreferences(getApplicationContext());
 
-        final Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        switchVibracionSonido.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchSonido.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    // Activar vibración del botón
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-                        vibrator.vibrate(createOneShot(500, DEFAULT_AMPLITUDE));
-                    } else {
-                        vibrator.vibrate(500);
-                    }
+                    MediaManager.playSoundWithoutVerification(getApplicationContext());
                 } else {
-                    // Desactivar vibración del botón
-                    vibrator.cancel();
+                    MediaManager.stopSound();
                 }
+
+                preferences.setSound(isChecked);
             }
         });
 
+        switchVibracion.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    MediaManager.vibrateWithoutVerification(getApplicationContext());
+                } else {
+                    MediaManager.stopVibrate();
+                }
+
+                preferences.setVibrate(isChecked);
+            }
+        });
 
         iniciarSpinner();
 
         spinnerIdioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String seleccionarIdioma = parent.getItemAtPosition(position).toString();
+                String idiomaSeleccionado = parent.getItemAtPosition(position).toString();
                 // Aquí implementamos el metodo para poder cambiar de idioma
 
-                Toast.makeText(getApplicationContext(), seleccionarIdioma, Toast.LENGTH_SHORT).show();
+                if(idiomaSeleccionado.equals(preferences.getIdioma())){
+                    return;
+                }
 
-                cambiarIdioma(seleccionarIdioma);
+                Toast.makeText(getApplicationContext(), R.string.idiomaCambiado, Toast.LENGTH_SHORT).show();
+                cambiarIdioma(idiomaSeleccionado);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Acción cuando no se selecciona ningún idioma
-
-
-
-
             }
         });
 
@@ -119,15 +112,8 @@ public class ConfgPreferencias extends AppCompatActivity {
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
 
-        getResources().
-
-                updateConfiguration(configuration, getResources().
-
-                        getDisplayMetrics());
-
-        // Reinicia la actividad para aplicar el cambio de idioma
-        //recreate();
-
+        getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
+        preferences.setIdioma(idioma);
     }
 
     private void iniciarSpinner() {
@@ -139,23 +125,18 @@ public class ConfgPreferencias extends AppCompatActivity {
 
         adapters.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerIdioma.setAdapter(adapters);
+
+        spinnerIdioma.setSelection(getPosicionIdioma());
     }
 
-
-    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
-
-        public SpinnerActivity() { spinner.setOnItemSelectedListener(this);}
-
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int pos, long id) {
-            String seleccionarIdioma = parent.getItemAtPosition(pos).toString();
-            // Aquí implementamos el metodo para poder cambiar de idioma
-
-            cambiarIdioma(seleccionarIdioma);
-        }
-
-        public void onNothingSelected(AdapterView<?> parent) {
-            // Another interface callback
+    private int getPosicionIdioma() {
+        switch (preferences.getIdioma()) {
+            case "Ingles":
+                return 1;
+            case "Frances":
+                return 2;
+            default: // Español
+                return 0;
         }
     }
 }
