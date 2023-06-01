@@ -19,7 +19,7 @@
     <string name="errorFaltaCampo">you must insert a </string>
     <string name="errorMaxChars">You must have less than 28 characters</string>
     <string name="errorBadEmail">The email must be in the format name@example.com</string>
-    <string name="errorPass">Your password must be 4-8 characters long and include a number or special character</string>
+    <string name="errorPass">Your password must be 4–8 characters long and include a number or special character</string>
 
     <!--HINTS-->
     <string name="nameHint">Name</string>
@@ -95,6 +95,7 @@
     <string name="nuevaPassWord">New Password </string>
     <string name="repeNuevaPassWord">Repeat password</string>
     <string name="btModifPassWord">modify</string>
+    <string name="idiomaCambiado">You must restart the application to display the new language</string>
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">password error </string>
@@ -126,7 +127,7 @@
     <string name="suenio">Hours of sleep</string>
     <string name="horasSue">How much have you slept today?</string>
     <string name="pasos">Number of steps</string>
-    <string name="numPasos">Record todays steps</string>
+    <string name="numPasos">Record today steps</string>
 
     <!--SUENIO-->
 
