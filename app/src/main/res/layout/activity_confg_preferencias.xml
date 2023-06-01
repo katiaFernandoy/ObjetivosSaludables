@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/second_background"
+    tools:context=".pages.configuracion.ConfgPreferencias">
+
+    <include
+        layout="@layout/action_bard_default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/preferencias"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+
+            <Switch
+                android:id="@+id/switchSonido"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/sonido" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Switch
+                android:id="@+id/switchVibracion"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/vibracion" />
+
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+        </LinearLayout>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textVie"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/idiomas"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/cambiarIdioma"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Spinner
+                android:id="@+id/spinnerIdioma"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_rounded"
+                android:paddingHorizontal="9dp"
+                android:popupBackground="@drawable/style_spinner_items_container" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textVi"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/general"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/colorPrefe"
+                style="@style/textviewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/tuColorPreferido"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonRosa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorVerde"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/verde"
+                    android:textStyle="bold"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonVerde"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorRosa"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/rosa"
+                    android:textStyle="bold"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonAzul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorAzul"
+                    style="@style/textviewGeneral"
+                    android:textColor="@color/azul"
+                    android:textStyle="bold
+"/>
+            </RadioGroup>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

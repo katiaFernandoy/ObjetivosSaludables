@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">ObjetivosSaludables</string>
+
+    <!--PORTADA-->
+    <string name="headerPortada">Track your progress, get insights and improve your lifestyle.</string>
+    <string name="btn_iniciarSesion">log in</string>
+    <string name="btnCrearCuenta">create Account</string>
+    <string name="btSaberMas">Know more</string>
+
+
+    <!--CREAR CUENTA-->
+    <string name="name">Name</string>
+    <string name="Appellido">Last name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="crearCuenta">Create Account</string>
+
+    <!--ERRORES-->
+    <string name="errorFaltaCampo">you must insert a </string>
+    <string name="errorMaxChars">You must have less than 28 characters</string>
+    <string name="errorBadEmail">The email must be in the format name@example.com</string>
+    <string name="errorPass">Your password must be 4–8 characters long and include a number or special character</string>
+
+    <!--HINTS-->
+    <string name="nameHint">Name</string>
+    <string name="AppellidoHint">Last Name</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+
+    <!--NOTICIAS-->
+
+    <string-array name="titulo_noticias">
+        <item>Health benefits of running daily.</item>
+        <item>Warm up before starting</item>
+        <item>Exercise without leaving home</item>
+        <item>Tips to eat healthier</item>
+
+    </string-array>
+
+    <string-array name="enlace_noticias">
+        <item>https://www.runnersworld.com/es/salud-lesiones-runner/a40141551/beneficios-correr/</item>
+        <item>https://www.nike.com/es/a/consejos-calentamiento-entrenamiento</item>
+        <item>https://www.runnersworld.com/es/training/g25549809/ejercicios-con-peso-corporal-en-casa/</item>
+        <item>https://findyoureverest.es/consejos-para-comer-mas-sano/</item>
+    </string-array>
+
+    <!--AJUSTES-->
+
+    <string name="confiPersonal">personal settings</string>
+    <string name="verInfo">Modify your personal information here</string>
+    <string name="cuenta">Account:</string>
+    <string name="cerrarSesion">Sign off</string>
+    <string name="sobre">About:</string>
+    <string name="valora">Rate our App and give us your opinion</string>
+    <string name="preferencias">Preferences</string>
+    <string name="prefeSonidos">Sounds, vibration...</string>
+    <string name="notificaciones">Notifications</string>
+    <string name="notiInfo">Personalize your notifications</string>
+    <string name="seguridad">Security</string>
+    <string name="seguLicencias">Licenses</string>
+    <string name="tuCuenta">Your Account</string>
+    <string name="correo">Email address:</string>
+    <string name="tuPeso">Your weight </string>
+    <string name="kg">kg</string>
+    <string name="fechaNacimiento">Birth date </string>
+    <string name="fecha">Date</string>
+    <string name="TuPerfil">Your Account</string>
+    <string name="Tugenero">Your gender</string>
+    <string name="genero">Gender</string>
+    <string name="mujer">Woman</string>
+    <string name="hombre">Men</string>
+    <string name="TuAltura">Your height</string>
+    <string name="altura">cm</string>
+    <string name="NoIndicado">I prefer not to indicate it</string>
+    <string name="confDeLaApp">App configuration</string>
+    <string name="recordatorio">Reminders</string>
+    <string name="desactivado">Deactivate</string>
+    <string name="activado">Activate</string>
+    <string name="botonSonido">Sound</string>
+    <string name="botonVolver">Back</string>
+    <string name="sonido">Sounds</string>
+    <string name="vibracion">vibration</string>
+    <string name="idiomas">Lenguage</string>
+    <string name="cambiarIdioma">change language</string>
+    <string name="general">General</string>
+    <string name="tuColorPreferido">Your favorite color</string>
+    <string name="objetivosSaludables">Healthy goals</string>
+    <string name="app">App</string>
+    <string name="modificarUsu">modify user</string>
+    <string name="colorRosa">Pink</string>
+    <string name="colorVerde">Green</string>
+    <string name="colorAzul">Blue</string>
+    <string name="tituloCambioPassWord">you can change your password</string>
+    <string name="passWordActual">Current password </string>
+    <string name="nuevaPassWord">New Password </string>
+    <string name="repeNuevaPassWord">Repeat password</string>
+    <string name="btModifPassWord">modify</string>
+    <string name="idiomaCambiado">You must restart the application to display the new language</string>
+
+    <!--SEGURIDAD-->
+    <string name="errorContraseña">password error </string>
+
+    <!--NOTIFICACIONES-->
+
+    <string name="recordatorios">reminders</string>
+
+    <!--SPINNERS-->
+
+    <string-array name="spinnerGenero">
+        <item>Woman</item>
+        <item>Men</item>
+        <item>I prefer not to answer</item>
+    </string-array>
+
+
+
+
+
+    <!--OBJETIVOS-->
+
+    <string name="definObj">Define your goals</string>
+    <string name="verObj">To where you want to go?</string>
+    <string name="consultaSem">Check your weekly plan</string>
+    <string name="planning">Diet and personalized training</string>
+    <string name="entrenamiento">Training</string>
+    <string name="horasEnt">Enter your training times</string>
+    <string name="suenio">Hours of sleep</string>
+    <string name="horasSue">How much have you slept today?</string>
+    <string name="pasos">Number of steps</string>
+    <string name="numPasos">Record today steps</string>
+
+    <!--SUENIO-->
+
+    <string name="suenioHoy">How much have you slept today?</string>
+    <string name="Puntuacion">Your score today has been:99</string>
+    <string name="mediaSemanal">Your average hours for this week is:</string>
+    <string name="humorEsperado">Depending on your rest, it is normal for you to feel:</string>
+    <string name="estas">You are one</string>
+    <string name="objetivo">to achieve your goal</string>
+
+
+    <!--TOOLBAR-->
+    <string name="titleToolBar">Be Healthy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

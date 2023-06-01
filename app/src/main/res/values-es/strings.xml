@@ -1,0 +1,148 @@
+
+<resources>
+    <string name="app_name">ObjetivosSaludables</string>
+
+    <!--PORTADA-->
+    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu estilo de vida.</string>
+    <string name="btn_iniciarSesion">Iniciar Sesión</string>
+    <string name="btnCrearCuenta">Crear Cuenta</string>
+    <string name="btSaberMas">Saber más</string>
+
+
+
+    <!--CREAR CUENTA-->
+    <string name="name">Nombre</string>idioma
+    <string name="Appellido">Apellido</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="crearCuenta">Crear Cuenta</string>
+
+    <!--ERRORES-->
+    <string name="errorFaltaCampo">Debes insertar un </string>
+    <string name="errorMaxChars">Debe tener menos de 28 caracteres</string>
+    <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
+    <string name="errorPass">Tu contraseña debe tener de 4 a 8 caracteres e incluir un número o caracter especial</string>
+    <!--HINTS-->
+    <string name="nameHint">Nombre</string>
+    <string name="AppellidoHint">Apellido</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+
+
+    <!--NOTICIAS-->
+
+    <string-array name="titulo_noticias">
+        <item>Beneficios de correr a diario, para la salud.</item>
+        <item>Calentamiento antes de empezar</item>
+        <item>Ejercicio sin salir de casa</item>
+        <item>Consejos para comer mas sano</item>
+
+    </string-array>
+
+    <string-array name="enlace_noticias">
+        <item>https://www.runnersworld.com/es/salud-lesiones-runner/a40141551/beneficios-correr/</item>
+        <item>https://www.nike.com/es/a/consejos-calentamiento-entrenamiento</item>
+        <item>https://www.runnersworld.com/es/training/g25549809/ejercicios-con-peso-corporal-en-casa/</item>
+        <item>https://findyoureverest.es/consejos-para-comer-mas-sano/</item>
+    </string-array>
+
+    <!--AJUSTES-->
+
+    <string name="confiPersonal">Configuración personal</string>
+    <string name="verInfo">Modifica aquí tu información personal</string>
+    <string name="cuenta">Cuenta:</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="sobre">Sobre</string>
+    <string name="valora">Valora nuestra App y danos tu opinión</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="prefeSonidos">Sonidos,vibración...</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="notiInfo">Personaliza tus notificaciones</string>
+    <string name="seguridad">Seguridad</string>
+    <string name="seguLicencias">Licencias</string>
+    <string name="tuCuenta">Tu cuenta</string>
+    <string name="correo">Dirección de correo electrónico:</string>
+    <string name="tuPeso">Tu peso</string>
+    <string name="kg">kg</string>
+    <string name="fechaNacimiento">Fecha de nacimiento</string>
+    <string name="fecha">fecha</string>
+    <string name="TuPerfil">Tu perfil</string>
+    <string name="Tugenero">Tu género</string>
+    <string name="genero">genero</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="TuAltura">Tu altura</string>
+    <string name="altura">cm</string>
+    <string name="NoIndicado">Prefiero no indicarlo</string>
+    <string name="confDeLaApp">Configuración de la app</string>
+    <string name="recordatorio">Recordatorios</string>
+    <string name="desactivado">Desactivar</string>
+    <string name="activado">Activar </string>
+    <string name="botonSonido">Sonido</string>
+    <string name="botonVolver">Volver</string>
+    <string name="sonido">Sonido</string>
+    <string name="vibracion">Vibración</string>
+    <string name="idiomas">Idiomas</string>
+    <string name="cambiarIdioma">Cambiar Idioma</string>
+    <string name="general">General</string>
+    <string name="tuColorPreferido">Tu color preferido</string>
+    <string name="objetivosSaludables">Objetivos Saludables</string>
+    <string name="app">App</string>
+    <string name="modificarUsu">Modificar Usuario</string>
+    <string name="colorRosa">Rosa</string>
+    <string name="colorVerde">Verde</string>
+    <string name="colorAzul">Azul</string>
+    <string name="tituloCambioPassWord">Modifica tu contraseña</string>
+    <string name="passWordActual">Contraseña Actual</string>
+    <string name="nuevaPassWord">Nueva contraseña</string>
+    <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
+    <string name="btModifPassWord">Modificar</string>
+    <string name="idiomaCambiado">Debe reiniciar la aplicación para mostrar el nuevo idioma</string>
+
+    <!--SEGURIDAD-->
+    <string name="errorContraseña">Error contraseña</string>
+
+    <!--NOTIFICACIONES-->
+
+    <string name="recordatorios">Recordatorios</string>
+
+    <!--SPINNERS-->
+
+    <string-array name="spinnerGenero">
+        <item>Mujer</item>
+        <item>Hombre</item>
+        <item>Prefiero no contestar</item>
+    </string-array>
+
+
+
+
+
+    <!--OBJETIVOS-->
+
+    <string name="definObj">Define tus objetivos</string>
+    <string name="verObj">¿Hasta dónde quieres llegar?</string>
+    <string name="consultaSem">Consulta tu plan semanal</string>
+    <string name="planning">Dieta y entrenamiento personalizado</string>
+    <string name="entrenamiento">Entrenamiento</string>
+    <string name="horasEnt">Introduce tus tiempos de entrenamiento</string>
+    <string name="suenio">Horas de sueño</string>
+    <string name="horasSue">¿Cuánto has dormido hoy?</string>
+    <string name="pasos">Número de pasos</string>
+    <string name="numPasos">Registra los pasos de hoy</string>
+
+    <!--SUENIO-->
+
+    <string name="suenioHoy">¿Cuánto has dormido hoy?</string>
+    <string name="Puntuacion">Tu puntuación de hoy ha sido:</string>
+    <string name="mediaSemanal">Tu media de horas para esta semana es:</string>
+    <string name="humorEsperado">Según tu descanso es normal que te sientas:</string>
+    <string name="estas">Estás a un</string>
+    <string name="objetivo">de conseguir tu objetivo</string>
+
+
+    <!--TOOLBAR-->
+    <string name="titleToolBar">Be Healthy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

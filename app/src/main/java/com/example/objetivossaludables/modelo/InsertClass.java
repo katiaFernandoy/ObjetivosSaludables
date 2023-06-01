@@ -1,10 +1,9 @@
 package com.example.objetivossaludables.modelo;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SUENIO;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -15,9 +14,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.pagesLogin.GrabarSuenio;
-import com.example.objetivossaludables.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.pagesLogin.RequestHandler;
+import com.example.objetivossaludables.manager.api.RequestHandler;
+import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 
 import org.json.JSONException;
 import org.json.JSONObject;
