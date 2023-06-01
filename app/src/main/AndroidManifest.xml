@@ -18,8 +18,11 @@
             android:name=".pagesLogin.ConfgPersonal"
             android:exported="false" />
         <activity
+            android:name=".pagesLogin.GrabarSuenio"
+            android:exported="false" />
+        <activity
             android:name=".pagesLogin.Menu"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".pagesLogin.PantallaCarga"
             android:exported="false" />
