@@ -1,8 +1,8 @@
-package com.example.objetivossaludables.fragmenthomepage;
+package com.example.objetivossaludables.pages.fragmenthomepage;
 
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,11 +18,11 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.pagesLogin.ConfgNotificaciones;
-import com.example.objetivossaludables.pagesLogin.ConfgPersonal;
-import com.example.objetivossaludables.pagesLogin.ConfgPreferencias;
-import com.example.objetivossaludables.pagesLogin.ConfgSeguridad;
-import com.example.objetivossaludables.pagesLogin.IniciarSesion;
+import com.example.objetivossaludables.pages.configuracion.ConfgNotificaciones;
+import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
+import com.example.objetivossaludables.pages.configuracion.ConfgPreferencias;
+import com.example.objetivossaludables.pages.configuracion.ConfgSeguridad;
+import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 
 public class SettingsFragemt extends Fragment {
 

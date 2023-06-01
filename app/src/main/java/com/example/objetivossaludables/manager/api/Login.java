@@ -1,9 +1,9 @@
-package com.example.objetivossaludables.modelo;
+package com.example.objetivossaludables.manager.api;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.PASSWORD;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.PASSWORD;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_LOGIN;
 
 import android.app.Activity;
@@ -12,16 +12,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.pagesLogin.Menu;
-import com.example.objetivossaludables.pagesLogin.RequestHandler;
+import com.example.objetivossaludables.pages.Menu;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class Login extends AsyncTask<Void, Void, String> {
 
@@ -84,8 +84,11 @@ public class Login extends AsyncTask<Void, Void, String> {
                     context.startActivity(intent);
                 } else
                     Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+
             } catch (JSONException e) {
                 e.printStackTrace();
+                Log.e("JSON mal formado", e.getMessage());
+                Log.e("JSON Response", s);
                 Toast.makeText(context, "Exception: " + e, Toast.LENGTH_LONG).show();
             }
         }

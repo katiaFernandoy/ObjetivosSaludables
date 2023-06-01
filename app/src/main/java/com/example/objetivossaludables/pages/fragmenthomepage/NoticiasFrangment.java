@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.fragmenthomepage;
+package com.example.objetivossaludables.pages.fragmenthomepage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

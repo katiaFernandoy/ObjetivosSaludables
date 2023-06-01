@@ -1,9 +1,11 @@
 package com.example.objetivossaludables.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -25,7 +27,18 @@ public class CustomSpinnerAdapters extends ArrayAdapter<String> {
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        View view = super.getDropDownView(position, convertView, parent);
+        View view = convertView;
+        if (view == null) {
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            view = inflater.inflate(R.layout.list_item_spinner_genero, parent, false);
+        }
+
+        TextView textViewItem = view.findViewById(R.id.textViewItem);
+        String item = getItem(position);
+        if (item != null) {
+            textViewItem.setText(item);
+        }
+
         return view;
     }
 }

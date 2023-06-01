@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pagesLogin;
+package com.example.objetivossaludables.pages;
 
 import android.os.Bundle;
 
@@ -9,10 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.databinding.ActivityMenuBinding;
-import com.example.objetivossaludables.fragmenthomepage.HomeFragment;
-import com.example.objetivossaludables.fragmenthomepage.NoticiasFrangment;
-import com.example.objetivossaludables.fragmenthomepage.SettingsFragemt;
-import com.example.objetivossaludables.fragmenthomepage.TrofeosFragemt;
+import com.example.objetivossaludables.pages.fragmenthomepage.HomeFragment;
+import com.example.objetivossaludables.pages.fragmenthomepage.NoticiasFrangment;
+import com.example.objetivossaludables.pages.fragmenthomepage.SettingsFragemt;
+import com.example.objetivossaludables.pages.fragmenthomepage.TrofeosFragemt;
 
 public class Menu extends AppCompatActivity {
 

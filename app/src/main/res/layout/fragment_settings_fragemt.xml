@@ -4,14 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/second_background"
-    tools:context=".fragmenthomepage.SettingsFragemt">
-
-    <include
-        layout="@layout/action_bard_default"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp" />
+    tools:context=".pages.fragmenthomepage.SettingsFragemt">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -264,7 +257,6 @@
                 android:text="@string/cerrarSesion" />
 
 
-
         </LinearLayout>
 
         <Space
@@ -304,7 +296,6 @@
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>

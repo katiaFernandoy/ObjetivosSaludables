@@ -1,7 +1,7 @@
-package com.example.objetivossaludables.pagesLogin;
+package com.example.objetivossaludables.pages.inicioapp;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -17,7 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.modelo.Registro;
+import com.example.objetivossaludables.manager.api.Registro;
 
 import java.util.regex.Pattern;
 

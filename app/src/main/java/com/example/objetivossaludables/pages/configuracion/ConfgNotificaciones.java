@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pagesLogin;
+package com.example.objetivossaludables.pages.configuracion;
 
 import androidx.appcompat.app.AppCompatActivity;
 

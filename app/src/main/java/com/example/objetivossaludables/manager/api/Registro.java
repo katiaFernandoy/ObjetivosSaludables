@@ -1,7 +1,7 @@
-package com.example.objetivossaludables.modelo;
+package com.example.objetivossaludables.manager.api;
 
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.SharedPreferences.STATUS;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
 
 import android.annotation.SuppressLint;
@@ -13,8 +13,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.pagesLogin.IniciarSesion;
-import com.example.objetivossaludables.pagesLogin.RequestHandler;
+import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 
 import org.json.JSONException;
 import org.json.JSONObject;

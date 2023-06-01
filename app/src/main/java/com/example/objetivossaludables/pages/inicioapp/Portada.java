@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pagesLogin;
+package com.example.objetivossaludables.pages.inicioapp;
 
 import android.content.Intent;
 import android.os.Bundle;
