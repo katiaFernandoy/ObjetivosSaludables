@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages;
 
+import static com.example.objetivossaludables.manager.api.GetHorasSuenio.media;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.InsertClass;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 
 import java.util.Calendar;
 
@@ -28,6 +30,7 @@ public class GrabarSuenio extends AppCompatActivity {
     private TextView tvResultAnalisis;
     private EditText mediaHoras;
     ProgressDialog pdLoading;
+    protected static Context context;
 
 
     @SuppressLint("MissingInflatedId")
@@ -73,14 +76,20 @@ public class GrabarSuenio extends AppCompatActivity {
     }
 
     public void grabarSuenio(View view) {
-        final String suenio = horasSuenio.getText().toString();
+
+        final Integer Id_usu = new UserPreferences(this).getUserId();
+        final Double suenio = Double.parseDouble(horasSuenio.getText().toString());
         final String day = GetDay();
         pdLoading = new ProgressDialog(GrabarSuenio.this);
 
-        if (!suenio.isEmpty()) {
-            InsertClass insertclass = new InsertClass(suenio, day, GrabarSuenio.this, pdLoading);
+        if (suenio >= 0 && suenio < 24) {
+            InsertClass insertclass = new InsertClass(suenio, day, Id_usu, GrabarSuenio.this, pdLoading);
             insertclass.execute();
         }
+        mediaHoras.setText("" + media);
     }
+
+
+
 
 }

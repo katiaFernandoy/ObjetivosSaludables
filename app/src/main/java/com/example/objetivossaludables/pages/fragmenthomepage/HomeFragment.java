@@ -71,32 +71,23 @@ public class HomeFragment extends Fragment {
     }
 
     public void lanzarSuenio() {
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), GrabarSuenio.class);
         startActivity(intent);
     }
 
     public void lanzarPasos() {
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), GrabarPasos.class);
         startActivity(intent);
     }
 
     public void lanzarEntrenamientos() {
-
-
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), ConsultarEntrenamientos.class);
         startActivity(intent);
     }
 
     public void lanzarObjetivos() {
-
-
-            ((Activity) getContext()).finish();
             Intent intent = new Intent(getContext(), EstablecerObjetivos.class);
             startActivity(intent);
-
 
     }
 }

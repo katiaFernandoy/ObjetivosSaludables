@@ -45,8 +45,8 @@
                     <TextView
                         android:id="@+id/textView"
                         style="@style/textviewGeneral"
-                        android:layout_width="229dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="246dp"
+                        android:layout_height="45dp"
                         android:text="@string/suenioHoy"
                         android:textStyle="bold" />
 
