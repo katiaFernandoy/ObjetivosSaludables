@@ -1,5 +1,8 @@
 package com.example.objetivossaludables.valoresestaticos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class ValuesPreferences {
 
     public static final String MY_PREFERENCES = "MyPrefs";
@@ -11,7 +14,7 @@ public class ValuesPreferences {
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
 
-    //
+    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     // AJUSTES
     public static final String SONIDO = "sonido";

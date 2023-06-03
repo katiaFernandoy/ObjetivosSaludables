@@ -1,6 +1,7 @@
 package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INFORMACION_PERSONAL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 
 import android.app.Activity;

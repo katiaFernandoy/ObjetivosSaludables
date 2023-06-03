@@ -51,11 +51,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/confCorreoPersonal"
+                    android:id="@+id/txt_emailInfoPersonal"
                     style="@style/textviewGeneral"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="madrid@gmail.com" />
+                    android:text="@string/email" />
 
 
             </LinearLayout>
