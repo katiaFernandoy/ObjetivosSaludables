@@ -2,6 +2,7 @@ package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_INFO_PERSONAL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.USER_ID;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
 
 import android.os.AsyncTask;
 import android.widget.Toast;

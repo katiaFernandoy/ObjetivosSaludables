@@ -98,6 +98,15 @@
     <!--SEGURIDAD-->
     <string name="errorContraseña">Error contraseña</string>
 
+    <!--FORMULARIO DATOS USUARIO-->
+
+    <string name="sobreTi">Cuentanos un poco sobre ti:</string>
+    <string name="InsertaTusDatos">Inserta tu datos aquí</string>
+    <string name="insertaUsu">Crear</string>
+    <string name="CampoPeso">Campo peso obligatorio</string>
+    <string name="campoFecha">Campo fecha obligatorio</string>
+    <string name="campoGenero">Campo genero obligatorio</string>
+    <string name="campoAltura">Campo altura obligatorio</string>
 
     <!--NOTIFICACIONES-->
 

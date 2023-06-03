@@ -100,9 +100,18 @@
     <!--SEGURIDAD-->
     <string name="errorContraseña">password error </string>
 
-    <!--NOTIFICACIONES-->
 
+    <!--FORMULARIO DATOS USUARIO-->
+
+    <string name="sobreTi">Tell us a bit about yourself:</string>
+    <string name="InsertaTusDatos">insert your data here</string>
+    <string name="CampoPeso">weight field required</string>
+    <string name="campoFecha">date field required</string>
+    <string name="campoGenero">mandatory gender field</string>
+    <string name="campoAltura">height field required</string>
     <string name="recordatorios">reminders</string>
+    <string name="insertaUsu">Create</string>
+
 
     <!--SPINNERS-->
 
