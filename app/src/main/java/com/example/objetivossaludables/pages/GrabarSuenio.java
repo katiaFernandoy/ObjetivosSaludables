@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.modelo.InsertClass;
+import com.example.objetivossaludables.manager.api.InsertClass;
 
 import java.util.Calendar;
 

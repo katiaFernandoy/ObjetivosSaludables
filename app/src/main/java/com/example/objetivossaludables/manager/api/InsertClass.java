@@ -1,20 +1,17 @@
-package com.example.objetivossaludables.modelo;
+package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SUENIO;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.manager.api.RequestHandler;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 
 import org.json.JSONException;
@@ -26,19 +23,17 @@ public class InsertClass extends AsyncTask<Void, Void, String> {
 
     private final String suenio;
     private final String day;
-    public static final String ID = "id";
-
     @SuppressLint("StaticFieldLeak")
     private final Context context;
     ProgressDialog pdLoading;
-    SharedPreferences sharedPreferences;
+    UserPreferences preferences;
 
     public InsertClass(String suenio, String day, Context context, ProgressDialog pdLoading) {
         this.suenio = suenio;
         this.day = day;
         this.context=context;
         this.pdLoading = pdLoading;
-        sharedPreferences = context.getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        preferences = new UserPreferences(context);
     }
 
     protected void onPreExecute() {
@@ -56,7 +51,7 @@ public class InsertClass extends AsyncTask<Void, Void, String> {
 
         //creating request parameters
         HashMap<String, String> params = new HashMap<>();
-        params.put("userId", EMAIL);
+        params.put(EMAIL, preferences.getUserEmail());
         params.put("horasSuenio", suenio);
         params.put("diaSemana", day);
 
@@ -74,12 +69,12 @@ public class InsertClass extends AsyncTask<Void, Void, String> {
             JSONObject obj = new JSONObject(s);
             //if no error in response
             if (!obj.getBoolean("error")) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(ID, EMAIL);
+               /* SharedPreferences.Editor editor = sharedPreferences.edit();
+                //editor.putString(ID, EMAIL);
                 editor.putString(suenio, suenio);
                 editor.putString(day, day);
                 editor.putBoolean(STATUS, true);
-                editor.apply();
+                editor.apply();*/
                 ((Activity) context).finish();
                 Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, IniciarSesion.class);

@@ -13,12 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.Registro;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 
@@ -84,6 +86,10 @@ public class CrearCuenta extends AppCompatActivity {
             ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(Color.RED);
             return false;
         }
+        if(txt_passLogin.getText().equals(txt_passLogin2.getText())){
+            Toast.makeText(this,getResources().getText(R.string.passNoCoinciden),Toast.LENGTH_LONG).show();
+            return false;
+        }
 
         return true;
     }
@@ -125,15 +131,14 @@ public class CrearCuenta extends AppCompatActivity {
 
 
     public void registro(View view) {
-        final String email = txt_mailLogin.getText().toString();
+        final String email = txt_mailLogin.getText().toString().toLowerCase(Locale.ROOT).trim();
         final String password = txt_passLogin.getText().toString();
-        final String password2 = txt_passLogin2.getText().toString();
-        final String nombre = txt_nombreLogin.getText().toString();
-        final String apellido = txt_apellidoLogin.getText().toString();
+        final String nombre = txt_nombreLogin.getText().toString().trim();
+        final String apellido = txt_apellidoLogin.getText().toString().trim();
         pdLoading = new ProgressDialog(CrearCuenta.this);
 
         if (verificarCampos()) {
-            Registro registro = new Registro(email, password, password2, nombre, apellido, CrearCuenta.this, pdLoading);
+            Registro registro = new Registro(email, password, nombre, apellido, CrearCuenta.this, pdLoading);
             registro.execute();
         }
     }

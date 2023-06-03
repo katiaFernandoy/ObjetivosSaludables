@@ -1,9 +1,11 @@
 package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INFORMACION_PERSONAL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.USER_ID;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 
+import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
@@ -27,7 +29,7 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
         @Override
         protected String doInBackground(Void... voids) {
             HashMap<String, String> params = new HashMap<>();
-            params.put(USER_ID, preferences.getUserEmail());
+            params.put(EMAIL, preferences.getUserEmail());
             return new RequestHandler().sendPostRequest(URL_INFORMACION_PERSONAL, params);
         }
 
@@ -41,7 +43,9 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
                 JSONObject json = new JSONObject(s);
                 //if error in response
                 if (json.getBoolean("error")) {
-                    Toast.makeText(context, json.getString("message"), Toast.LENGTH_LONG).show();
+                    Log.e("API INFORMACIÓN PERSONAL", json.getString("message"));
+                    Toast.makeText(context, json.getString("Error al obtener la información, pruebe más tarde"), Toast.LENGTH_LONG).show();
+                    ((Activity) context).finish();
                     return;
                 }
 
@@ -51,7 +55,7 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
                         json.getDouble("peso"),
                         json.getInt("altura"),
                         json.getString("genero"),
-                        dateFormat.parse(json.getString("f_nacimiento"))
+                        dateFormat.parse(json.getString("fechaNacimiento"))
                 ));
 
                 txt_nombreMod.setText(ConfgPersonal.getInfoPersonal().getNombre());
@@ -61,8 +65,10 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
                 txt_alturaMod.setText(String.valueOf(ConfgPersonal.getInfoPersonal().getAltura()));
 
             } catch (JSONException | ParseException e) {
-                e.printStackTrace();
-                Toast.makeText(context, "Exception: " + e, Toast.LENGTH_LONG).show();
+                Log.e("Error al parseo", e.getMessage());
+                Log.e("Response", s);
+                Toast.makeText(context, "Error al obtener la información, pruebe más tarde", Toast.LENGTH_LONG).show();
+                ((Activity) context).finish();
             }
         }
 

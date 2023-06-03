@@ -21,6 +21,7 @@ import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.Login;
 import com.example.objetivossaludables.pages.Menu;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class IniciarSesion extends AppCompatActivity {
@@ -102,7 +103,7 @@ public class IniciarSesion extends AppCompatActivity {
     }
 
     public void login(View view) {
-        final String email = txt_mail.getText().toString();
+        final String email = txt_mail.getText().toString().toLowerCase(Locale.ROOT).trim();
         final String password = txt_passLogin.getText().toString();
         pdLoading = new ProgressDialog(IniciarSesion.this);
 

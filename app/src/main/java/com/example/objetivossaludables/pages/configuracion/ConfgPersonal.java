@@ -46,7 +46,7 @@ public class ConfgPersonal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_personal);
-        context = getApplicationContext();
+        context = ConfgPersonal.this;
         preferences = new UserPreferences(this);
         pdLoading = new ProgressDialog(this);
 
