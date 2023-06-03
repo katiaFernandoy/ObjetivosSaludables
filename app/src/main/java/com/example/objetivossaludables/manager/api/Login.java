@@ -76,10 +76,10 @@ public class Login extends AsyncTask<Void, Void, String> {
                 JSONObject obj = new JSONObject(s);
                 //if no error in response
                 if (!obj.getBoolean("error")) {
-                    sId_usuario = obj.getString("ID");
+                    //sId_usuario = obj.getString("ID");
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(EMAIL, email);
-                    editor.putString(ID, sId_usuario);
+                    //editor.putString(ID, sId_usuario);
                     editor.putBoolean(STATUS, true);
                     editor.apply();
                     ((Activity) context).finish();

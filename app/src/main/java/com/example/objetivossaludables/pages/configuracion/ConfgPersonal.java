@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +30,6 @@ public class ConfgPersonal extends AppCompatActivity {
     protected static Spinner spn_generoModif;
     protected static TextInputEditText txt_nombreMod, txt_pesoMod, txt_fechaMod, txt_alturaMod;
     @SuppressLint("SimpleDateFormat")
-    protected static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     protected static UserPreferences preferences;
     protected static ProgressDialog pdLoading;
 
@@ -56,6 +57,8 @@ public class ConfgPersonal extends AppCompatActivity {
         txt_pesoMod = findViewById(R.id.txt_pesoModif);
         txt_fechaMod = findViewById(R.id.txt_fechaModif);
         txt_alturaMod = findViewById(R.id.txt_alturaModif);
+        TextView txt_mailInfoUsu = findViewById(R.id.txt_emailInfoPersonal);
+        txt_mailInfoUsu.setText(preferences.getUserEmail());
         Button btn_modificar = findViewById(R.id.bt_modificarInfoUsu);
 
         new ApiGetInformacionPersonal();
@@ -63,9 +66,27 @@ public class ConfgPersonal extends AppCompatActivity {
         btn_modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                verificarDatos();
                 new ApiModificarInfoPersonal();
             }
         });
+    }
+
+    public boolean verificarDatos(){
+        if(txt_nombreMod.getText() == null || txt_nombreMod.getText().equals("")){
+            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.errorFaltaCampo),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_fechaMod.getText() == null || txt_fechaMod.getText().equals("")){
+            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.campoFecha),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_pesoMod.getText() == null || txt_pesoMod.getText().equals("")){
+            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.errorFaltaCampo),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_alturaMod.getText() == null || txt_pesoMod.getText().equals("")){
+            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.campoAltura),Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
     private void iniciarSpinner() {

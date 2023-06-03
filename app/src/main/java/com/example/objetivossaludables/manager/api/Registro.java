@@ -1,6 +1,9 @@
 package com.example.objetivossaludables.manager.api;
 
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.APELLIDO;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.NOMBRE;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
 
@@ -82,9 +85,9 @@ public class Registro extends AsyncTask<Void, Void, String> {
             //if no error in response
             if (!obj.getBoolean("error")) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(email, email);
-                editor.putString(nombre, nombre);
-                editor.putString(apellido, apellido);
+                editor.putString(EMAIL, email);
+                editor.putString(NOMBRE, nombre);
+                editor.putString(APELLIDO, apellido);
                 editor.putBoolean(STATUS, true);
                 editor.apply();
                 ((Activity) context).finish();
