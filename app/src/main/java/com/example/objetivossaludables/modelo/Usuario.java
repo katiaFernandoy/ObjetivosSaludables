@@ -3,18 +3,18 @@ package com.example.objetivossaludables.modelo;
 public class Usuario {
 
     private int id;
-    private String userID;//email
+    private String email;//email
     private String nombre;
     private String apellido;
 
-    public Usuario(String userID, String nombre, String apellido) {
-        this.userID = userID;
+    public Usuario(String email, String nombre, String apellido) {
+        this.email = email;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Usuario(String userID, String nombre) {
-        this.userID = userID;
+    public Usuario(String email, String nombre) {
+        this.email = email;
         this.nombre = nombre;
     }
 
@@ -26,12 +26,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNombre() {

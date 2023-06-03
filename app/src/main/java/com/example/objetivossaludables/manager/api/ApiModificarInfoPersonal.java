@@ -1,7 +1,7 @@
 package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_INFO_PERSONAL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.USER_ID;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
 
 import android.os.AsyncTask;
@@ -31,7 +31,7 @@ public class ApiModificarInfoPersonal extends ConfgPersonal {
 
             try {
                 modInfoPersonal = new InformacionPersonal(
-                        getInfoPersonal().getUserID(),
+                        getInfoPersonal().getEmail(),
                         txt_nombreMod.getText().toString(),
                         Double.parseDouble(txt_pesoMod.getText().toString()),
                         Integer.parseInt(txt_alturaMod.getText().toString()),
@@ -43,7 +43,7 @@ public class ApiModificarInfoPersonal extends ConfgPersonal {
             }
 
             HashMap<String, String> params = new HashMap<>();
-            params.put(USER_ID, getInfoPersonal().getUserID());
+            params.put(EMAIL, getInfoPersonal().getEmail());
             params.put("nombre", compararAntiguoValorConNuevo(getInfoPersonal().getNombre(), modInfoPersonal.getNombre()));
             params.put("peso", compararAntiguoValorConNuevo(getInfoPersonal().getPeso(), modInfoPersonal.getPeso()));
             params.put("altura", compararAntiguoValorConNuevo(getInfoPersonal().getAltura(), modInfoPersonal.getAltura()));

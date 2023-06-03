@@ -2,6 +2,7 @@ package com.example.objetivossaludables.manager.sharedpreferences;
 
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.APELLIDO;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID_USU;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.NOMBRE;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
@@ -23,9 +24,10 @@ public class UserPreferences {
         return preferences.getString(EMAIL,"");
     }
 
-    public void setUserEmail(String email){
+    public void setUserEmail(String email,int id_usu){
         SharedPreferences.Editor edit = preferences.edit();
         edit.putString(EMAIL,email);
+        edit.putInt(ID_USU,id_usu);
         edit.apply();
     }
 
@@ -48,7 +50,7 @@ public class UserPreferences {
 
     public void setUsuario(Usuario usu){
         SharedPreferences.Editor edit = preferences.edit();
-        edit.putString(EMAIL,usu.getUserID());
+        edit.putString(EMAIL,usu.getEmail());
         edit.putString(NOMBRE,usu.getNombre());
         edit.putString(APELLIDO,usu.getApellido());
         edit.putBoolean(STATUS,true);

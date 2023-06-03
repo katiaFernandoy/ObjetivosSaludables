@@ -8,13 +8,13 @@ public class ValuesPreferences {
     public static final String MY_PREFERENCES = "MyPrefs";
     public static final String STATUS = "status";
     public static final String USER_ID= "userId";
+    public static final String ID_USU= "id_usu";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
 
     public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
 
     // AJUSTES
     public static final String SONIDO = "sonido";
