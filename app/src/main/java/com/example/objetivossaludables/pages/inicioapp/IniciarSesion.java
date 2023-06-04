@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.Login;
-import com.example.objetivossaludables.pages.Menu;
+import com.example.objetivossaludables.pages.HomePages.Menu;
 
 import java.util.Locale;
 import java.util.regex.Pattern;

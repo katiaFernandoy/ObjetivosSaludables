@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pages;
+package com.example.objetivossaludables.pages.HomePages;
 
 import android.os.Bundle;
 

@@ -1,7 +1,6 @@
 package com.example.objetivossaludables.pages.fragmenthomepage;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,10 +11,10 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.pages.ConsultarEntrenamientos;
-import com.example.objetivossaludables.pages.EstablecerObjetivos;
-import com.example.objetivossaludables.pages.GrabarPasos;
-import com.example.objetivossaludables.pages.GrabarSuenio;
+import com.example.objetivossaludables.pages.HomePages.ConsultarEntrenamientos;
+import com.example.objetivossaludables.pages.HomePages.EstablecerObjetivos;
+import com.example.objetivossaludables.pages.HomePages.GrabarPasos;
+import com.example.objetivossaludables.pages.HomePages.GrabarSuenio;
 
 public class HomeFragment extends Fragment {
 
@@ -71,32 +70,23 @@ public class HomeFragment extends Fragment {
     }
 
     public void lanzarSuenio() {
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), GrabarSuenio.class);
         startActivity(intent);
     }
 
     public void lanzarPasos() {
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), GrabarPasos.class);
         startActivity(intent);
     }
 
     public void lanzarEntrenamientos() {
-
-
-        ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), ConsultarEntrenamientos.class);
         startActivity(intent);
     }
 
     public void lanzarObjetivos() {
-
-
-            ((Activity) getContext()).finish();
             Intent intent = new Intent(getContext(), EstablecerObjetivos.class);
             startActivity(intent);
-
 
     }
 }

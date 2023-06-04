@@ -10,4 +10,9 @@ public class URLs {
     public static final String URL_MODIFICAR_INFO_PERSONAL = URL + "modificarInfoUsuario.php";
 
     public static final String URL_INSERT_INFO_PERSONAL = URL + "insertarInfoUsuario.php";
+
+    public static final String URL_OBTENERSUENIO = URL + "getSuenioSemana.php";
+
+
+
 }

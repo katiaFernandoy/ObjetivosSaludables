@@ -1,6 +1,4 @@
-package com.example.objetivossaludables.pages;
-
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
+package com.example.objetivossaludables.pages.HomePages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.manager.api.ApiGetHorasSuenio;
 import com.example.objetivossaludables.manager.api.InsertClass;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 
 import java.util.Calendar;
 
@@ -26,8 +26,9 @@ public class GrabarSuenio extends AppCompatActivity {
     private TextView tvResultadoSuenio;
     private ImageView ivResultadoSuenio;
     private TextView tvResultAnalisis;
-    private EditText mediaHoras;
-    ProgressDialog pdLoading;
+    protected  static EditText mediaHoras;
+    protected static ProgressDialog pdLoading;
+    protected static Context context;
 
 
     @SuppressLint("MissingInflatedId")
@@ -41,8 +42,9 @@ public class GrabarSuenio extends AppCompatActivity {
         ivResultadoSuenio = findViewById(R.id.ivResultadoSuenio);
         tvResultAnalisis = findViewById(R.id.tvResultAnalisis);
         mediaHoras = findViewById(R.id.horasMediaSemana);
+        pdLoading = new ProgressDialog(GrabarSuenio.this);
 
-        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        context=GrabarSuenio.this;
 
     }
 
@@ -72,15 +74,29 @@ public class GrabarSuenio extends AppCompatActivity {
         return d;
     }
 
+    public void getAnimo(Double suenio){
+        if(suenio < 6) {
+            tvResultAnalisis.setText(getResources().getText(R.string.humorMal));
+        }else{
+            tvResultAnalisis.setText(getResources().getText(R.string.humorBien));
+        }
+    }
+
     public void grabarSuenio(View view) {
-        final String suenio = horasSuenio.getText().toString();
+
+        final Integer Id_usu = new UserPreferences(this).getUserId();
+        final Double suenio = Double.parseDouble(horasSuenio.getText().toString());
         final String day = GetDay();
         pdLoading = new ProgressDialog(GrabarSuenio.this);
 
-        if (!suenio.isEmpty()) {
-            InsertClass insertclass = new InsertClass(suenio, day, GrabarSuenio.this, pdLoading);
+        if (suenio >= 0 && suenio < 24) {
+            InsertClass insertclass = new InsertClass(suenio, day, Id_usu, GrabarSuenio.this, pdLoading);
             insertclass.execute();
+            getAnimo(suenio);
+            new ApiGetHorasSuenio();
         }
+
     }
+
 
 }

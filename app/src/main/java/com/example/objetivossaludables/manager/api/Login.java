@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
-import com.example.objetivossaludables.pages.Menu;
+import com.example.objetivossaludables.pages.HomePages.Menu;
 
 import org.json.JSONException;
 import org.json.JSONObject;
