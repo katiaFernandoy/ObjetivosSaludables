@@ -108,9 +108,12 @@
     <string name="InsertaTusDatos">Inserta tu datos aquí</string>
     <string name="insertaUsu">Crear</string>
     <string name="CampoPeso">Campo peso obligatorio</string>
+    <string name="campoPesoIncorrecto">Peso solo debe tener numeros y/o decimales</string>
     <string name="campoFecha">Campo fecha obligatorio</string>
+    <string name="campoFechaIncorrecto">Fecha debe tener el formato: yyyy-MM-dd</string>
     <string name="campoGenero">Campo genero obligatorio</string>
     <string name="campoAltura">Campo altura obligatorio</string>
+    <string name="campoAlturaIncorrecto">Altura debe ser numérico sin decimales</string>
 
     <!--NOTIFICACIONES-->
 

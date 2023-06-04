@@ -160,4 +160,7 @@
     <string name="passNoCoinciden">Las contraseñas no coinciden</string>
     <string name="passViejaYNuevaSonIguales">La nueva contraseña y la antigüa no deben coincidir</string>
     <string name="title_activity_establecer_objetivos">EstablecerObjetivos</string>
+    <string name="campoPesoIncorrecto">Peso solo debe tener numeros y/o decimales</string>
+    <string name="campoFechaIncorrecto">Fecha debe tener el formato: yyyy-MM-dd</string>
+    <string name="campoAlturaIncorrecto">Altura debe ser numérico sin decimales</string>
 </resources>

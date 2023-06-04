@@ -1,94 +1,90 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.DATE_FORMAT;
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfoPersonal;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INSERT_INFO_PERSONAL;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.adapters.CustomSpinnerAdapters;
-import com.example.objetivossaludables.manager.api.ApiInsertarInformacionPersonal;
+import com.example.objetivossaludables.manager.api.ApiHandler;
+import com.example.objetivossaludables.manager.api.ApiInterface;
+import com.example.objetivossaludables.manager.progressdialog.PdLoading;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
-import com.example.objetivossaludables.modelo.InformacionPersonal;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.text.ParseException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Arrays;
+import java.util.HashMap;
 
-public class InsertarInfoUsuario extends AppCompatActivity {
+public class InsertarInfoUsuario extends AppCompatActivity implements ApiInterface {
 
-    private static InformacionPersonal newInfoPersonal = null;
-    protected static TextInputEditText txt_insertPeso;
-    protected static TextInputEditText txt_insertFechaNaci;
-    protected static TextInputEditText txt_insertAltura;
-    protected static Spinner spinnerInsertgenero;
-
-    protected static UserPreferences preferences;
-    protected static ProgressDialog pdLoading;
-    public static Context context;
+    private TextInputEditText txt_insertPeso, txt_insertFechaNaci, txt_insertAltura;
+    private Spinner spinnerInsertgenero;
+    private PdLoading pdLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insertar_info_usuario);
-        context = InsertarInfoUsuario.this;
-        preferences = new UserPreferences(this);
-        pdLoading = new ProgressDialog(this);
 
         iniciarSpinner();
-
         txt_insertPeso = findViewById(R.id.txt_insertPeso);
         txt_insertFechaNaci = findViewById(R.id.txt_insertFechaNaci);
         txt_insertAltura = findViewById(R.id.txt_insertAltura);
         Button bt_insertInfo = findViewById(R.id.btn_insertInfo);
 
-        bt_insertInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               if(!verificarDatos()){
-                   return;
-               }
-
-                try {
-                    newInfoPersonal = new InformacionPersonal(
-                            new UserPreferences(getApplicationContext()).getUserEmail(),
-                            Double.parseDouble(txt_insertPeso.getText().toString()),
-                            DATE_FORMAT.parse(txt_insertFechaNaci.getText().toString()),
-                           String.valueOf( spinnerInsertgenero.getSelectedItemId()),
-                            Integer.parseInt(txt_insertAltura.getText().toString()));
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
-
-                new ApiInsertarInformacionPersonal();
+        bt_insertInfo.setOnClickListener(v -> {
+            if(!verificarDatos()){
+                return;
             }
+
+            //email, peso, altura, fecha, genero
+            HashMap <String,String> params = getParamsInfoPersonal(
+                    new UserPreferences(this).getUserEmail(),
+                    getTexto(txt_insertPeso), //quitar los espacios al principio y final
+                    getTexto(txt_insertAltura),
+                    getTexto(txt_insertFechaNaci),
+                    String.valueOf(spinnerInsertgenero.getSelectedItem()));
+
+            pdLoading = new PdLoading(this);
+            new ApiHandler(this,URL_INSERT_INFO_PERSONAL,params).start(); // start que sino no funciona
         });
     }
 
     public boolean verificarDatos(){
-
-        if(txt_insertPeso.getText() == null || txt_insertPeso.getText().equals("")){
-            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.errorFaltaCampo),Toast.LENGTH_SHORT).show();
+        if(txt_insertPeso.getText() == null || getTexto(txt_insertPeso).equals("")){
+            Toast.makeText(this,getResources().getText(R.string.errorFaltaCampo),Toast.LENGTH_SHORT).show();
             return false;
-        }if(txt_insertFechaNaci.getText() == null || txt_insertFechaNaci.getText().equals("")){
-            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.campoFecha),Toast.LENGTH_SHORT).show();
+        }if(!isDouble(getTexto(txt_insertPeso))){
+            Toast.makeText(this,getResources().getText(R.string.campoPesoIncorrecto),Toast.LENGTH_SHORT).show();
             return false;
-        }if(txt_insertAltura.getText() == null || txt_insertAltura.getText().equals("")){
-            Toast.makeText(context.getApplicationContext(),getResources().getText(R.string.campoAltura),Toast.LENGTH_SHORT).show();
+        }if(txt_insertFechaNaci.getText() == null || getTexto(txt_insertFechaNaci).equals("")){
+            Toast.makeText(this,getResources().getText(R.string.campoFecha),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(!isDate(getTexto(txt_insertFechaNaci))){
+            Toast.makeText(this,getResources().getText(R.string.campoFechaIncorrecto),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_insertAltura.getText() == null || getTexto(txt_insertAltura).equals("")){
+            Toast.makeText(this,getResources().getText(R.string.campoAltura),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(!isInteger( getTexto(txt_insertAltura))){
+            Toast.makeText(this,getResources().getText(R.string.campoAlturaIncorrecto),Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
-    private void iniciarSpinner() {
 
+    private void iniciarSpinner() {
         spinnerInsertgenero = findViewById(R.id.spinnerInsertGenero);
 
         CustomSpinnerAdapters adapters = new CustomSpinnerAdapters(
@@ -97,7 +93,23 @@ public class InsertarInfoUsuario extends AppCompatActivity {
         spinnerInsertgenero.setAdapter(adapters);
     }
 
-    protected static InformacionPersonal getNewInfoPersonal() {
-        return newInfoPersonal;
+    @Override
+    public void returnResponse(JSONObject json) {
+        pdLoading.dismiss(); // Se cierra el PdLoading
+
+        try {
+            if(json.getBoolean("error")){
+                Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, IniciarSesion.class);
+            startActivity(intent);
+            finish();
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
