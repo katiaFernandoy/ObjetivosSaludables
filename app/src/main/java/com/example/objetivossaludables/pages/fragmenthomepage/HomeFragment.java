@@ -1,7 +1,6 @@
 package com.example.objetivossaludables.pages.fragmenthomepage;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,10 +11,10 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.pages.ConsultarEntrenamientos;
-import com.example.objetivossaludables.pages.EstablecerObjetivos;
-import com.example.objetivossaludables.pages.GrabarPasos;
-import com.example.objetivossaludables.pages.GrabarSuenio;
+import com.example.objetivossaludables.pages.HomePages.ConsultarEntrenamientos;
+import com.example.objetivossaludables.pages.HomePages.EstablecerObjetivos;
+import com.example.objetivossaludables.pages.HomePages.GrabarPasos;
+import com.example.objetivossaludables.pages.HomePages.GrabarSuenio;
 
 public class HomeFragment extends Fragment {
 

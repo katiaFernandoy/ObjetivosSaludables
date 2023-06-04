@@ -1,36 +1,29 @@
 package com.example.objetivossaludables.manager.api;
 
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INFORMACION_PERSONAL;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_OBTENERSUENIO;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID_USU;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
-import com.example.objetivossaludables.modelo.InformacionPersonal;
-import com.example.objetivossaludables.pages.GrabarSuenio;
-import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
+import com.example.objetivossaludables.pages.HomePages.GrabarSuenio;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.HashMap;
+import java.util.Iterator;
 
-public class GetHorasSuenio extends GrabarSuenio {
+public class ApiGetHorasSuenio extends GrabarSuenio {
 
-    final Integer Id_usu = new UserPreferences(this).getUserId();
-    protected static ProgressDialog pdLoading;
+    public ApiGetHorasSuenio() {
+        new AssyncTaskAPI().execute();
+    }
+
+    final Integer Id_usu = new UserPreferences(context).getUserId();
     public static double media;
-
 
 
     class AssyncTaskAPI extends AsyncTask<Void, Void, String> {
@@ -52,17 +45,23 @@ public class GetHorasSuenio extends GrabarSuenio {
                     Double Horas = 0.0;
                     int contador = 0;
                     JSONObject json = new JSONObject(s);
-                    String key = json.getString("key"); //obtenemos el valor de la clave 'key'
-                    JSONArray horas = json.getJSONArray("array"); //obtenemos el valor del array 'array'
 
+                    JSONObject horas= json.getJSONObject("horas");
+                    Iterator x = horas.keys();
 
-                    for (int i = 0; i < horas.length(); i++) {
-                        if (horas.getString(i) != null){
-                        Horas += Double.parseDouble(horas.getString(i));
-                        contador++;}
+                    while (x.hasNext()){
+                        String key = (String) x.next();
+
+                            if (horas.getString(key) != null){
+                                Horas += Double.parseDouble(horas.getString(key));
+                                contador++;}
+
                     }
 
+
+
                     media = Horas/contador;
+                    mediaHoras.setText("" +String.valueOf(media).substring(0,4));
 
                     //if error in response
                     if (json.getBoolean("error")) {

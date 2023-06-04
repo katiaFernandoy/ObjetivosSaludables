@@ -1,8 +1,6 @@
 package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SUENIO;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID_USU;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -75,10 +73,10 @@ public class InsertClass extends AsyncTask<Void, Void, String> {
             JSONObject obj = new JSONObject(s);
             //if no error in response
             if (!obj.getBoolean("error")) {
-                ((Activity) context).finish();
+//                ((Activity) context).finish();
                 Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(context, IniciarSesion.class);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, IniciarSesion.class);
+//                context.startActivity(intent);
             } else
                 Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
         } catch (JSONException e) {

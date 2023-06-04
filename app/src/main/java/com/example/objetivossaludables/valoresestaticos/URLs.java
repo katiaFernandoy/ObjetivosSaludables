@@ -11,7 +11,7 @@ public class URLs {
 
     public static final String URL_INSERT_INFO_PERSONAL = URL + "insertarInfoUsuario.php";
 
-    public static final String URL_OBTENERSUENIO = URL + "getHorasSuenio.php";
+    public static final String URL_OBTENERSUENIO = URL + "getSuenioSemana.php";
 
 
 
