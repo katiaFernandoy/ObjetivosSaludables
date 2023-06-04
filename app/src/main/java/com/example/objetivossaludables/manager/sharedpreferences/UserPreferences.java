@@ -23,6 +23,10 @@ public class UserPreferences {
     public String getUserEmail(){
         return preferences.getString(EMAIL,"");
     }
+    public Integer getUserId(){
+        return preferences.getInt(ID_USU,0);
+    }
+
 
     public void setUserEmail(String email,int id_usu){
         SharedPreferences.Editor edit = preferences.edit();

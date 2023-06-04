@@ -146,10 +146,13 @@
     <string name="humorEsperado">Según tu descanso es normal que te sientas:</string>
     <string name="estas">Estás a un</string>
     <string name="objetivo">de conseguir tu objetivo</string>
+    <string name="humorBien">Alegre, enérgico, optimista, resolutivo</string>
+    <string name="humorMal">Irritable, pesimista, lapsus de memoria</string>
 
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_establecer_objetivos">EstablecerObjetivos</string>
 </resources>

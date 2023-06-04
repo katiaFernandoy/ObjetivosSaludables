@@ -147,6 +147,8 @@
     <string name="humorEsperado">Depending on your rest, it is normal for you to feel:</string>
     <string name="estas">You are one</string>
     <string name="objetivo">to achieve your goal</string>
+    <string name="humorBien">Cheerful, energetic, optimistic, resolute</string>
+    <string name="humorMal">Irritable, pessimistic, memory lapses</string>
 
 
     <!--TOOLBAR-->
@@ -155,4 +157,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="passNoCoinciden">Passwords didn\'t match</string>
     <string name="passViejaYNuevaSonIguales">New password and old password must not be the same</string>
+    <string name="title_activity_establecer_objetivos">SetObjectives</string>
 </resources>
