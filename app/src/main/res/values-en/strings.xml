@@ -158,4 +158,7 @@
     <string name="passNoCoinciden">Passwords didn\'t match</string>
     <string name="passViejaYNuevaSonIguales">New password and old password must not be the same</string>
     <string name="title_activity_establecer_objetivos">SetObjectives</string>
+    <string name="campoPesoIncorrecto">Weight must have only numbers and/or decimals</string>
+    <string name="campoFechaIncorrecto">Date must have this format: yyyy-MM-dd</string>
+    <string name="campoAlturaIncorrecto">Height must have only numbers</string>
 </resources>
