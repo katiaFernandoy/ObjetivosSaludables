@@ -104,6 +104,7 @@
 
     <!--FORMULARIO DATOS USUARIO-->
 
+    <string name="campoObligatorio">Campo contraseña obligatorio</string>
     <string name="sobreTi">Cuentanos un poco sobre ti:</string>
     <string name="InsertaTusDatos">Inserta tus datos aquí</string>
     <string name="CampoPeso">Campo peso obligatorio</string>

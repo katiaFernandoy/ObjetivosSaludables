@@ -99,6 +99,7 @@
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">Error contraseña</string>
+    <string name="campoObligatorio">Campo contraseña obligatorio</string>
 
     <!--FORMULARIO DATOS USUARIO-->
 

@@ -1,5 +1,7 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.DATE_FORMAT;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -8,23 +10,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.adapters.CustomSpinnerAdapters;
-import com.example.objetivossaludables.manager.api.ApiGetInformacionPersonal;
+import com.example.objetivossaludables.manager.api.ApiInsertarInformacionPersonal;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.modelo.InformacionPersonal;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.Arrays;
 
 public class InsertarInfoUsuario extends AppCompatActivity {
 
-    private static InformacionPersonal infoPersonal = null;
+    private static InformacionPersonal newInfoPersonal = null;
     protected static TextInputEditText txt_insertPeso;
     protected static TextInputEditText txt_insertFechaNaci;
     protected static TextInputEditText txt_insertAltura;
@@ -38,7 +38,7 @@ public class InsertarInfoUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insertar_info_usuario);
-        context = getApplicationContext();
+        context = InsertarInfoUsuario.this;
         preferences = new UserPreferences(this);
         pdLoading = new ProgressDialog(this);
 
@@ -49,13 +49,26 @@ public class InsertarInfoUsuario extends AppCompatActivity {
         txt_insertAltura = findViewById(R.id.txt_insertAltura);
         Button bt_insertInfo = findViewById(R.id.btn_insertInfo);
 
-        new ApiGetInformacionPersonal();
-
         bt_insertInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                verificarDatos();
+               if(!verificarDatos()){
+                   return;
+               }
+
+                try {
+                    newInfoPersonal = new InformacionPersonal(
+                            new UserPreferences(getApplicationContext()).getUserEmail(),
+                            Double.parseDouble(txt_insertPeso.getText().toString()),
+                            DATE_FORMAT.parse(txt_insertFechaNaci.getText().toString()),
+                           String.valueOf( spinnerInsertgenero.getSelectedItemId()),
+                            Integer.parseInt(txt_insertAltura.getText().toString()));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+
+                new ApiInsertarInformacionPersonal();
             }
         });
     }
@@ -76,11 +89,15 @@ public class InsertarInfoUsuario extends AppCompatActivity {
     }
     private void iniciarSpinner() {
 
-        spinnerInsertgenero = findViewById(R.id.spinner);
+        spinnerInsertgenero = findViewById(R.id.spinnerInsertGenero);
 
         CustomSpinnerAdapters adapters = new CustomSpinnerAdapters(
                 this, Arrays.asList(getResources().getStringArray(R.array.spinnerGenero)));
 
         spinnerInsertgenero.setAdapter(adapters);
+    }
+
+    protected static InformacionPersonal getNewInfoPersonal() {
+        return newInfoPersonal;
     }
 }

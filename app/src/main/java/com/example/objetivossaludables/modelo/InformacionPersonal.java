@@ -9,16 +9,21 @@ public class InformacionPersonal extends Usuario{
      private String genero;
      private int altura;
 
-    public InformacionPersonal(String userId, String nombre, double peso, int altura, String genero, Date fechaNacimiento) {
-        super(userId,nombre);
+    public InformacionPersonal(String email, String nombre, double peso, int altura, String genero, Date fechaNacimiento) {
+        super(email,nombre);
         this.peso = peso;
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
         this.altura = altura;
     }
 
-
-
+    public InformacionPersonal(String email,double peso, Date fechaNacimiento, String genero, int altura) {
+        super(email);
+        this.peso = peso;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.altura = altura;
+    }
 
     public double getPeso() {
         return peso;

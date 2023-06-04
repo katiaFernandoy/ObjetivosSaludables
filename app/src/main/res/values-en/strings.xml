@@ -103,6 +103,7 @@
 
     <!--FORMULARIO DATOS USUARIO-->
 
+    <string name="campoObligatorio">required password field</string>
     <string name="sobreTi">Tell us a bit about yourself:</string>
     <string name="InsertaTusDatos">insert your data here</string>
     <string name="CampoPeso">weight field required</string>

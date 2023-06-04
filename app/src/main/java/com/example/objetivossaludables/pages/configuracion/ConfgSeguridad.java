@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
 
@@ -28,20 +29,25 @@ public class ConfgSeguridad extends AppCompatActivity {
         txt_passWordNuevaRepe = findViewById(R.id.txt_passWordNuevaRepe);
 
 
-        bt_modificarPassWord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+       
 
     }
 
 
-    public boolean verificarPassWord(){
+    public boolean verificarDatos(){
 
         if(txt_passWordActual.getText().toString().equals("") || txt_passWordActual.getText() == null){
-
+            Toast.makeText(this,getResources().getText(R.string.campoObligatorio),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_passWordActual.getText().toString().equals("") || txt_passWordActual.getText() == null){
+            Toast.makeText(this,getResources().getText(R.string.errorMaxChars),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_passWordNueva.getText().toString().equals("") || txt_passWordNueva.getText() == null){
+            Toast.makeText(this,getResources().getText(R.string.campoObligatorio),Toast.LENGTH_SHORT).show();
+            return false;
+        }if(txt_passWordNueva.getText().toString().equals("") || txt_passWordNueva.getText() == null){
+            Toast.makeText(this,getResources().getText(R.string.errorMaxChars),Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         return true;

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
+import com.example.objetivossaludables.pages.inicioapp.InsertarInfoUsuario;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -85,7 +86,7 @@ public class Registro extends AsyncTask<Void, Void, String> {
             ((Activity) context).finish();
 
             Toast.makeText(context.getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(context, IniciarSesion.class);
+            Intent intent = new Intent(context, InsertarInfoUsuario.class);
             context.startActivity(intent);
         } catch (JSONException e) {
             e.printStackTrace();

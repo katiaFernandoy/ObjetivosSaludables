@@ -35,11 +35,11 @@ public class ConfgPersonal extends AppCompatActivity {
 
     public static Context context;
 
-    public static InformacionPersonal getInfoPersonal() {
+    protected static InformacionPersonal getInfoPersonal() {
         return infoPersonal;
     }
 
-    public static void setInfoPersonal(InformacionPersonal infoPersonal) {
+    protected static void setInfoPersonal(InformacionPersonal infoPersonal) {
         ConfgPersonal.infoPersonal = infoPersonal;
     }
 
@@ -66,7 +66,9 @@ public class ConfgPersonal extends AppCompatActivity {
         btn_modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                verificarDatos();
+                if(!verificarDatos()){
+                    return;
+                }
                 new ApiModificarInfoPersonal();
             }
         });

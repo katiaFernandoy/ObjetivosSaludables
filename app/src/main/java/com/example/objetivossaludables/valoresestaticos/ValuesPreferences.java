@@ -14,7 +14,7 @@ public class ValuesPreferences {
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
 
-    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    public static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     // AJUSTES
     public static final String SONIDO = "sonido";

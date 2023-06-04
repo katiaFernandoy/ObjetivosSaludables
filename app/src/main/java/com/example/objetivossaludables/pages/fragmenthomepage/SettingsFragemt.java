@@ -24,6 +24,7 @@ import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
 import com.example.objetivossaludables.pages.configuracion.ConfgPreferencias;
 import com.example.objetivossaludables.pages.configuracion.ConfgSeguridad;
 import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
+import com.example.objetivossaludables.pages.inicioapp.Portada;
 
 public class SettingsFragemt extends Fragment {
 
@@ -101,7 +102,7 @@ public class SettingsFragemt extends Fragment {
         editor.apply();
 
         ((Activity) getContext()).finish();
-        Intent intent = new Intent(getContext(), IniciarSesion.class);
+        Intent intent = new Intent(getContext(), Portada.class);
         startActivity(intent);
 
     }
