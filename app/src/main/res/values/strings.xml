@@ -21,6 +21,7 @@
     <string name="errorBadEmail">El email debe estar en el formato name@example.com</string>
     <string name="errorPass">Tu contraseña debe tener de 4 a 8 caracteres e incluir un número o caracter especial y una mayúscula</string>
     <string name="passNoCoinciden">Las contraseñas no coinciden</string>
+    <string name="passViejaYNuevaSonIguales">La nueva contraseña y la antigüa no deben coincidir</string>
 
     <!--HINTS-->
     <string name="nameHint">Nombre</string>

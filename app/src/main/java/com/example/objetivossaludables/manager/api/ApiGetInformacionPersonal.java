@@ -23,6 +23,7 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
 
     public ApiGetInformacionPersonal() {
         new AssyncTaskAPI().execute();
+
     }
 
     class AssyncTaskAPI extends AsyncTask<Void, Void, String> {
