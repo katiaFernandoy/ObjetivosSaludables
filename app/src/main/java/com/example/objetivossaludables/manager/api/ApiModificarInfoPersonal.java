@@ -2,7 +2,7 @@ package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_INFO_PERSONAL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.DATE_FORMAT;
 
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -36,7 +36,7 @@ public class ApiModificarInfoPersonal extends ConfgPersonal {
                         Double.parseDouble(txt_pesoMod.getText().toString()),
                         Integer.parseInt(txt_alturaMod.getText().toString()),
                         spn_generoModif.getSelectedItem().toString(),
-                        dateFormat.parse(txt_fechaMod.getText().toString())
+                        DATE_FORMAT.parse(txt_fechaMod.getText().toString())
                 );
             } catch (ParseException e) {
                 throw new RuntimeException(e);
@@ -98,7 +98,7 @@ public class ApiModificarInfoPersonal extends ConfgPersonal {
         }
 
         private String compararAntiguoValorConNuevo(Date antiguo, Date nuevo) {
-            return antiguo.equals(nuevo) ? "" : dateFormat.format(nuevo);
+            return antiguo.equals(nuevo) ? "" : DATE_FORMAT.format(nuevo);
         }
     }
 }

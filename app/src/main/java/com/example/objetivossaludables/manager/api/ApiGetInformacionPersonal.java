@@ -1,7 +1,7 @@
 package com.example.objetivossaludables.manager.api;
 
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INFORMACION_PERSONAL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.dateFormat;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.DATE_FORMAT;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 
 import android.app.Activity;
@@ -23,6 +23,7 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
 
     public ApiGetInformacionPersonal() {
         new AssyncTaskAPI().execute();
+
     }
 
     class AssyncTaskAPI extends AsyncTask<Void, Void, String> {
@@ -56,12 +57,12 @@ public class ApiGetInformacionPersonal extends ConfgPersonal {
                         json.getDouble("peso"),
                         json.getInt("altura"),
                         json.getString("genero"),
-                        dateFormat.parse(json.getString("fechaNacimiento"))
+                        DATE_FORMAT.parse(json.getString("fechaNacimiento"))
                 ));
 
                 txt_nombreMod.setText(ConfgPersonal.getInfoPersonal().getNombre());
                 txt_pesoMod.setText(String.valueOf(ConfgPersonal.getInfoPersonal().getPeso()));
-                txt_fechaMod.setText(dateFormat.format(ConfgPersonal.getInfoPersonal().getFechaNacimiento()));
+                txt_fechaMod.setText(DATE_FORMAT.format(ConfgPersonal.getInfoPersonal().getFechaNacimiento()));
                 spn_generoModif.setSelection(getGenero(getInfoPersonal().getGenero()));
                 txt_alturaMod.setText(String.valueOf(ConfgPersonal.getInfoPersonal().getAltura()));
 

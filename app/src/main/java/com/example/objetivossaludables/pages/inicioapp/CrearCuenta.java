@@ -54,7 +54,7 @@ public class CrearCuenta extends AppCompatActivity {
 
         if (status) {
             finish();
-            Intent intent = new Intent(CrearCuenta.this, IniciarSesion.class);
+            Intent intent = new Intent(CrearCuenta.this, InsertarInfoUsuario.class);
             startActivity(intent);
         }
     }
@@ -140,6 +140,7 @@ public class CrearCuenta extends AppCompatActivity {
         if (verificarCampos()) {
             Registro registro = new Registro(email, password, nombre, apellido, CrearCuenta.this, pdLoading);
             registro.execute();
+
         }
     }
 

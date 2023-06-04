@@ -17,6 +17,9 @@
             android:name=".pages.HomePages.EstablecerObjetivos"
             android:exported="false" />
         <activity
+            android:name=".pages.inicioapp.InsertarInfoUsuario"
+            android:exported="false" />
+        <activity
             android:name=".pages.configuracion.ConfgNotificaciones"
             android:exported="false" />
         <activity

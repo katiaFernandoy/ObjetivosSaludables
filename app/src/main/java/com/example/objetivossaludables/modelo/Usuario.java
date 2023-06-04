@@ -18,6 +18,10 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    public Usuario(String email) {
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
