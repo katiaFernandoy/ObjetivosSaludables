@@ -69,11 +69,13 @@
                     android:ems="10"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:textAlignment="viewStart"
-                    tools:ignore="OnClick" />
+                    tools:ignore="OnClick"
+                    android:hint="@string/password"
+                    />
 
                 <Space
                     android:layout_width="match_parent"
@@ -133,11 +135,12 @@
                     android:ems="10"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:textAlignment="viewStart"
-                    tools:ignore="OnClick" />
+                    tools:ignore="OnClick"
+                    android:hint="@string/password"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -181,11 +184,12 @@
                     android:ems="10"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:textAlignment="viewStart"
-                    tools:ignore="OnClick" />
+                    tools:ignore="OnClick"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
