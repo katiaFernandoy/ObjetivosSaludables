@@ -1,7 +1,6 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
-import static com.example.objetivossaludables.manager.media.MediaManager.playSound;
-import static com.example.objetivossaludables.manager.media.MediaManager.vibrate;
+import static com.example.objetivossaludables.manager.media.MediaManager.exeMedia;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsLogin;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_LOGIN;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
@@ -102,8 +101,7 @@ public class IniciarSesion extends AppCompatActivity implements ApiInterface {
     }
 
     public void login(View view) {
-        playSound(this);
-        vibrate(this);
+        exeMedia(this); //Ejecuta vibración y sonido
 
         if(!verificarCampos()){
             return;

@@ -19,11 +19,13 @@ public class Portada extends AppCompatActivity {
         findViewById(R.id.bt_crearCuentaPortada).setOnClickListener(v -> {
             Intent intent = new Intent(Portada.this, CrearCuenta.class);
             startActivity(intent);
+            finish();
         });
 
         findViewById(R.id.bt_iniciarSesionPortada).setOnClickListener(v -> {
             Intent intent = new Intent(Portada.this, IniciarSesion.class);
             startActivity(intent);
+            finish();
         });
 
 
