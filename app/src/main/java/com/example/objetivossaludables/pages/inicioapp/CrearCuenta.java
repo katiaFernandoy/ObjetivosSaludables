@@ -1,13 +1,11 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfo;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,26 +16,26 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.manager.api.Registro;
+import com.example.objetivossaludables.manager.api.ApiHandler;
+import com.example.objetivossaludables.manager.api.ApiInterface;
+import com.example.objetivossaludables.manager.progressdialog.PdLoading;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 
-import java.util.Locale;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 
-public class CrearCuenta extends AppCompatActivity {
+public class CrearCuenta extends AppCompatActivity implements ApiInterface {
 
-    SharedPreferences sharedPreferences;
-    ProgressDialog pdLoading;
-    private EditText txt_nombreLogin;
-    private EditText txt_apellidoLogin;
-    private EditText txt_mailLogin;
-    private EditText txt_passLogin;
-    private EditText txt_passLogin2;
-    private boolean status;
+    private UserPreferences preferences;
+    private PdLoading pdLoading;
+    private EditText txt_nombreLogin, txt_apellidoLogin, txt_mailLogin, txt_passLogin, txt_passLogin2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cuenta);
 
@@ -47,16 +45,7 @@ public class CrearCuenta extends AppCompatActivity {
         txt_passLogin = findViewById(R.id.txt_passLogin);
         txt_passLogin2 = findViewById(R.id.txt_passLogin2);
 
-
-        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-
-        status = sharedPreferences.getBoolean(STATUS, false);
-
-        if (status) {
-            finish();
-            Intent intent = new Intent(CrearCuenta.this, InsertarInfoUsuario.class);
-            startActivity(intent);
-        }
+        preferences = new UserPreferences(this);
     }
 
 
@@ -86,11 +75,10 @@ public class CrearCuenta extends AppCompatActivity {
             ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(Color.RED);
             return false;
         }
-        if(txt_passLogin.getText().equals(txt_passLogin2.getText())){
+        if(!getTexto(txt_passLogin).equals(getTexto(txt_passLogin2))){
             Toast.makeText(this,getResources().getText(R.string.passNoCoinciden),Toast.LENGTH_LONG).show();
             return false;
         }
-
         return true;
     }
 
@@ -120,7 +108,7 @@ public class CrearCuenta extends AppCompatActivity {
     }
 
     public boolean verificarMail() {
-        Pattern patron = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
+        Pattern patron = Pattern.compile("([a-z\\d]+(\\.?[a-z\\d])*)+@(([a-z]+)\\.([a-z]+))+");
         return patron.matcher(txt_mailLogin.getText().toString()).find();
     }
 
@@ -130,20 +118,45 @@ public class CrearCuenta extends AppCompatActivity {
     }
 
 
-    public void registro(View view) {
-        final String email = txt_mailLogin.getText().toString().toLowerCase(Locale.ROOT).trim();
-        final String password = txt_passLogin.getText().toString();
-        final String nombre = txt_nombreLogin.getText().toString().trim();
-        final String apellido = txt_apellidoLogin.getText().toString().trim();
-        pdLoading = new ProgressDialog(CrearCuenta.this);
-
-        if (verificarCampos()) {
-            Registro registro = new Registro(email, password, nombre, apellido, CrearCuenta.this, pdLoading);
-            registro.execute();
-
+    public void registrarUsuario(View view) {
+        if(!verificarCampos()){
+            return;
         }
+
+        pdLoading = new PdLoading(this);
+
+        HashMap<String,String> params = getParamsInfo(
+                getTexto(txt_mailLogin).toLowerCase(),
+                getTexto(txt_nombreLogin),
+                getTexto(txt_apellidoLogin),
+                getTexto(txt_passLogin));
+
+        new ApiHandler(this,URL_REGISTRO,params).start();
     }
 
 
+    @Override
+    public void returnResponse(JSONObject json) {
+        pdLoading.dismiss(); // Se cierra el PdLoading
+
+        try {
+            if(json.getBoolean("error")){
+                Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+            preferences.setUserEmail(getTexto(txt_mailLogin).toLowerCase(),json.getInt("id"));
+            preferences.setUserStatus(true);
+
+            Intent intent = new Intent(this, InsertarInfoUsuario.class);
+            startActivity(intent);
+
+            finish();
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
