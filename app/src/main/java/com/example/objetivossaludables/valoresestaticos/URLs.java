@@ -12,6 +12,8 @@ public class URLs {
 
     public static final String URL_INSERT_INFO_PERSONAL = BASIC_URL + "insertarInfoUsuario.php";
 
+    public static final String URL_EMAIL_PWD_OLVIDADA = BASIC_URL + "email_pwdOlvidada.php";
+
     public static final String URL_OBTENERSUENIO = BASIC_URL + "getSuenioSemana.php";
 
 

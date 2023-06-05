@@ -105,6 +105,10 @@
     <!--FORMULARIO DATOS USUARIO-->
 
     <string name="campoObligatorio">Campo contraseña obligatorio</string>
+    <string name="menus">Menus</string>
+    <string name="elegirMenu">Aquí puedes encontrar tus menús según tus preferencias</string>
+    <string name="MenuLostPeso">Menús para bajar de peso</string>
+    <string name="menusSemanal">Menús semanal</string>
     <string name="sobreTi">Cuentanos un poco sobre ti:</string>
     <string name="InsertaTusDatos">Inserta tus datos aquí</string>
     <string name="CampoPeso">Campo peso obligatorio</string>

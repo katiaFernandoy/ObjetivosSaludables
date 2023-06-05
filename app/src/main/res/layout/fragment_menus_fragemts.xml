@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/second_background"
+    tools:context=".pages.fragmenthomepage.TrofeosFragemt">
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textVie"
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/menus"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/titutlocontraseñaModif"
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/elegirMenu"
+            android:textAlignment="center" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textSemanal"
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/MenuLostPeso"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Spinner
+            android:id="@+id/spinnerBajarPeso"
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_rounded"
+            android:popupBackground="@drawable/style_spinner_items_container"
+            android:layout_height="60dp"
+            android:paddingHorizontal="9dp"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

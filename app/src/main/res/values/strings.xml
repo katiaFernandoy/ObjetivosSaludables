@@ -118,6 +118,16 @@
     <string name="otp">OTP</string>
     <string name="nuevaPassword">Introduzca una nueva contraseña para su cuenta:</string>
 
+    <!--MENUS-->
+
+    <string name="menus">Menús</string>
+    <string name="elegirMenu">Aquí puedes encontrar tus menús según tus preferencias</string>
+    <string name="MenuLostPeso">Menús para bajar de peso</string>
+    <string name="menusSemanal">Menús semanal</string>
+    <string-array name="ganarMasaMuscular">Menús para ganar masa muscula</string-array>
+
+
+
 
     <!--FORMULARIO DATOS USUARIO-->
 
@@ -142,6 +152,22 @@
         <item>Mujer</item>
         <item>Hombre</item>
         <item>Prefiero no contestar</item>
+    </string-array>
+
+    <string-array name="menusPerderPeso">
+        <item name="menu1">Lunes</item>
+        <item name="menu2">Martes</item>
+        <item name="menu2">Miercoles</item>
+        <item name="menu4">Jueves</item>
+        <item name="menu5">Viernes</item>
+    </string-array>
+
+    <string-array name="menusGanarMasa">
+        <item name="menu1">Lunes</item>
+        <item name="menu2">Martes</item>
+        <item name="menu2">Miercoles</item>
+        <item name="menu4">Jueves</item>
+        <item name="menu5">Viernes</item>
     </string-array>
 
 

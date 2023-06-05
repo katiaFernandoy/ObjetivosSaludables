@@ -1,7 +1,11 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
+import static com.example.objetivossaludables.manager.media.MediaManager.playSound;
+import static com.example.objetivossaludables.manager.media.MediaManager.vibrate;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
+
+import static java.security.AccessController.getContext;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -19,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.Login;
+import com.example.objetivossaludables.pages.HomePages.GrabarPasos;
 import com.example.objetivossaludables.pages.HomePages.Menu;
 
 import java.util.Locale;
@@ -30,6 +35,10 @@ public class IniciarSesion extends AppCompatActivity {
     private EditText txt_mail;
     private EditText txt_passLogin;
     private Button bt_iniciarLogin;
+
+    private TextView txt_passWordOlvidada;
+
+
     ProgressDialog pdLoading;
     public static String usuLog;
 
@@ -41,6 +50,7 @@ public class IniciarSesion extends AppCompatActivity {
         txt_mail = findViewById(R.id.txt_mailLogin);
         txt_passLogin = findViewById(R.id.txt_passLogin);
         bt_iniciarLogin = findViewById(R.id.bt_iniciarSesion);
+        txt_passWordOlvidada = findViewById(R.id.txt_passWordOlvidada);
 
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
@@ -51,6 +61,14 @@ public class IniciarSesion extends AppCompatActivity {
             Intent intent = new Intent(IniciarSesion.this, Menu.class);
             startActivity(intent);
         }
+        txt_passWordOlvidada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(IniciarSesion.this, Email_pwdOlvidada.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -103,9 +121,13 @@ public class IniciarSesion extends AppCompatActivity {
     }
 
     public void login(View view) {
+        playSound(this);
+        vibrate(this);
+
         final String email = txt_mail.getText().toString().toLowerCase(Locale.ROOT).trim();
         final String password = txt_passLogin.getText().toString();
         pdLoading = new ProgressDialog(IniciarSesion.this);
+
 
         if (verificarCampos()) {
             Login login = new Login(email, password, IniciarSesion.this, pdLoading);
