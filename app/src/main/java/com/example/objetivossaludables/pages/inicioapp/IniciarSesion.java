@@ -2,46 +2,38 @@ package com.example.objetivossaludables.pages.inicioapp;
 
 import static com.example.objetivossaludables.manager.media.MediaManager.playSound;
 import static com.example.objetivossaludables.manager.media.MediaManager.vibrate;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
-
-import static java.security.AccessController.getContext;
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsLogin;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_LOGIN;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.objetivossaludables.R;
-import com.example.objetivossaludables.manager.api.Login;
-import com.example.objetivossaludables.pages.HomePages.GrabarPasos;
+import com.example.objetivossaludables.manager.api.ApiHandler;
+import com.example.objetivossaludables.manager.api.ApiInterface;
+import com.example.objetivossaludables.manager.progressdialog.PdLoading;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.pages.HomePages.Menu;
 
-import java.util.Locale;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.regex.Pattern;
 
-public class IniciarSesion extends AppCompatActivity {
+public class IniciarSesion extends AppCompatActivity implements ApiInterface {
 
-    SharedPreferences sharedPreferences;
-    private EditText txt_mail;
-    private EditText txt_passLogin;
-    private Button bt_iniciarLogin;
-
-    private TextView txt_passWordOlvidada;
-
-
-    ProgressDialog pdLoading;
-    public static String usuLog;
-
+    private EditText txt_mail, txt_passLogin;
+    private PdLoading pdLoading;
+    private UserPreferences preferences;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,31 +41,22 @@ public class IniciarSesion extends AppCompatActivity {
 
         txt_mail = findViewById(R.id.txt_mailLogin);
         txt_passLogin = findViewById(R.id.txt_passLogin);
-        bt_iniciarLogin = findViewById(R.id.bt_iniciarSesion);
-        txt_passWordOlvidada = findViewById(R.id.txt_passWordOlvidada);
+        TextView txt_passWordOlvidada = findViewById(R.id.txt_passWordOlvidada);
+        preferences = new UserPreferences(this);
 
-        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-
-        boolean status = sharedPreferences.getBoolean(STATUS, false);
-
-        if (status) {
+        if (preferences.getUserStatus()) {
             finish();
-            Intent intent = new Intent(IniciarSesion.this, Menu.class);
+            Intent intent = new Intent(this, Menu.class);
             startActivity(intent);
         }
-        txt_passWordOlvidada.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(IniciarSesion.this, Email_pwdOlvidada.class);
-                startActivity(intent);
-            }
+        txt_passWordOlvidada.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Email_pwdOlvidada.class);
+            startActivity(intent);
         });
     }
 
-
     public boolean verificarCampos() {
-
         if (txt_mail.getText() == null || txt_mail.getText().toString().equals("")) {
             resaltarError(R.id.emailError, getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.email));
             return false;
@@ -96,7 +79,6 @@ public class IniciarSesion extends AppCompatActivity {
         txtError.setText(texto);
     }
 
-
     @SuppressLint("NonConstantResourceId")
     public void limpiarErrores(View view) {
         switch (view.getId()) {
@@ -107,11 +89,10 @@ public class IniciarSesion extends AppCompatActivity {
                 ((TextView) findViewById(R.id.passwordInfo)).setTextColor(getResources().getColor(R.color.grayInfo));
                 break;
         }
-
     }
 
     public boolean verificarMail() {
-        Pattern patron = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
+        Pattern patron = Pattern.compile("([a-z\\d]+(\\.?[a-z\\d])*)+@(([a-z]+)\\.([a-z]+))+");
         return patron.matcher(txt_mail.getText().toString()).find();
     }
 
@@ -124,14 +105,38 @@ public class IniciarSesion extends AppCompatActivity {
         playSound(this);
         vibrate(this);
 
-        final String email = txt_mail.getText().toString().toLowerCase(Locale.ROOT).trim();
-        final String password = txt_passLogin.getText().toString();
-        pdLoading = new ProgressDialog(IniciarSesion.this);
+        if(!verificarCampos()){
+            return;
+        }
+
+        pdLoading = new PdLoading(this);
+
+        String email = getTexto(txt_mail).toLowerCase();
+        new ApiHandler(this,URL_LOGIN,getParamsLogin(email,getTexto(txt_passLogin))).start();
+    }
 
 
-        if (verificarCampos()) {
-            Login login = new Login(email, password, IniciarSesion.this, pdLoading);
-            login.execute();
+    @Override
+    public void returnResponse(JSONObject json) {
+        pdLoading.dismiss(); // Se cierra el PdLoading
+
+        try {
+            if(json.getBoolean("error")){
+                Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
+            preferences.setUserEmail(getTexto(txt_mail).toLowerCase(),json.getInt("id"));
+            preferences.setUserStatus(true);
+
+            Intent intent = new Intent(this, Menu.class);
+            startActivity(intent);
+
+            finish();
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
         }
     }
 }

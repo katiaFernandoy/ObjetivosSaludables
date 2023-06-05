@@ -7,6 +7,15 @@
     android:background="@drawable/degraded_background_green"
     tools:context=".pages.inicioapp.IniciarSesion">
 
+    <include
+        layout="@layout/action_bard_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,12 +28,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
-
-        <include layout="@layout/action_bard_default" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +106,6 @@
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_vertical"
                     android:shadowColor="#656161"
                     android:shadowDx="0"
                     android:shadowDy="-0.2"
