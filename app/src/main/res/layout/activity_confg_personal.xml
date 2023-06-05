@@ -92,7 +92,7 @@
                     android:inputType="text"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:text="katia"
+                    android:text="@string/name"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 

@@ -53,7 +53,7 @@
     <string name="sobre">About:</string>
     <string name="valora">Rate our App and give us your opinion</string>
     <string name="preferencias">Preferences</string>
-    <string name="prefeSonidos">Sounds, vibration...</string>
+    <string name="prefeSonidos">Sounds, vibration…</string>
     <string name="notificaciones">Notifications</string>
     <string name="notiInfo">Personalize your notifications</string>
     <string name="seguridad">Security</string>
@@ -161,4 +161,11 @@
     <string name="campoPesoIncorrecto">Weight must have only numbers and/or decimals</string>
     <string name="campoFechaIncorrecto">Date must have this format: yyyy-MM-dd</string>
     <string name="campoAlturaIncorrecto">Height must have only numbers</string>
+    <string name="faltaCampoNombre">Name is mandatory</string>
+    <string name="faltaCampoPeso">Weight is mandatory</string>
+    <string name="faltaCampoFechaNacimiento">Birthdate is mandatory</string>
+    <string name="faltaCampoAltura">Weight  is mandatory</string>
+    <string name="faltaCampoGenero">Gender  is mandatory</string>
+    <string name="errorAlObtenerInfo">Error getting info, try it later</string>
+    <string name="errorAlModificarLaInformacion">Error modifying information</string>
 </resources>

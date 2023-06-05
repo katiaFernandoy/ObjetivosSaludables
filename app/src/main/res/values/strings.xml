@@ -54,7 +54,7 @@
     <string name="sobre">Sobre</string>
     <string name="valora">Valora nuestra App y danos tu opinión</string>
     <string name="preferencias">Preferencias</string>
-    <string name="prefeSonidos">Sonidos,vibración...</string>
+    <string name="prefeSonidos">Sonidos,vibración…</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="notiInfo">Personaliza tus notificaciones</string>
     <string name="seguridad">Seguridad</string>
@@ -97,6 +97,13 @@
     <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
     <string name="btModifPassWord">Modificar</string>
     <string name="idiomaCambiado">Debe reiniciar la aplicación para mostrar el nuevo idioma</string>
+    <string name="faltaCampoNombre">Debe insertar un nombre</string>
+    <string name="faltaCampoPeso">Debe insertar un peso</string>
+    <string name="faltaCampoFechaNacimiento">Debe insertar una fecha de nacimiento</string>
+    <string name="faltaCampoAltura">Debe insertar una altura</string>
+    <string name="faltaCampoGenero">Debe insertar un género</string>
+    <string name="errorAlObtenerInfo">Error al obtener la información, pruebe más tarde</string>
+    <string name="errorAlModificarLaInformacion">Error al modificar la información</string>
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">Error contraseña</string>
