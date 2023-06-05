@@ -22,7 +22,13 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
+            android:layout_height="20dp" />
+
+        <include layout="@layout/action_bard_default" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 
         <TextView
             style="@style/textviewGeneral"

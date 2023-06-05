@@ -11,10 +11,15 @@ import android.os.Vibrator;
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.sharedpreferences.SettingPreferences;
 
-public class MediaManager  {
+public class MediaManager {
 
     private static MediaPlayer sonido;
     private static Vibrator vibrator;
+
+    public static void exeMedia(Context context) {
+        playSound(context);
+        vibrate(context);
+    }
 
     public static void playSound(Context c) {
         if (new SettingPreferences(c).getSoundState()) {
@@ -23,16 +28,16 @@ public class MediaManager  {
         }
     }
 
-    public static void stopSound(){
-        if(sonido != null){
+    public static void stopSound() {
+        if (sonido != null) {
             sonido.stop();
             sonido.release();
             sonido = null;
         }
     }
 
-    public static void vibrate(Context c){
-        if(new SettingPreferences(c).getVibrateState()){
+    public static void vibrate(Context c) {
+        if (new SettingPreferences(c).getVibrateState()) {
             vibrator = (Vibrator) c.getSystemService(Context.VIBRATOR_SERVICE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
@@ -43,7 +48,7 @@ public class MediaManager  {
         }
     }
 
-    public static void playSoundWithoutVerification(Context c){
+    public static void playSoundWithoutVerification(Context c) {
         sonido = MediaPlayer.create(c, R.raw.sonido1);
         sonido.start();
     }
@@ -58,8 +63,8 @@ public class MediaManager  {
         }
     }
 
-    public static void stopVibrate(){
-        if(vibrator != null){
+    public static void stopVibrate() {
+        if (vibrator != null) {
             vibrator.cancel();
         }
     }

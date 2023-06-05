@@ -14,8 +14,8 @@
 
     <item
         android:id="@+id/trophyNav"
-        android:icon="@drawable/trofeo_img"
-        android:title="trophy" />
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Menus" />
 
     <item
         android:id="@+id/profileNav"
