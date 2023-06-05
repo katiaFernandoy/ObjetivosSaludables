@@ -163,4 +163,13 @@
     <string name="campoPesoIncorrecto">Peso solo debe tener numeros y/o decimales</string>
     <string name="campoFechaIncorrecto">Fecha debe tener el formato: yyyy-MM-dd</string>
     <string name="campoAlturaIncorrecto">Altura debe ser numérico sin decimales</string>
+    <string name="passwordOlvidada">¿Has olvidado tu contraseña?</string>
+    <string name="restablecerPassword">Restablecer contraseña</string>
+    <string name="introducirPassword">Introduce tu dirección de correo electrónico</string>
+    <string name="otpInfo">Introduce el número que te hemos enviado a tu correo electrónico</string>
+    <string name="otptitulo">Vereificaión otp por Email</string>
+    <string name="btOtpContinuar">continuar</string>
+    <string name="otpVolverEnviar">Volver a enviar OTP</string>
+    <string name="otp">OTP</string>
+    <string name="nuevaPassword">Introduzca una nueva contraseña para su cuenta:</string>
 </resources>

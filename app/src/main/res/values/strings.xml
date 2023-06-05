@@ -2,7 +2,7 @@
     <string name="app_name">ObjetivosSaludables</string>
 
     <!--PORTADA-->
-    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén informacion y mejora tu estilo de vida.</string>
+    <string name="headerPortada">Haz un seguimiento de tu progreso, obtén información y mejora tu estilo de vida.</string>
     <string name="btn_iniciarSesion">Iniciar Sesión</string>
     <string name="btnCrearCuenta">Crear Cuenta</string>
     <string name="btSaberMas">Saber más</string>
@@ -97,10 +97,20 @@
     <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
     <string name="btModifPassWord">Modificar</string>
     <string name="idiomaCambiado">Debe reiniciar la aplicación para mostrar el nuevo idioma</string>
+    <string name="passwordOlvidada">¿Has olvidado tu contraseña?</string>
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">Error contraseña</string>
     <string name="campoObligatorio">Campo contraseña obligatorio</string>
+    <string name="restablecerPassword">Restablecer contraseña</string>
+    <string name="introducirPassword">Introduce tu dirección de correo electrónico</string>
+    <string name="otpInfo">Introduce el número que te hemos enviado a tu correo electrónico</string>
+    <string name="otptitulo">Vereificaión otp por Email</string>
+    <string name="btOtpContinuar">continuar</string>
+    <string name="otpVolverEnviar">Volver a enviar OTP</string>
+    <string name="otp">OTP</string>
+    <string name="nuevaPassword">Introduzca una nueva contraseña para su cuenta:</string>
+
 
     <!--FORMULARIO DATOS USUARIO-->
 

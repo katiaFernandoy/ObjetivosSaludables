@@ -161,4 +161,13 @@
     <string name="campoPesoIncorrecto">Weight must have only numbers and/or decimals</string>
     <string name="campoFechaIncorrecto">Date must have this format: yyyy-MM-dd</string>
     <string name="campoAlturaIncorrecto">Height must have only numbers</string>
+    <string name="passwordOlvidada">Forgot your password?</string>
+    <string name="restablecerPassword">password reset</string>
+    <string name="introducirPassword">Enter your email address</string>
+    <string name="otpInfo">Enter the number we have sent to your e-mail address</string>
+    <string name="otptitulo">Otp Email Verification</string>
+    <string name="btOtpContinuar">continue</string>
+    <string name="otpVolverEnviar">Resend OTP</string>
+    <string name="otp">OTP</string>
+    <string name="nuevaPassword">Enter a new password for your account:</string>
 </resources>
