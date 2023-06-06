@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pages.inicioapp;
+package com.example.objetivossaludables.pages.otp;
 
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfoPersonal;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_EMAIL_PWD_OLVIDADA;

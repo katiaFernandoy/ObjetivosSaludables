@@ -1,4 +1,4 @@
-package com.example.objetivossaludables.pages.inicioapp;
+package com.example.objetivossaludables.pages.otp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
