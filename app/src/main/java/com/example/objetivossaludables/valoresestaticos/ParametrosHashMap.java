@@ -1,6 +1,7 @@
 package com.example.objetivossaludables.valoresestaticos;
 
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
+import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.PASSWORD;
 
 import java.util.HashMap;
@@ -50,6 +51,13 @@ public class ParametrosHashMap {
             put("altura",altura);
             put("fechaNacimiento",fechaNacimiento);
             put("genero",genero);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsOTP(int id_usu, int otp){
+        return new HashMap<String,String>(){{
+            put(ID, String.valueOf(id_usu));
+            put("otp", String.valueOf(otp));
         }};
     }
 }
