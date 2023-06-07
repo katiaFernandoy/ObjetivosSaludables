@@ -29,6 +29,7 @@ import com.example.objetivossaludables.pages.inicioapp.Portada;
 public class SettingsFragemt extends Fragment {
 
     private Button bt_cerrar;
+    private Button bt_eliminarCuenta;
     private LinearLayout linearLayoutConfPersonal;
     private LinearLayout linearLayoutPreferencias;
     private LinearLayout linearLayoutSeguridad;
@@ -43,6 +44,7 @@ public class SettingsFragemt extends Fragment {
         View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
         bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+        bt_eliminarCuenta = root.findViewById(R.id.bt_eliminarCuenta);
         linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
         linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
         linearLayoutNotificaciones = root.findViewById(R.id.linearLayoutNotificaciones);

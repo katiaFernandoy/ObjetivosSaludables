@@ -105,6 +105,7 @@
     <string name="errorAlObtenerInfo">Error al obtener la información, pruebe más tarde</string>
     <string name="errorAlModificarLaInformacion">Error al modificar la información</string>
     <string name="passwordOlvidada">¿Has olvidado tu contraseña?</string>
+    <string name="bt_eliminar">Eliminar cuenta</string>
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">Error contraseña</string>
