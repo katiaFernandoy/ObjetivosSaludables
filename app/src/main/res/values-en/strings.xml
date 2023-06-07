@@ -108,8 +108,8 @@
     <string name="elegirMenu">Here you can find your menus according to your preferences</string>
     <string name="MenuLostPeso">weight loss menus</string>
     <string name="menusSemanal">weekly menus</string>
-    <string name="sobreTi">Tell us a bit about yourself:</string>
-    <string name="InsertaTusDatos">insert your data here</string>
+    <string name="sobreTi">Tell us a bit about yourself</string>
+    <string name="InsertaTusDatos">insert your data here:</string>
     <string name="CampoPeso">weight field required</string>
     <string name="campoFecha">date field required</string>
     <string name="campoGenero">mandatory gender field</string>

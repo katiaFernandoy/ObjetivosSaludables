@@ -133,8 +133,8 @@
 
     <!--FORMULARIO DATOS USUARIO-->
 
-    <string name="sobreTi">Cuentanos un poco sobre ti:</string>
-    <string name="InsertaTusDatos">Inserta tu datos aquí</string>
+    <string name="sobreTi">Cuentanos un poco sobre ti</string>
+    <string name="InsertaTusDatos">Inserta tu datos aquí:</string>
     <string name="insertaUsu">Crear</string>
     <string name="CampoPeso">Campo peso obligatorio</string>
     <string name="campoPesoIncorrecto">Peso solo debe tener numeros y/o decimales</string>

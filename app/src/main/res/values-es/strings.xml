@@ -109,8 +109,8 @@
     <string name="elegirMenu">Aquí puedes encontrar tus menús según tus preferencias</string>
     <string name="MenuLostPeso">Menús para bajar de peso</string>
     <string name="menusSemanal">Menús semanal</string>
-    <string name="sobreTi">Cuentanos un poco sobre ti:</string>
-    <string name="InsertaTusDatos">Inserta tus datos aquí</string>
+    <string name="sobreTi">Cuentanos un poco sobre ti</string>
+    <string name="InsertaTusDatos">Inserta tus datos aquí:</string>
     <string name="CampoPeso">Campo peso obligatorio</string>
     <string name="campoFecha">Campo fecha obligatorio</string>
     <string name="campoGenero">Campo genero obligatorio</string>
