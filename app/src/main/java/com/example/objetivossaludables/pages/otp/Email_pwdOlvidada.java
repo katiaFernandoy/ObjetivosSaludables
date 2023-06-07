@@ -8,8 +8,10 @@ import static com.example.objetivossaludables.valoresestaticos.Verificaciones.ge
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,8 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Pattern;
+
 public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface {
 
     private EditText txt_mailPassworOlvidada;
@@ -39,12 +43,45 @@ public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface
         Button bt_restablecerPassword = findViewById(R.id.bt_restablecerPassword);
 
         bt_restablecerPassword.setOnClickListener(v -> {
-            String email = getTexto(txt_mailPassworOlvidada);
+            limpiarError();
 
+            if(!verificar()){
+                return;
+            }
+
+            String email = getTexto(txt_mailPassworOlvidada);
             pdLoading = new PdLoading(Email_pwdOlvidada.this);
 
             new ApiHandler(Email_pwdOlvidada.this, URL_VERIFICAR_EMAIL, getParamsInfoPersonal(email)).start();
         });
+    }
+
+    private boolean verificar(){
+        if (txt_mailPassworOlvidada.getText() == null || getTexto(txt_mailPassworOlvidada).equals("")) {
+            resaltarError(getResources().getString(R.string.errorFaltaCampo) + " " + getResources().getString(R.string.email));
+            return false;
+        } else if (!verificarMail()) {
+            resaltarError(getResources().getString(R.string.errorBadEmail));
+            return false;
+        }
+        return true;
+    }
+
+    private void resaltarError(String texto) {
+        TextView txtError = findViewById(R.id.lbEmailError);
+        txtError.setVisibility(View.VISIBLE);
+        txtError.setText(texto);
+    }
+
+    private boolean verificarMail() {
+        Pattern patron = Pattern.compile("([a-z\\d]+(\\.?[a-z\\d])*)+@(([a-z]+)\\.([a-z]+))+");
+        return patron.matcher(getTexto(txt_mailPassworOlvidada)).find();
+    }
+
+    private void limpiarError(){
+        TextView txtError = findViewById(R.id.lbEmailError);
+        txtError.setVisibility(View.GONE);
+        txtError.setText("");
     }
 
     @Override
@@ -68,7 +105,7 @@ public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface
             new MailJob("", otp);
             //Inserto en la base de datos encriptando
             new RequestHandler().sendPostRequest(
-                    URL_INSERTAR_OTP,getParamsOTP(json.getInt("id"),otp));
+                    URL_INSERTAR_OTP,getParamsOTP(json.getInt("id"),String.valueOf(otp)));
 
             Intent intent = new Intent(this, Otp_OlvidadaPassword.class);
             startActivity(intent);

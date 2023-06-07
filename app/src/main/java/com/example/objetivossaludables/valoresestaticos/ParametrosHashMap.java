@@ -54,10 +54,26 @@ public class ParametrosHashMap {
         }};
     }
 
-    public static HashMap<String,String> getParamsOTP(int id_usu, int otp){
+    public static HashMap<String,String> getParamsModifyPassword(String email,String oldPwd,String newPwd){
+        return new HashMap<String,String>(){{
+            put(EMAIL, email);
+            put("oldPassword", oldPwd);
+            put("newPassword", newPwd);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsOTP(int id_usu, String otp){
         return new HashMap<String,String>(){{
             put(ID, String.valueOf(id_usu));
-            put("otp", String.valueOf(otp));
+            put("otp", otp);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsOTP(String email, String newPassword){
+        return new HashMap<String,String>(){{
+            put(EMAIL, email);
+            put("newPassword", newPassword);
+            put("isOptionOTP", "true");
         }};
     }
 }

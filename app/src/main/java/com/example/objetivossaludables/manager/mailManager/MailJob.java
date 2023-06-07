@@ -64,11 +64,11 @@ public class MailJob{
                 "    <div style=\"background-color: #f5f5f5; padding: 20px;\">\n" +
                 "        <div style=\"background-color: #ffffff; padding: 20px; border-radius: 5px;\">\n" +
                 "            <h2 style=\"text-align: center;\">Recuperación de contraseña</h2>\n" +
-                "            <p>¡Hola!</p>\n" +
+                "            <p>¡Saludos desde el equipo de atención al cliente!</p>\n" +
                 "            <p>Hemos recibido una solicitud para recuperar tu contraseña. Utiliza el siguiente código de recuperación de 4 dígitos:</p>\n" +
                 "            <h1 style=\"text-align: center; font-size: 36px; padding: 20px; background-color: #e9e9e9; border-radius: 5px;\">"+otp+"</h1>\n" +
                 "            <p>Utiliza este código para restablecer tu contraseña. Si no has solicitado la recuperación de contraseña, puedes ignorar este mensaje.</p>\n" +
-                "            <p>Saludos,<br>Tu aplicación</p>\n" +
+                "            <p>Saludos,<br>¡¡El equipo de Objetivos Saludables!!</p>\n" +
                 "        </div>\n" +
                 "    </div>\n" +
                 "</body>\n" +
