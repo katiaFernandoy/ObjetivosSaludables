@@ -15,5 +15,11 @@
     <color name="verde">#147E74</color>
     <color name="rosa">#FFEC5689</color>
     <color name="azul">#075CDA</color>
+    <color name="greenStateFalse">#4CAF50</color>
+    <color name="greenStateTrue">#A4EFA7</color>
+    <color name="pinkStateFalse">#E91E63</color>
+    <color name="pinkStateTrue">#DF5986</color>
+    <color name="blueStateFalse">#094EB5</color>
+    <color name="blueStateTrue">#03A9F4</color>
 
 </resources>
