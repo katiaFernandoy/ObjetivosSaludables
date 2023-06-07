@@ -20,47 +20,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <include layout="@layout/action_bard_default" />
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="50dp" />
 
-        <include layout="@layout/action_bard_default" />
+        <TextView
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/restablecerPassword"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/introducirEmail" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp" />
 
-        <TextView
-            style="@style/textviewGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/restablecerPassword"
-            android:textStyle="bold"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TextView
-            style="@style/textviewGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/introducirPassword"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="80dp" />
-
-        <TextView
-            style="@style/textviewGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email"/>
-
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/txt_mailPassworOlvidada"
@@ -74,11 +57,28 @@
             android:inputType="text"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            tools:ignore="OnClick"  />
+            tools:ignore="OnClick"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/lbEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:shadowColor="@color/grayInfo"
+            android:shadowDx="0"
+            android:shadowDy="-0.2"
+            android:shadowRadius="0.2"
+            android:textColor="#FF0000"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/baseline_error" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <Button
             android:id="@+id/bt_restablecerPassword"

@@ -174,11 +174,13 @@
     <string name="errorAlModificarLaInformacion">Error modifying information</string>
     <string name="passwordOlvidada">Forgot your password?</string>
     <string name="restablecerPassword">password reset</string>
-    <string name="introducirPassword">Enter your email address</string>
+    <string name="introducirEmail">Enter your email address and we will send you a code to reset your password.</string>
     <string name="otpInfo">Enter the number we have sent to your e-mail address</string>
     <string name="otptitulo">Otp Email Verification</string>
-    <string name="btOtpContinuar">continue</string>
+    <string name="btOtpContinuar">CONTINUE</string>
     <string name="otpVolverEnviar">Resend OTP</string>
     <string name="otp">OTP</string>
     <string name="nuevaPassword">Enter a new password for your account:</string>
+    <string name="faltaOTP">Enter an OTP</string>
+    <string name="otpSoloNumerico">OTP is only numeric</string>
 </resources>
