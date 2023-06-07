@@ -76,4 +76,11 @@ public class ParametrosHashMap {
             put("isOptionOTP", "true");
         }};
     }
+
+    public static HashMap<String,String> getParamsId(String id){
+        return new HashMap<String,String>(){{
+            put(ID, id);
+        }};
+    }
+
 }
