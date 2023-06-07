@@ -95,7 +95,7 @@
     <string name="tituloCambioPassWord">Modifica tu contraseña</string>
     <string name="passWordActual">Contraseña Actual</string>
     <string name="nuevaPassWord">Nueva contraseña</string>
-    <string name="repeNuevaPassWord">Repetir nueva contraseña</string>
+    <string name="repeNuevaPassWord">Repetir contraseña</string>
     <string name="btModifPassWord">Modificar</string>
     <string name="idiomaCambiado">Debe reiniciar la aplicación para mostrar el nuevo idioma</string>
 
@@ -176,11 +176,13 @@
     <string name="errorAlModificarLaInformacion">Error al modificar la información</string>
     <string name="passwordOlvidada">¿Has olvidado tu contraseña?</string>
     <string name="restablecerPassword">Restablecer contraseña</string>
-    <string name="introducirPassword">Introduce tu dirección de correo electrónico</string>
+    <string name="introducirEmail">Introduce tu dirección de correo electrónico y nosotros te enviaremos un código para que puedas restablecer tu contraseña</string>
     <string name="otpInfo">Introduce el número que te hemos enviado a tu correo electrónico</string>
-    <string name="otptitulo">Vereificaión otp por Email</string>
-    <string name="btOtpContinuar">continuar</string>
+    <string name="otptitulo">Verificación otp por Email</string>
+    <string name="btOtpContinuar">CONTINUAR</string>
     <string name="otpVolverEnviar">Volver a enviar OTP</string>
     <string name="otp">OTP</string>
     <string name="nuevaPassword">Introduzca una nueva contraseña para su cuenta:</string>
+    <string name="faltaOTP">Introduce un OTP</string>
+    <string name="otpSoloNumerico">OTP es un valor numérico</string>
 </resources>

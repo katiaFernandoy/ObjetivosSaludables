@@ -22,6 +22,7 @@ import com.example.objetivossaludables.manager.api.ApiInterface;
 import com.example.objetivossaludables.manager.progressdialog.PdLoading;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.pages.HomePages.Menu;
+import com.example.objetivossaludables.pages.otp.Email_pwdOlvidada;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -85,7 +86,7 @@ public class IniciarSesion extends AppCompatActivity implements ApiInterface {
                 findViewById(R.id.emailError).setVisibility(View.GONE);
                 break;
             case R.id.txt_passLogin:
-                ((TextView) findViewById(R.id.passwordInfo)).setTextColor(getResources().getColor(R.color.grayInfo));
+                ((TextView) findViewById(R.id.passwordInfo)).setTextColor(getResources().getColor(R.color.grayInfo,getTheme()));
                 break;
         }
     }

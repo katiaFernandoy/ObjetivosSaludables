@@ -14,13 +14,13 @@
         android:theme="@style/Theme.ObjetivosSaludables"
         tools:targetApi="31">
         <activity
-            android:name=".pages.inicioapp.ModificarPassword_OTP"
+            android:name=".pages.otp.ModificarPassword_OTP"
             android:exported="false" />
         <activity
-            android:name=".pages.inicioapp.Otp_OlvidadaPassword"
+            android:name=".pages.otp.Otp_OlvidadaPassword"
             android:exported="false" />
         <activity
-            android:name=".pages.inicioapp.Email_pwdOlvidada"
+            android:name=".pages.otp.Email_pwdOlvidada"
             android:exported="false" />
         <activity
             android:name=".pages.HomePages.EstablecerObjetivos"

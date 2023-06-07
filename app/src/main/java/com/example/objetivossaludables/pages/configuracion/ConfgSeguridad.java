@@ -1,6 +1,8 @@
 package com.example.objetivossaludables.pages.configuracion;
 
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsModifyPassword;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_PWD;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,7 +43,6 @@ public class ConfgSeguridad extends AppCompatActivity implements ApiInterface {
 
     }
 
-
     public boolean verificarDatos() {
 
         if (txt_passWordActual.getText() == null || txt_passWordActual.getText().toString().equals("")) {
@@ -73,16 +74,16 @@ public class ConfgSeguridad extends AppCompatActivity implements ApiInterface {
     }
 
     public void cambiarPassword(View view) {
-
         if (!verificarDatos()) {
             return;
         }
 
         // Construimos lo parámetros para el PHP
-        HashMap<String,String> params = new HashMap<>();
-        params.put("email", new UserPreferences(this).getUserEmail());
-        params.put("oldPassword", txt_passWordActual.getText().toString());
-        params.put("newPassword", txt_passWordNueva.getText().toString());
+        HashMap<String,String> params =
+                getParamsModifyPassword(
+                        new UserPreferences(this).getUserEmail(),
+                        getTexto(txt_passWordActual),
+                        getTexto(txt_passWordNueva));
 
         pdLoading = new PdLoading(this); // Implementada nueva clase
         new ApiHandler(this,URL_MODIFICAR_PWD, params).start(); // Ejecuta el hilo de ApiHandler
