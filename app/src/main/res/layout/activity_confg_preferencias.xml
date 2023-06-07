@@ -9,8 +9,9 @@
 
     <include
         layout="@layout/action_bard_default"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +22,8 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,36 +31,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            style="@style/textviewGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preferencias"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="50dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView4"
-                style="@style/textviewGeneral"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="@string/preferencias"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-
 
             <Switch
                 android:id="@+id/switchSonido"
                 style="@style/textviewGeneral"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="@string/sonido" />
-
+                android:text="@string/sonido"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Space
                 android:layout_width="match_parent"
@@ -68,24 +66,18 @@
             <Switch
                 android:id="@+id/switchVibracion"
                 style="@style/textviewGeneral"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="@string/vibracion" />
-
-
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
+                android:text="@string/vibracion"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         </LinearLayout>
 
-
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,23 +85,24 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textVie"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="18sp"
                 android:text="@string/idiomas"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:textSize="18sp"
                 android:text="@string/cambiarIdioma"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="10dp" />
 
             <Spinner
                 android:id="@+id/spinnerIdioma"
@@ -134,6 +127,7 @@
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:textSize="18sp"
                 android:text="@string/general"
                 android:textStyle="bold" />
 
@@ -142,6 +136,7 @@
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:textSize="18sp"
                 android:text="@string/tuColorPreferido"/>
 
             <Space
@@ -156,6 +151,7 @@
                     android:id="@+id/radioButtonRosa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="18sp"
                     android:text="@string/colorVerde"
                     style="@style/textviewGeneral"
                     android:textColor="@color/verde"
@@ -165,6 +161,7 @@
                     android:id="@+id/radioButtonVerde"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="18sp"
                     android:text="@string/colorRosa"
                     style="@style/textviewGeneral"
                     android:textColor="@color/rosa"
@@ -174,17 +171,13 @@
                     android:id="@+id/radioButtonAzul"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="18sp"
                     android:text="@string/colorAzul"
                     style="@style/textviewGeneral"
                     android:textColor="@color/azul"
                     android:textStyle="bold
 "/>
             </RadioGroup>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-
 
         </LinearLayout>
 
