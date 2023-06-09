@@ -106,8 +106,8 @@
     <string name="campoObligatorio">required password field</string>
     <string name="menus">Menus</string>
     <string name="elegirMenu">Here you can find your menus according to your preferences</string>
-    <string name="MenuLostPeso">weight loss menus</string>
-    <string name="menusSemanal">weekly menus</string>
+    <string name="MenuLostPeso">Weight loss menus</string>
+    <string name="menusSemanal">Weekly menus</string>
     <string name="sobreTi">Tell us a bit about yourself</string>
     <string name="InsertaTusDatos">insert your data here:</string>
     <string name="CampoPeso">weight field required</string>
@@ -183,5 +183,7 @@
     <string name="nuevaPassword">Enter a new password for your account:</string>
     <string name="faltaOTP">Enter an OTP</string>
     <string name="otpSoloNumerico">OTP is only numeric</string>
+    <string name="suenioError">Must be a valid time</string>
+    <string name="noHorasSuenio">No reported hours of sleep</string>
     <string name="bt_eliminar">Delete account</string>
 </resources>

@@ -46,6 +46,8 @@ public class CrearCuenta extends AppCompatActivity implements ApiInterface {
         txt_passLogin2 = findViewById(R.id.txt_passLogin2);
 
         preferences = new UserPreferences(this);
+
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
     }
 
 
@@ -95,7 +97,7 @@ public class CrearCuenta extends AppCompatActivity implements ApiInterface {
                 findViewById(R.id.lbEmailError).setVisibility(View.GONE);
                 break;
             case R.id.txt_passLogin:
-                ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(getResources().getColor(R.color.grayInfo));
+                ((TextView) findViewById(R.id.lbPasswordInfo)).setTextColor(getResources().getColor(R.color.grayInfo,getTheme()));
                 break;
         }
 
