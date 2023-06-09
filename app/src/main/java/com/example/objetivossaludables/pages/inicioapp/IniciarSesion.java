@@ -44,6 +44,8 @@ public class IniciarSesion extends AppCompatActivity implements ApiInterface {
         TextView txt_passWordOlvidada = findViewById(R.id.txt_passWordOlvidada);
         preferences = new UserPreferences(this);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         if (preferences.getUserStatus()) {
             finish();
             Intent intent = new Intent(this, Menu.class);

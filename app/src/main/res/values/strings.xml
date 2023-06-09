@@ -54,7 +54,7 @@
     <string name="sobre">Sobre</string>
     <string name="valora">Valora nuestra App y danos tu opinión</string>
     <string name="preferencias">Preferencias</string>
-    <string name="prefeSonidos">Sonidos,vibración...</string>
+    <string name="prefeSonidos">Sonidos,vibración…</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="notiInfo">Personaliza tus notificaciones</string>
     <string name="seguridad">Seguridad</string>
@@ -196,7 +196,8 @@
     <string name="objetivo">de conseguir tu objetivo</string>
     <string name="humorBien">Alegre, enérgico, optimista, resolutivo</string>
     <string name="humorMal">Irritable, pesimista, lapsus de memoria</string>
-
+    <string name="suenioError">Debe ser una hora válida</string>
+    <string name="noHorasSuenio">No tienes horas de sueño reportadas</string>
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>
