@@ -44,6 +44,8 @@ public class ConfgPersonal extends AppCompatActivity implements ApiInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_personal);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         preferences = new UserPreferences(this);
         iniciarSpinner();
         TextView txt_mailInfoUsu = findViewById(R.id.txt_emailInfoPersonal);

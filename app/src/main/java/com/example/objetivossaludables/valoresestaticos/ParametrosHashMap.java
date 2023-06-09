@@ -76,4 +76,18 @@ public class ParametrosHashMap {
             put("isOptionOTP", "true");
         }};
     }
+
+    public static HashMap<String,String> getParamsId(String id_usu){
+        return new HashMap<String,String>(){{
+            put(ID, id_usu);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsSuenio(String id_usu, String horas, String dia){
+        return new HashMap<String,String>(){{
+            put(ID, id_usu);
+            put("horasSuenio", horas);
+            put("diaSemana", dia);
+        }};
+    }
 }

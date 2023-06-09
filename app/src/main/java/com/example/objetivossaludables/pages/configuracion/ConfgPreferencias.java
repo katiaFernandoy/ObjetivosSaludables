@@ -24,7 +24,6 @@ public class ConfgPreferencias extends AppCompatActivity {
 
     private Switch switchSonido;
     private Switch switchVibracion;
-    private Button btPruebaSonido;
     private Spinner spinnerIdioma;
     private SettingPreferences preferences;
 
@@ -32,6 +31,8 @@ public class ConfgPreferencias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_preferencias);
+
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         spinnerIdioma = findViewById(R.id.spinnerIdioma);
         switchSonido = findViewById(R.id.switchSonido);

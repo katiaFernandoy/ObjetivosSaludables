@@ -36,6 +36,8 @@ public class ModificarPassword_OTP extends AppCompatActivity implements ApiInter
         txt_pwd = findViewById(R.id.txt_passWordNueva_otp);
         txt_pwdRepe = findViewById(R.id.txt_passWordNuevaRepe_otp);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         findViewById(R.id.bt_modificarPassWord_otp).setOnClickListener(v -> {
             if(!verificar()){
                 return;
