@@ -42,6 +42,8 @@ public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface
         txt_mailPassworOlvidada = findViewById(R.id.txt_mailPassworOlvidada);
         Button bt_restablecerPassword = findViewById(R.id.bt_restablecerPassword);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         bt_restablecerPassword.setOnClickListener(v -> {
             limpiarError();
 

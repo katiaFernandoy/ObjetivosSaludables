@@ -41,6 +41,7 @@ public class ConfgSeguridad extends AppCompatActivity implements ApiInterface {
         txt_passWordNueva = findViewById(R.id.txt_passWordNueva);
         txt_passWordNuevaRepe = findViewById(R.id.txt_passWordNuevaRepe);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
     }
 
     public boolean verificarDatos() {

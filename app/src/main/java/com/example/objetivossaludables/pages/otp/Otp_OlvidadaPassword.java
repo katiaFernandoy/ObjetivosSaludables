@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.api.ApiHandler;
 import com.example.objetivossaludables.manager.api.ApiInterface;
-import com.example.objetivossaludables.manager.api.RequestHandler;
 import com.example.objetivossaludables.manager.mailManager.MailJob;
 import com.example.objetivossaludables.manager.progressdialog.PdLoading;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
@@ -39,6 +38,8 @@ public class Otp_OlvidadaPassword extends AppCompatActivity implements ApiInterf
 
         txt_otp = findViewById(R.id.txt_otp);
         preferences = new UserPreferences(this);
+
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         findViewById(R.id.txt_volverEnviarOTP).setOnClickListener(v -> {
             pdLoading = new PdLoading(this);

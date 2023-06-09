@@ -13,12 +13,21 @@
         android:layout_height="match_parent"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
-        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <include layout="@layout/action_bard_default" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -124,51 +133,112 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                style="@style/textviewGeneral"
-                android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/tuPeso" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txt_pesoModif"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/edittext_rounded"
-                    android:drawableEnd="@drawable/baseline_edit_24"
-                    android:drawablePadding="12dp"
-                    android:ems="10"
-                    android:text="@string/kg"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:inputType="text"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:textAlignment="viewStart"
-                    tools:ignore="OnClick" />
-
+                android:layout_weight="1"
+                android:orientation="vertical">
                 <TextView
+                    style="@style/textviewGeneral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_vertical"
-                    android:shadowColor="@color/grayInfo"
-                    android:shadowDx="0"
-                    android:shadowDy="-0.2"
-                    android:shadowRadius="0.2"
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"
-                    android:visibility="gone"
-                    app:drawableStartCompat="@drawable/baseline_error" />
+                    android:text="@string/tuPeso" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_pesoModif"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:drawableEnd="@drawable/baseline_edit_24"
+                        android:drawablePadding="12dp"
+                        android:ems="10"
+                        android:text="@string/kg"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:inputType="text"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textAlignment="viewStart"
+                        tools:ignore="OnClick" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:shadowColor="@color/grayInfo"
+                        android:shadowDx="0"
+                        android:shadowDy="-0.2"
+                        android:shadowRadius="0.2"
+                        android:textColor="#FF0000"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:drawableStartCompat="@drawable/baseline_error" />
 
 
-            </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/textviewGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/TuAltura" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_alturaModif"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:drawableEnd="@drawable/baseline_edit_24"
+                        android:drawablePadding="12dp"
+                        android:ems="10"
+                        android:text="@string/altura"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:inputType="text"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        tools:ignore="OnClick" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:shadowColor="@color/grayInfo"
+                        android:shadowDx="0"
+                        android:shadowDy="-0.2"
+                        android:shadowRadius="0.2"
+                        android:textColor="#FF0000"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:drawableStartCompat="@drawable/baseline_error" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -255,76 +325,24 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                style="@style/textviewGeneral"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_modificarInfoUsu"
+                style="@style/BotonPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/TuAltura" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txt_alturaModif"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/edittext_rounded"
-                    android:drawableEnd="@drawable/baseline_edit_24"
-                    android:drawablePadding="12dp"
-                    android:ems="10"
-                    android:text="@string/altura"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:inputType="text"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    tools:ignore="OnClick" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_vertical"
-                    android:shadowColor="@color/grayInfo"
-                    android:shadowDx="0"
-                    android:shadowDy="-0.2"
-                    android:shadowRadius="0.2"
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"
-                    android:visibility="gone"
-                    app:drawableStartCompat="@drawable/baseline_error" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/bt_modificarInfoUsu"
-                    style="@style/BotonPrincipal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modificarUsu" />
-
-
-
-            </LinearLayout>
+                android:text="@string/modificarUsu" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

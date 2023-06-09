@@ -37,6 +37,8 @@ public class GrabarSuenio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grabar_suenio);
 
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         horasSuenio = findViewById(R.id.horasSuenio);
         tvResultadoSuenio = findViewById(R.id.tvResultadoSuenio);
         ivResultadoSuenio = findViewById(R.id.ivResultadoSuenio);
