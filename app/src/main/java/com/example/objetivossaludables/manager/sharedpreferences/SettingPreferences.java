@@ -18,7 +18,7 @@ public class SettingPreferences {
     }
 
     public boolean getSoundState(){
-        return sp.getBoolean(SONIDO,false);
+        return sp.getBoolean(SONIDO,true);
     }
 
     public void setSound(Boolean estado){
@@ -28,7 +28,7 @@ public class SettingPreferences {
     }
 
     public boolean getVibrateState(){
-        return sp.getBoolean(VIBRACION,false);
+        return sp.getBoolean(VIBRACION,true);
     }
 
     public void setVibrate(Boolean estado){

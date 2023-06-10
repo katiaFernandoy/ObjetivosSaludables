@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.manager.media.MediaManager.exeMedia;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsLogin;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_LOGIN;
@@ -27,6 +28,7 @@ import com.example.objetivossaludables.pages.otp.Email_pwdOlvidada;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.regex.Pattern;
 
 public class IniciarSesion extends AppCompatActivity implements ApiInterface {
@@ -39,12 +41,14 @@ public class IniciarSesion extends AppCompatActivity implements ApiInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_iniciarSesion)));
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         txt_mail = findViewById(R.id.txt_mailLogin);
         txt_passLogin = findViewById(R.id.txt_passLogin);
         TextView txt_passWordOlvidada = findViewById(R.id.txt_passWordOlvidada);
         preferences = new UserPreferences(this);
 
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         if (preferences.getUserStatus()) {
             finish();

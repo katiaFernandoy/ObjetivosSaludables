@@ -27,7 +27,6 @@ public class ConfgPreferencias extends AppCompatActivity {
     private Spinner spinnerIdioma;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchSonido, switchVibracion;
-    private RadioGroup rgColores;
     private SettingPreferences preferences;
 
     @Override
@@ -40,7 +39,7 @@ public class ConfgPreferencias extends AppCompatActivity {
         switchSonido = findViewById(R.id.switchSonido);
         switchVibracion = findViewById(R.id.switchVibracion);
         spinnerIdioma = findViewById(R.id.spinnerIdioma);
-        rgColores = findViewById(R.id.rg_Colores);
+        RadioGroup rgColores = findViewById(R.id.rg_Colores);
 
         preferences = new SettingPreferences(getApplicationContext());
 
@@ -85,8 +84,8 @@ public class ConfgPreferencias extends AppCompatActivity {
         });
 
         rgColores.setOnCheckedChangeListener((radioGroup, radioButtonId) -> {
-            if (radioButtonId != -1 || radioButtonId == preferences.getColor()) {
-                preferences.setColor(radioButtonId);
+            if (radioButtonId != -1 && getCheckBoxAtPosition() != preferences.getColor()) {
+                preferences.setColor(getCheckBoxAtPosition());
             }
         });
     }
@@ -131,9 +130,31 @@ public class ConfgPreferencias extends AppCompatActivity {
     private void iniciarComponentes(){
         switchSonido.setChecked(preferences.getSoundState());
         switchVibracion.setChecked(preferences.getVibrateState());
-        rgColores.check(preferences.getColor());
+        setCheckBoxAtPosition(preferences.getColor());
 
         iniciarSpinner();
+    }
+
+    private int getCheckBoxAtPosition(){
+            if(((RadioButton)findViewById(R.id.radioButtonRosa)).isChecked()){
+                return 1;
+            }else if(((RadioButton)findViewById(R.id.radioButtonAzul)).isChecked()){
+                return 2;
+            } else{
+                return 0;
+            }
+    }
+
+    private void setCheckBoxAtPosition(int position){
+        switch (position) {
+            case 1: //rosa
+                ((RadioButton) findViewById(R.id.radioButtonRosa)).setChecked(true);
+                break;
+            case 2: // azul
+                ((RadioButton) findViewById(R.id.radioButtonAzul)).setChecked(true);
+            default: // azul
+                ((RadioButton) findViewById(R.id.radioButtonVerde)).setChecked(true);
+        }
     }
 }
 

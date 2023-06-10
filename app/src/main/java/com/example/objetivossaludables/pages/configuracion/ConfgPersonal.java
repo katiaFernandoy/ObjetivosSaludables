@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.configuracion;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfoPersonal;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INFORMACION_PERSONAL;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_INFO_PERSONAL;
@@ -28,6 +29,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class ConfgPersonal extends AppCompatActivity implements ApiInterface {
@@ -44,6 +46,7 @@ public class ConfgPersonal extends AppCompatActivity implements ApiInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_personal);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_modificarInfoUsu)));
         findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         preferences = new UserPreferences(this);

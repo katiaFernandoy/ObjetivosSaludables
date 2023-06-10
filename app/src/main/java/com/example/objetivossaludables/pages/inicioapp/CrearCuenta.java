@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfo;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_REGISTRO;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
@@ -24,6 +25,7 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
@@ -39,6 +41,9 @@ public class CrearCuenta extends AppCompatActivity implements ApiInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cuenta);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_crearCuenta)));
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         txt_nombreLogin = findViewById(R.id.txt_nombreLogin);
         txt_apellidoLogin = findViewById(R.id.txt_apellidoLogin);
         txt_mailLogin = findViewById(R.id.txt_mailLogin);
@@ -46,8 +51,6 @@ public class CrearCuenta extends AppCompatActivity implements ApiInterface {
         txt_passLogin2 = findViewById(R.id.txt_passLogin2);
 
         preferences = new UserPreferences(this);
-
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
     }
 
 
