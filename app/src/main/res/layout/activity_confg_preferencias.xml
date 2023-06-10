@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -126,16 +126,16 @@
                 android:id="@+id/textVi"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="@string/general"
+                android:text="@string/cambiarTema"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/colorPrefe"
                 style="@style/textviewGeneral"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:text="@string/tuColorPreferido"/>
 
@@ -144,57 +144,54 @@
                 android:layout_height="20dp" />
 
             <RadioGroup
+                android:id="@+id/rg_Colores"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radioButtonVerde"
+                    style="@style/textviewGeneral"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="@string/colorVerde"
-                    style="@style/textviewGeneral"
-                    android:buttonTint="@color/white"
                     android:background="@drawable/container_info_settings"
                     android:backgroundTint="@color/greenStateFalse"
-                    android:textStyle="bold"/>
+                    android:buttonTint="@color/white"
+                    android:text="@string/colorVerde"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:id="@+id/radioButtonRosa"
+                    style="@style/textviewGeneral"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
                     android:layout_marginHorizontal="10dp"
-                    android:textSize="18sp"
-                    android:text="@string/colorRosa"
-                    style="@style/textviewGeneral"
-                    android:buttonTint="@color/white"
+                    android:layout_weight="1"
                     android:background="@drawable/container_info_settings"
                     android:backgroundTint="@color/pinkStateFalse"
-                    android:textStyle="bold"/>
+                    android:buttonTint="@color/white"
+                    android:text="@string/colorRosa"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAzul"
+                    style="@style/textviewGeneral"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="@string/colorAzul"
-                    style="@style/textviewGeneral"
-                    android:buttonTint="@color/white"
                     android:background="@drawable/container_info_settings"
                     android:backgroundTint="@color/blueStateFalse"
-                    android:textStyle="bold"/>
+                    android:buttonTint="@color/white"
+                    android:text="@string/colorAzul"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </RadioGroup>
 
         </LinearLayout>
 
-
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
