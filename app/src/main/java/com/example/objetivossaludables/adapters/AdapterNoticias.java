@@ -1,5 +1,7 @@
 package com.example.objetivossaludables.adapters;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +19,7 @@ import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.modelo.Noticias;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyViewHolder> {
 
@@ -64,6 +67,8 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
 
         public MyViewHolder(@NonNull View view) {
             super(view);
+            setColorState(view.getContext(), Collections.singletonList(itemView.findViewById(R.id.btn_noticiasItem)));
+
             tvTitulo = itemView.findViewById(R.id.txt_noticiasItem);
             tituloImagen = itemView.findViewById(R.id.img_noticiasItem);
             btn_noticiasItem = itemView.findViewById(R.id.btn_noticiasItem);

@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.inicioapp;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfoPersonal;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INSERT_INFO_PERSONAL;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.*;
@@ -24,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class InsertarInfoUsuario extends AppCompatActivity implements ApiInterface {
@@ -36,6 +38,7 @@ public class InsertarInfoUsuario extends AppCompatActivity implements ApiInterfa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insertar_info_usuario);
+        setColorState(this, Collections.singletonList(findViewById(R.id.btn_insertInfo)));
 
         iniciarSpinner();
         txt_insertPeso = findViewById(R.id.txt_insertPeso);

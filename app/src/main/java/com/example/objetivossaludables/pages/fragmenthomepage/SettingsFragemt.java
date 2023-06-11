@@ -1,22 +1,12 @@
 package com.example.objetivossaludables.pages.fragmenthomepage;
 
-
-import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsId;
-import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsOTP;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_DESACTIVAR_CUENTA;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INSERTAR_OTP;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_VERIFICAR_OTP;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
-import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +18,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.manager.api.ApiHandler;
 import com.example.objetivossaludables.manager.api.ApiInterface;
 import com.example.objetivossaludables.manager.api.RequestHandler;
@@ -38,35 +29,33 @@ import com.example.objetivossaludables.pages.configuracion.ConfgNotificaciones;
 import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
 import com.example.objetivossaludables.pages.configuracion.ConfgPreferencias;
 import com.example.objetivossaludables.pages.configuracion.ConfgSeguridad;
-import com.example.objetivossaludables.pages.inicioapp.IniciarSesion;
 import com.example.objetivossaludables.pages.inicioapp.Portada;
 import com.example.objetivossaludables.pages.otp.Otp_OlvidadaPassword;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
+
 public class SettingsFragemt extends Fragment implements ApiInterface {
 
-    private Button bt_cerrar;
-    private Button bt_eliminarCuenta;
-    private LinearLayout linearLayoutConfPersonal;
-    private LinearLayout linearLayoutPreferencias;
-    private LinearLayout linearLayoutSeguridad;
-    private LinearLayout linearLayoutNotificaciones;
     private UserPreferences preferences;
     private PdLoading pdLoading;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
 
-        bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
-        bt_eliminarCuenta = root.findViewById(R.id.bt_eliminarCuenta);
-        linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
-        linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
-        linearLayoutNotificaciones = root.findViewById(R.id.linearLayoutNotificaciones);
-        linearLayoutSeguridad = root.findViewById(R.id.linearLayoutSeguridad);
+        setColorState(getContext(), Collections.singletonList(root.findViewById(R.id.bt_cerrarSesion)));
+
+        Button bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
+        Button bt_eliminarCuenta = root.findViewById(R.id.bt_eliminarCuenta);
+        LinearLayout linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
+        LinearLayout linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
+        LinearLayout linearLayoutNotificaciones = root.findViewById(R.id.linearLayoutNotificaciones);
+        LinearLayout linearLayoutSeguridad = root.findViewById(R.id.linearLayoutSeguridad);
         preferences = new UserPreferences(getContext());
 
         linearLayoutConfPersonal.setOnClickListener(new View.OnClickListener() {
@@ -113,9 +102,7 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
         bt_eliminarCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 alertDialog();
-
             }
         });
 
@@ -123,12 +110,10 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
     }
 
     public void cerrarSesion() {
-        preferences.cerrarSesion();
-
+        preferences.clearPreferences();
         ((Activity) getContext()).finish();
         Intent intent = new Intent(getContext(), Portada.class);
         startActivity(intent);
-
     }
 
     public void alertDialog(){
