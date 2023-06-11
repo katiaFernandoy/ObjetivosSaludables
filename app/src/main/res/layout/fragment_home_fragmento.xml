@@ -75,7 +75,7 @@
             android:layout_height="20dp" />
 
         <LinearLayout
-            android:id="@+id/llPuntuacionSuenio"
+            android:id="@+id/llPlanSemanal"
             style="@style/container_info_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
