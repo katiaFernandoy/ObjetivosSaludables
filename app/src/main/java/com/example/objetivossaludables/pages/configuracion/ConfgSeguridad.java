@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.configuracion;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsModifyPassword;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_MODIFICAR_PWD;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
@@ -22,6 +23,7 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
@@ -37,11 +39,12 @@ public class ConfgSeguridad extends AppCompatActivity implements ApiInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confg_seguridad);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_modificarPassWord)));
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         txt_passWordActual = findViewById(R.id.txt_passWordActual);
         txt_passWordNueva = findViewById(R.id.txt_passWordNueva);
         txt_passWordNuevaRepe = findViewById(R.id.txt_passWordNuevaRepe);
-
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
     }
 
     public boolean verificarDatos() {

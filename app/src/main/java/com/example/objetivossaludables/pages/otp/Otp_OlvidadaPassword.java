@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.otp;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsOTP;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INSERTAR_OTP;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_VERIFICAR_OTP;
@@ -23,6 +24,8 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
+
 public class Otp_OlvidadaPassword extends AppCompatActivity implements ApiInterface {
 
     private boolean isVerificacionOTP = false;
@@ -36,10 +39,11 @@ public class Otp_OlvidadaPassword extends AppCompatActivity implements ApiInterf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_olvidada_password);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_otpContinuar)));
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         txt_otp = findViewById(R.id.txt_otp);
         preferences = new UserPreferences(this);
-
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         findViewById(R.id.txt_volverEnviarOTP).setOnClickListener(v -> {
             pdLoading = new PdLoading(this);

@@ -20,6 +20,7 @@ public class ValuesPreferences {
     public static final String SONIDO = "sonido";
     public static final String VIBRACION = "vibracion";
     public static final String IDIOMA = "idioma";
+    public static final String COLOR = "color";
 
     public static final String COLOR_1 = "#4CAF50";
     public static final String COLOR_2 = "#A4EFA7";

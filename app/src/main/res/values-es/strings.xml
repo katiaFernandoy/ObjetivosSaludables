@@ -85,7 +85,7 @@
     <string name="idiomas">Idiomas</string>
     <string name="cambiarIdioma">Cambiar Idioma</string>
     <string name="general">General</string>
-    <string name="tuColorPreferido">Tu color preferido</string>
+    <string name="tuColorPreferido">Elige tu color</string>
     <string name="objetivosSaludables">Objetivos Saludables</string>
     <string name="app">App</string>
     <string name="modificarUsu">Modificar Usuario</string>
@@ -185,6 +185,7 @@
     <string name="nuevaPassword">Introduzca una nueva contraseña para su cuenta:</string>
     <string name="faltaOTP">Introduce un OTP</string>
     <string name="otpSoloNumerico">OTP es un valor numérico</string>
+    <string name="cambiarTema">Cambia el tema de los botones</string>
     <string name="suenioError">Debe ser una hora válida</string>
     <string name="noHorasSuenio">No tienes horas de sueño reportadas</string>
 </resources>

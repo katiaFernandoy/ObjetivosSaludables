@@ -1,5 +1,6 @@
 package com.example.objetivossaludables.pages.otp;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsInfoPersonal;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsOTP;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_INSERTAR_OTP;
@@ -27,6 +28,7 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.regex.Pattern;
 
 public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface {
@@ -39,10 +41,11 @@ public class Email_pwdOlvidada extends AppCompatActivity implements ApiInterface
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_pwd_olvidada);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_restablecerPassword)));
+        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+
         txt_mailPassworOlvidada = findViewById(R.id.txt_mailPassworOlvidada);
         Button bt_restablecerPassword = findViewById(R.id.bt_restablecerPassword);
-
-        findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         bt_restablecerPassword.setOnClickListener(v -> {
             limpiarError();

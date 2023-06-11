@@ -83,7 +83,7 @@
     <string name="idiomas">Lenguage</string>
     <string name="cambiarIdioma">change language</string>
     <string name="general">General</string>
-    <string name="tuColorPreferido">Your favorite color</string>
+    <string name="tuColorPreferido">Chose your color</string>
     <string name="objetivosSaludables">Healthy goals</string>
     <string name="app">App</string>
     <string name="modificarUsu">modify user</string>
@@ -183,6 +183,7 @@
     <string name="nuevaPassword">Enter a new password for your account:</string>
     <string name="faltaOTP">Enter an OTP</string>
     <string name="otpSoloNumerico">OTP is only numeric</string>
+    <string name="cambiarTema">Change the theme of your buttons</string>
     <string name="suenioError">Must be a valid time</string>
     <string name="noHorasSuenio">No reported hours of sleep</string>
 </resources>

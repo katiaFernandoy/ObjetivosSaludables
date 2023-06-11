@@ -84,7 +84,7 @@
     <string name="idiomas">Idiomas</string>
     <string name="cambiarIdioma">Cambiar Idioma</string>
     <string name="general">Introduce el número que te hemos enviado a tu correo electrónico</string>
-    <string name="tuColorPreferido">Tu color preferido</string>
+    <string name="tuColorPreferido">Elige tu color</string>
     <string name="objetivosSaludables">Objetivos Saludables</string>
     <string name="app">App</string>
     <string name="modificarUsu">Modificar usuario</string>
@@ -204,4 +204,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_establecer_objetivos">EstablecerObjetivos</string>
+    <string name="cambiarTema">Cambia el tema de los botones</string>
 </resources>

@@ -45,6 +45,12 @@ public class UserPreferences {
         edit.apply();
     }
 
+    public void clearPreferences(){
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.clear();
+        edit.apply();
+    }
+
     public Usuario getUser(){
         return new Usuario(
                 preferences.getString(EMAIL,""),
