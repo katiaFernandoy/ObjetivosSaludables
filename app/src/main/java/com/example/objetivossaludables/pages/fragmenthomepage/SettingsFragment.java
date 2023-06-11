@@ -1,10 +1,12 @@
 package com.example.objetivossaludables.pages.fragmenthomepage;
 
+
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsId;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_DESACTIVAR_CUENTA;
 import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,23 +23,18 @@ import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.example.objetivossaludables.manager.api.ApiHandler;
 import com.example.objetivossaludables.manager.api.ApiInterface;
-import com.example.objetivossaludables.manager.api.RequestHandler;
-import com.example.objetivossaludables.manager.mailManager.MailJob;
 import com.example.objetivossaludables.manager.progressdialog.PdLoading;
-import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
-import com.example.objetivossaludables.pages.configuracion.ConfgNotificaciones;
 import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
 import com.example.objetivossaludables.pages.configuracion.ConfgPreferencias;
 import com.example.objetivossaludables.pages.configuracion.ConfgSeguridad;
 import com.example.objetivossaludables.pages.inicioapp.Portada;
-import com.example.objetivossaludables.pages.otp.Otp_OlvidadaPassword;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Collections;
+import java.util.Arrays;
 
-public class SettingsFragemt extends Fragment implements ApiInterface {
+public class SettingsFragment extends Fragment implements ApiInterface {
 
     private UserPreferences preferences;
     private PdLoading pdLoading;
@@ -46,15 +43,17 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_settings_fragemt, container, false);
+        View root = inflater.inflate(R.layout.fragment_settings_fragment, container, false);
 
-        setColorState(getContext(), Collections.singletonList(root.findViewById(R.id.bt_cerrarSesion)));
+        setColorState(getContext(),
+                Arrays.asList(
+                        root.findViewById(R.id.bt_cerrarSesion),
+                        root.findViewById(R.id.bt_eliminarCuenta)));
 
         Button bt_cerrar = root.findViewById(R.id.bt_cerrarSesion);
         Button bt_eliminarCuenta = root.findViewById(R.id.bt_eliminarCuenta);
         LinearLayout linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
         LinearLayout linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
-        LinearLayout linearLayoutNotificaciones = root.findViewById(R.id.linearLayoutNotificaciones);
         LinearLayout linearLayoutSeguridad = root.findViewById(R.id.linearLayoutSeguridad);
         preferences = new UserPreferences(getContext());
 
@@ -74,14 +73,6 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
             }
         });
 
-        linearLayoutNotificaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ConfgNotificaciones.class);
-                startActivity(intent);
-            }
-        });
-
         linearLayoutSeguridad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,8 +80,6 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
                 startActivity(intent);
             }
         });
-
-
 
         bt_cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +118,7 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
                 pdLoading = new PdLoading(getContext());
 
                 String id = String.valueOf(preferences.getUserId());
-                new ApiHandler(SettingsFragemt.this, URL_DESACTIVAR_CUENTA, getParamsId(id)).start();
+                new ApiHandler(SettingsFragment.this, URL_DESACTIVAR_CUENTA, getParamsId(id)).start();
                 dialog.dismiss();
             }
         });
@@ -148,7 +137,6 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
 
     @Override
     public void returnResponse(JSONObject json) {
-
         pdLoading.dismiss();
 
         try {
@@ -168,6 +156,5 @@ public class SettingsFragemt extends Fragment implements ApiInterface {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

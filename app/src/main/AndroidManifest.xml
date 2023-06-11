@@ -29,9 +29,6 @@
             android:name=".pages.inicioapp.InsertarInfoUsuario"
             android:exported="false" />
         <activity
-            android:name=".pages.configuracion.ConfgNotificaciones"
-            android:exported="false" />
-        <activity
             android:name=".pages.configuracion.ConfgSeguridad"
             android:exported="false" />
         <activity
