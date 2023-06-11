@@ -14,6 +14,7 @@ public class URLs {
     public static final String URL_VERIFICAR_EMAIL = BASIC_URL + "verificarEmail.php";
     public static final String URL_INSERTAR_OTP = BASIC_URL + "insertOTP.php";
     public static final String URL_VERIFICAR_OTP = BASIC_URL + "verificarOTP.php";
+    public static final String URL_DESACTIVAR_CUENTA = BASIC_URL + "eliminarCuenta.php";
 
 
 }

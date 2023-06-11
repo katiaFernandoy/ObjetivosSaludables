@@ -11,7 +11,7 @@ import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.databinding.ActivityMenuBinding;
 import com.example.objetivossaludables.pages.fragmenthomepage.HomeFragment;
 import com.example.objetivossaludables.pages.fragmenthomepage.NoticiasFrangment;
-import com.example.objetivossaludables.pages.fragmenthomepage.SettingsFragemt;
+import com.example.objetivossaludables.pages.fragmenthomepage.SettingsFragment;
 import com.example.objetivossaludables.pages.fragmenthomepage.TrofeosFragemt;
 
 public class Menu extends AppCompatActivity {
@@ -38,7 +38,7 @@ public class Menu extends AppCompatActivity {
                     replaceFragment(new TrofeosFragemt());
                     break;
                 case R.id.profileNav:
-                    replaceFragment(new SettingsFragemt());
+                    replaceFragment(new SettingsFragment());
                     break;
             }
 

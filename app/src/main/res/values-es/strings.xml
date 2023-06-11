@@ -186,6 +186,7 @@
     <string name="faltaOTP">Introduce un OTP</string>
     <string name="otpSoloNumerico">OTP es un valor numérico</string>
     <string name="cambiarTema">Cambia el tema de los botones</string>
+    <string name="bt_eliminar">Eliminar cuenta</string>
     <string name="suenioError">Debe ser una hora válida</string>
     <string name="noHorasSuenio">No tienes horas de sueño reportadas</string>
 </resources>
