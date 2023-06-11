@@ -206,4 +206,6 @@
     <string name="perderPeso">Perder peso</string>
     <string name="aumentarMasa">Aumentar masa muscular</string>
     <string name="grabarObjetivos">Grabar Objetivos</string>
+    <string name="ejercicioTitle">Ejercicios</string>
+    <string name="elegirEjercico">Aquí puedes encontrar tus ejercicios según tus preferencias</string>
 </resources>
