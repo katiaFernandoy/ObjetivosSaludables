@@ -158,6 +158,8 @@
 
 
     <!--TOOLBAR-->
+    <string name="pasosHoy">¿Cuántos pasos has dado hoy?</string>
+    <string name="mediaSemanalPasos">Tu media de pasos para esta semana es:</string>
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -189,4 +191,19 @@
     <string name="bt_eliminar">Eliminar cuenta</string>
     <string name="suenioError">Debe ser una hora válida</string>
     <string name="noHorasSuenio">No tienes horas de sueño reportadas</string>
+    <string name="pasosError">Debe ser una cifra válida</string>
+    <string name="noPasos">No tienes número de pasos reportados</string>
+    <string name="humorEsperadoPasos">Según tu actividad es normal que te sientas:</string>
+    <string name="mediaSemanalEntrenamiento">Tu media de horas entrenadas para esta semana es:</string>
+    <string name="humorEsperadoEntrenamiento">Según tu actividad es normal que te sientas:</string>
+    <string name="entrenamientpError">Debe ser una cifra válida</string>
+    <string name="noEntrenamiento">No tienes número de horas reportadas</string>
+    <string name="entrenamientoHoy">¿Cuántas horas has entrenado hoy?</string>
+    <string name="objSuenio">¿Cuál es tu objetivo de sueño?</string>
+    <string name="objPasos">¿Cuál es tu objetivo de pasos?</string>
+    <string name="objEntrenamiento">¿Cuál es tu objetivo de entrenamiento?</string>
+    <string name="objPeso">¿Qué quieres conseguir?</string>
+    <string name="perderPeso">Perder peso</string>
+    <string name="aumentarMasa">Aumentar masa muscular</string>
+    <string name="grabarObjetivos">Grabar Objetivos</string>
 </resources>

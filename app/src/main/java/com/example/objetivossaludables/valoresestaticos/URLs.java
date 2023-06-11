@@ -16,5 +16,11 @@ public class URLs {
     public static final String URL_VERIFICAR_OTP = BASIC_URL + "verificarOTP.php";
     public static final String URL_DESACTIVAR_CUENTA = BASIC_URL + "eliminarCuenta.php";
 
+    public static final String URL_GET_PASOS = BASIC_URL + "getPasosSemana.php";
+    public static final String URL_SET_PASOS = BASIC_URL + "insertarPasos.php";
+
+    public static final String URL_GET_ENTRENAMIENTO = BASIC_URL + "getEntrenamientoSemana.php";
+    public static final String URL_SET_ENTRENAMIENTO = BASIC_URL + "insertarEntrenamiento.php";
+    public static final String URL_SET_OBJETIVOS = BASIC_URL + "insertarObjetivos.php";
 
 }

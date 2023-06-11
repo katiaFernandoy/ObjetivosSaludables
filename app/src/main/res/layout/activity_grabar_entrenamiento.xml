@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.HomePages.GrabarSuenio">
+    android:onClick="grabarEntrenamiento"
+    tools:context=".pages.HomePages.GrabarEntrenamiento">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -38,10 +39,9 @@
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:layout_marginBottom="40dp"
-                android:src="@drawable/erizo"/>
+                android:src="@drawable/coby2" />
 
             <LinearLayout
-                android:id="@+id/llHorasSuenio"
                 style="@style/container_info_settings"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -54,7 +54,7 @@
                     style="@style/textviewGeneral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/suenioHoy"
+                    android:text="@string/entrenamientoHoy"
                     android:textStyle="bold" />
 
                 <Space
@@ -63,13 +63,13 @@
                     android:layout_weight="1" />
 
                 <EditText
-                    android:id="@+id/horasSuenio"
+                    android:id="@+id/pasosDia"
                     android:layout_width="70dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="10dp"
                     android:ems="10"
                     android:inputType="number|numberDecimal"
-                    android:onClick="grabarSuenio" />
+                    android:onClick="grabarEntrenamiento" />
 
 
             </LinearLayout>
@@ -79,7 +79,7 @@
                 android:layout_height="10dp" />
 
             <LinearLayout
-                android:id="@+id/llPuntuacionSuenio"
+                android:id="@+id/llPuntuacionEntrenamiento"
                 style="@style/container_info_settings"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -105,7 +105,7 @@
                         android:layout_height="10dp" />
 
                     <TextView
-                        android:id="@+id/tvResultadoSuenio"
+                        android:id="@+id/tvResultadoEntrenamiento"
                         style="@style/textviewGeneral"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
 
 
                 <ImageView
-                    android:id="@+id/ivResultadoSuenio"
+                    android:id="@+id/ivResultAnalisEntrenamiento"
                     android:layout_width="70dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="10dp"
@@ -129,7 +129,6 @@
                 android:layout_height="10dp" />
 
             <LinearLayout
-                android:id="@+id/llSuenio"
                 style="@style/container_info_settings"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -148,7 +147,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:text="@string/humorEsperado"
+                        android:text="@string/humorEsperadoEntrenamiento"
                         android:textStyle="bold" />
 
                     <Space
@@ -156,7 +155,7 @@
                         android:layout_height="10dp" />
 
                     <TextView
-                        android:id="@+id/tvResultAnalisPasos"
+                        android:id="@+id/tvResultAnalisEntrenamiento"
                         style="@style/textviewGeneral"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
@@ -180,7 +179,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvAnalisisSuenio"
+                    android:id="@+id/tvAnalisisEntrenamiento"
                     style="@style/textviewGeneral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -194,7 +193,7 @@
                     android:layout_weight="1" />
 
                 <EditText
-                    android:id="@+id/horasMediaSemana"
+                    android:id="@+id/horasMediaEntrenamiento"
                     android:layout_width="70dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="10dp"
@@ -206,5 +205,4 @@
         </LinearLayout>
 
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

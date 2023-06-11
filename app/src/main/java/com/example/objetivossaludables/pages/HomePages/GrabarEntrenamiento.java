@@ -1,9 +1,12 @@
 package com.example.objetivossaludables.pages.HomePages;
 
 import static com.example.objetivossaludables.pages.HomePages.GrabarSuenio.GetDay;
+import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsEntrenamiento;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsId;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsPasos;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_ENTRENAMIENTO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_PASOS;
+import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_ENTRENAMIENTO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_PASOS;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
@@ -30,67 +33,66 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class GrabarPasos extends AppCompatActivity implements ApiInterface {
+public class GrabarEntrenamiento extends AppCompatActivity implements ApiInterface {
 
-    private EditText pasosDia, horasMediaSemana;
-    private TextView tvResultadoPasos, tvResultAnalisPasos;
-    private ImageView ivResultadoPasos;
+    private EditText entrenamientoDia, horasMediaEntrenamiento;
+    private TextView tvResultadoEntrenamiento, tvResultAnalisEntrenamiento;
+    private ImageView ivResultAnalisEntrenamiento;
     private PdLoading pdLoading;
     private UserPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grabar_pasos);
+        setContentView(R.layout.activity_grabar_entrenamiento);
 
         findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
-        pasosDia = findViewById(R.id.pasosDia);
-        tvResultadoPasos = findViewById(R.id.tvResultadoPasos);
-        ivResultadoPasos = findViewById(R.id.ivResultadoPasos);
-        tvResultAnalisPasos = findViewById(R.id.tvResultAnalisPasos);
-        horasMediaSemana = findViewById(R.id.horasMediaSemana);
+        entrenamientoDia = findViewById(R.id.pasosDia);
+        tvResultadoEntrenamiento = findViewById(R.id.tvResultadoEntrenamiento);
+        ivResultAnalisEntrenamiento = findViewById(R.id.ivResultAnalisEntrenamiento);
+        tvResultAnalisEntrenamiento = findViewById(R.id.tvResultAnalisEntrenamiento);
+        horasMediaEntrenamiento = findViewById(R.id.horasMediaEntrenamiento);
 
         preferences = new UserPreferences(this);
-        getPasos();
+        getEntrenamiento();
     }
 
-    private void getPasos() {
+    private void getEntrenamiento() {
         pdLoading = new PdLoading(this);
         String id = String.valueOf(preferences.getUserId());
-        new ApiHandler(this,URL_GET_PASOS,getParamsId(id)).start();
+        new ApiHandler(this,URL_GET_ENTRENAMIENTO,getParamsId(id)).start();
     }
 
-    public void grabarPasos(View view) {
+    public void grabarEntrenamiento(View view) {
 
-        final int pasos = Integer.parseInt(getTexto(pasosDia));
+        final int entrenamiento = Integer.parseInt(getTexto(entrenamientoDia));
 
-        if (pasos < 0 || pasos >= 90000) {
+        if (entrenamiento < 0 || entrenamiento >= 24) {
             Toast.makeText(this,getResources().getText(R.string.pasosError),Toast.LENGTH_SHORT).show();
             return;
         }
 
-        getAnimoPasos(pasos);
+        getAnimoEntrenamiento(entrenamiento);
 
         final int id_usu = preferences.getUserId();
         final String day = GetDay();
 
-        HashMap<String,String> params = getParamsPasos(
+        HashMap<String,String> params = getParamsEntrenamiento(
                 String.valueOf(id_usu),
-                String.valueOf(pasos),
+                String.valueOf(entrenamiento),
                 day);
 
         pdLoading = new PdLoading(this);
-        new ApiHandler(this,URL_SET_PASOS,params).start();
+        new ApiHandler(this,URL_SET_ENTRENAMIENTO,params).start();
     }
 
-
-
-    private void getAnimoPasos(double pasos) {
-        if(pasos < 5000) {
-            tvResultAnalisPasos.setText(R.string.humorMal);
+    private void getAnimoEntrenamiento(int entrenamiento) {
+        if(entrenamiento < 1) {
+            tvResultAnalisEntrenamiento.setText(R.string.humorMal);
         }else{
-            tvResultAnalisPasos.setText(R.string.humorBien);
+            tvResultAnalisEntrenamiento.setText(R.string.humorBien);
         }
     }
 
@@ -109,28 +111,29 @@ public class GrabarPasos extends AppCompatActivity implements ApiInterface {
                 Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
             }
 
-            final String media = getMediaPasos(json.getJSONObject("pasos"));
+            final String media = getMediaEntrenamiento(json.getJSONObject("entrenamiento"));
             if(media.equals("")){
                 Toast.makeText(this,getResources().getText(R.string.noPasos),Toast.LENGTH_SHORT).show();
             }
-            runOnUiThread(() -> horasMediaSemana.setText(!media.equals("") ? media : "0.00" ));
+            runOnUiThread(() -> horasMediaEntrenamiento.setText(!media.equals("") ? media : "0.00" ));
 
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+
     }
 
-    private String getMediaPasos(JSONObject pasos) throws JSONException {
+    private String getMediaEntrenamiento(JSONObject entrenamiento) throws JSONException {
         double horasSuma = 0.0;
         int contador = 0;
 
-        Iterator<String> horasIter = pasos.keys();
+        Iterator<String> horasIter = entrenamiento.keys();
         while (horasIter.hasNext()) {
             String key = horasIter.next();
 
-            if (!pasos.getString(key).equals("")) {
-                Log.e("sumaMedia","Hola --> " + pasos.getString(key));
-                horasSuma += Double.parseDouble(pasos.getString(key));
+            if (!entrenamiento.getString(key).equals("")) {
+                Log.e("sumaMedia","Hola --> " + entrenamiento.getString(key));
+                horasSuma += Double.parseDouble(entrenamiento.getString(key));
                 contador++;
             }
         }

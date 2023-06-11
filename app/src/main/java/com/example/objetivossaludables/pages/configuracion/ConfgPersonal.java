@@ -162,7 +162,7 @@ public class ConfgPersonal extends AppCompatActivity implements ApiInterface {
                 json.getString("genero"),
                 DATE_FORMAT.parse(json.getString("fechaNacimiento")));
 
-        runOnUiThread(() -> {
+        runOnUiThread(() -> {//función landa
             txt_nombreMod.setText(oldInfo.getNombre());
             txt_pesoMod.setText(String.valueOf(oldInfo.getPeso()));
             txt_fechaMod.setText(DATE_FORMAT.format(oldInfo.getFechaNacimiento()));
