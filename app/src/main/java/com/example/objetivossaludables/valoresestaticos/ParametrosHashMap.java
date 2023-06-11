@@ -90,4 +90,29 @@ public class ParametrosHashMap {
             put("diaSemana", dia);
         }};
     }
+
+    public static HashMap<String,String> getParamsPasos(String id_usu, String pasos, String dia){
+        return new HashMap<String,String>(){{
+            put(ID, id_usu);
+            put("pasos", pasos);
+            put("diaSemana", dia);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsEntrenamiento(String id_usu, String entrenamiento, String dia){
+        return new HashMap<String,String>(){{
+            put(ID, id_usu);
+            put("entrenamiento", entrenamiento);
+            put("diaSemana", dia);
+        }};
+    }
+
+    public static HashMap<String,String> getParamsObjetivos(String id_usu, String entrenamiento, String suenio, String pasos){
+        return new HashMap<String,String>(){{
+            put(ID, id_usu);
+            put("horasEntrenamiento", entrenamiento);
+            put("suenio", suenio);
+            put("pasos", pasos);
+        }};
+    }
 }
