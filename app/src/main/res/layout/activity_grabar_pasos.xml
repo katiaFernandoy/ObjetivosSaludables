@@ -124,7 +124,7 @@
                         android:layout_width="70dp"
                         android:layout_height="45dp"
                         android:layout_marginEnd="10dp"
-                        android:src="@drawable/feliz" />
+                        android:src="@drawable/neutral" />
 
                 </LinearLayout>
 
@@ -151,7 +151,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:text="@string/humorEsperado"
+                            android:text="@string/humorEsperadoPasos"
                             android:textStyle="bold" />
 
                         <Space
@@ -188,7 +188,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:text="@string/mediaSemanal"
+                        android:text="@string/mediaSemanalPasos"
                         android:textStyle="bold" />
 
                     <Space

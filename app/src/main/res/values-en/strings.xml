@@ -146,7 +146,7 @@
     <!--SUENIO-->
 
     <string name="suenioHoy">How much have you slept today?</string>
-    <string name="Puntuacion">Your score today has been:99</string>
+    <string name="Puntuacion">Your score today has been:</string>
     <string name="mediaSemanal">Your average hours for this week is:</string>
     <string name="humorEsperado">Depending on your rest, it is normal for you to feel:</string>
     <string name="estas">You are one</string>

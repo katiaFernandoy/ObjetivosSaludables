@@ -8,6 +8,7 @@ import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_ENTR
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_PASOS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_ENTRENAMIENTO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_PASOS;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getPuntuacion;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,6 +76,14 @@ public class GrabarEntrenamiento extends AppCompatActivity implements ApiInterfa
         }
 
         getAnimoEntrenamiento(entrenamiento);
+        int porcentajeEntrenamiento = getPuntuacion(Double.parseDouble(String.valueOf(entrenamiento)),Double.parseDouble(preferences.getObjetivoEntrenar()));
+        tvResultadoEntrenamiento.setText(String.valueOf(porcentajeEntrenamiento));
+
+        if(porcentajeEntrenamiento < 50){
+            ivResultAnalisEntrenamiento.setImageDrawable(getResources().getDrawable(R.drawable.triste));
+        }if(porcentajeEntrenamiento > 90){
+            ivResultAnalisEntrenamiento.setImageDrawable(getResources().getDrawable(R.drawable.feliz));
+        }
 
         final int id_usu = preferences.getUserId();
         final String day = GetDay();
@@ -113,7 +122,7 @@ public class GrabarEntrenamiento extends AppCompatActivity implements ApiInterfa
 
             final String media = getMediaEntrenamiento(json.getJSONObject("entrenamiento"));
             if(media.equals("")){
-                Toast.makeText(this,getResources().getText(R.string.noPasos),Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getResources().getText(R.string.noEntrenamiento),Toast.LENGTH_SHORT).show();
             }
             runOnUiThread(() -> horasMediaEntrenamiento.setText(!media.equals("") ? media : "0.00" ));
 
