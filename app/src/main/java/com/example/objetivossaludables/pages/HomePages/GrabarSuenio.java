@@ -48,14 +48,14 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
         horasSuenio = findViewById(R.id.horasSuenio);
         tvResultadoSuenio = findViewById(R.id.tvResultadoSuenio);
         ivResultadoSuenio = findViewById(R.id.ivResultadoSuenio);
-        tvResultAnalisis = findViewById(R.id.tvResultAnalisis);
+        tvResultAnalisis = findViewById(R.id.tvResultAnalisPasos);
         mediaHoras = findViewById(R.id.horasMediaSemana);
 
         preferences = new UserPreferences(this);
         getHorasSuenioInit();
     }
 
-    public String GetDay(){
+    public static String GetDay(){
         Calendar c = Calendar.getInstance();
         int dia =  c.get(Calendar.DAY_OF_WEEK);
        String d ="";
@@ -83,9 +83,9 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
 
     public void getAnimo(Double suenio){
         if(suenio < 6) {
-            tvResultAnalisis.setText(getResources().getText(R.string.humorMal));
+            tvResultAnalisis.setText(R.string.humorMal);
         }else{
-            tvResultAnalisis.setText(getResources().getText(R.string.humorBien));
+            tvResultAnalisis.setText(R.string.humorBien);
         }
     }
 

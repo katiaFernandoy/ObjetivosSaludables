@@ -25,11 +25,11 @@ public class ApiHandler extends Thread {
     public void run() {
         Looper.prepare(); // Lopper necesario para los toast
         //Metodo que llamamos desde un hilo secundario para no colapsar el hilo principal
-        object.returnResponse(handleResponse());
+        object.returnResponse(handleResponse());//objeto que llamamos para obtener la respuesta
     }
 
     public JSONObject handleResponse(){
-        // Respues del servidor
+        // Respuesta del servidor
         String response = new RequestHandler().sendPostRequest(URL,PARAMS);
 
         try{
