@@ -38,7 +38,6 @@ public class HomeFragment extends Fragment {
         llEntrenamiento = root.findViewById(R.id.llEntrenamiento);
         llPasos = root.findViewById(R.id.llPasos);
         llSuenio = root.findViewById(R.id.llSuenio);
-        llPlanSemanal = root.findViewById(R.id.llPlanSemanal);
 
         tvObjetivos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,20 +66,12 @@ public class HomeFragment extends Fragment {
                 lanzarSuenio();
             }
         });
-        llPlanSemanal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lanzarMenus();
-            }
-        });
+
 
         return root;
     }
 
-    private void lanzarMenus() {
-        Intent intent = new Intent(getContext(), MenusFragment.class);
-        startActivity(intent);
-    }
+
 
     public void lanzarSuenio() {
         Intent intent = new Intent(getContext(), GrabarSuenio.class);
