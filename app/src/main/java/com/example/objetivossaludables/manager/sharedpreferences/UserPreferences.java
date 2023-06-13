@@ -1,17 +1,13 @@
 package com.example.objetivossaludables.manager.sharedpreferences;
 
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.APELLIDO;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.EMAIL;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.ID_USU;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.MY_PREFERENCES;
-import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.NOMBRE;
 import static com.example.objetivossaludables.valoresestaticos.ValuesPreferences.STATUS;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.example.objetivossaludables.modelo.Usuario;
 
 public class UserPreferences {
 
@@ -52,19 +48,50 @@ public class UserPreferences {
         edit.apply();
     }
 
-    public Usuario getUser(){
-        return new Usuario(
-                preferences.getString(EMAIL,""),
-                preferences.getString(NOMBRE,""),
-                preferences.getString(APELLIDO,""));
+    public void cerrarSesion(){
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.putString(EMAIL,"");
+        edit.putInt(ID,-1);
+        edit.putBoolean(STATUS,false);
+        edit.apply();
+
     }
 
-    public void setUsuario(Usuario usu){
+    public int getMenuSeleccionado(){
+        return preferences.getInt("menu",0);
+    }
+
+    public void setMenuSeleccionado(int menu){
         SharedPreferences.Editor edit = preferences.edit();
-        edit.putString(EMAIL,usu.getEmail());
-        edit.putString(NOMBRE,usu.getNombre());
-        edit.putString(APELLIDO,usu.getApellido());
-        edit.putBoolean(STATUS,true);
+        edit.putInt("menu",menu);
+        edit.apply();
+    }
+
+    public String getObjetivoSuenio(){ return preferences.getString("suenio","8");
+    }
+
+    public String getObjetivoPasos(){
+        return preferences.getString("pasos","10000");
+    }
+
+    public String getObjetivoEntrenar(){ return preferences.getString("entrenamiento","2");
+    }
+
+    public Boolean getObjetivoPeso(){ return preferences.getBoolean("peso",true);
+    }
+
+    public void setObjetivoPeso(boolean objPeso) {
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.putBoolean("peso", objPeso);
+        edit.apply();
+    }
+
+    public void setObjectives(String suenio, String entrenamiento, String pasos, boolean objPeso){
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.putString("suenio", suenio.equals("")?"8":suenio);
+        edit.putString("entrenamiento", entrenamiento.equals("")?"2":entrenamiento);
+        edit.putString("pasos", pasos.equals("")?"10000":pasos);
+        edit.putBoolean("peso", objPeso);
         edit.apply();
     }
 

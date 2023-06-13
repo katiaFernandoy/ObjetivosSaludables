@@ -128,9 +128,8 @@
     <string name="MenuLostPeso">Menús para bajar de peso</string>
     <string name="menusSemanal">Menús semanal</string>
     <string-array name="ganarMasaMuscular">Menús para ganar masa muscula</string-array>
-
-
-
+    <string name="ejercicioTitle">Ejercicios</string>
+    <string name="elegirEjercico">Aquí puedes encontrar tus ejercicios según tus preferencias</string>
 
     <!--FORMULARIO DATOS USUARIO-->
 
@@ -199,6 +198,32 @@
     <string name="humorMal">Irritable, pesimista, lapsus de memoria</string>
     <string name="suenioError">Debe ser una hora válida</string>
     <string name="noHorasSuenio">No tienes horas de sueño reportadas</string>
+
+    <!--PASOS-->
+
+    <string name="pasosHoy">¿Cuántos pasos has dado hoy?</string>
+    <string name="mediaSemanalPasos">Tu media de pasos para esta semana es:</string>
+    <string name="humorEsperadoPasos">Según tu actividad es normal que te sientas:</string>
+    <string name="pasosError">Debe ser una cifra válida</string>
+    <string name="noPasos">No tienes número de pasos reportados</string>
+
+    <!--ENTRENAMIENTO-->
+
+    <string name="entrenamientoHoy">¿Cuántas horas has entrenado hoy?</string>
+    <string name="mediaSemanalEntrenamiento">Tu media de horas entrenadas para esta semana es:</string>
+    <string name="humorEsperadoEntrenamiento">Según tu actividad es normal que te sientas:</string>
+    <string name="entrenamientpError">Debe ser una cifra válida</string>
+    <string name="noEntrenamiento">No tienes número de horas reportadas</string>
+
+    <!--OBJETIVOS-->
+
+    <string name="objSuenio">¿Cuál es tu objetivo de sueño?</string>
+    <string name="objPasos">¿Cuál es tu objetivo de pasos?</string>
+    <string name="objEntrenamiento">¿Cuál es tu objetivo de entrenamiento?</string>
+    <string name="objPeso">¿Qué quieres conseguir?</string>
+    <string name="perderPeso">Perder peso</string>
+    <string name="aumentarMasa">Aumentar masa muscular</string>
+    <string name="grabarObjetivos">Grabar Objetivos</string>
 
     <!--TOOLBAR-->
     <string name="titleToolBar">Be Healthy</string>

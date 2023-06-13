@@ -38,57 +38,18 @@
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:layout_marginBottom="40dp"
-                android:src="@drawable/erizo"/>
+                android:src="@drawable/coby3"/>
 
             <LinearLayout
-                android:id="@+id/llHorasSuenio"
                 style="@style/container_info_settings"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/textView"
-                    style="@style/textviewGeneral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/suenioHoy"
-                    android:textStyle="bold" />
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <EditText
-                    android:id="@+id/horasSuenio"
-                    android:layout_width="70dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="10dp"
-                    android:ems="10"
-                    android:inputType="number|numberDecimal"
-                    android:onClick="grabarSuenio" />
-
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <LinearLayout
-                android:id="@+id/llPuntuacionSuenio"
-                style="@style/container_info_settings"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="120dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -97,74 +58,46 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:text="@string/Puntuacion"
+                        android:text="@string/objPeso"
                         android:textStyle="bold" />
 
                     <Space
                         android:layout_width="wrap_content"
                         android:layout_height="10dp" />
 
-                    <TextView
-                        android:id="@+id/tvResultadoSuenio"
-                        style="@style/textviewGeneral"
+                    <RadioGroup
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="14sp" />
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            style="@style/textviewGeneral"
+                            android:id="@+id/rbPerderPeso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@color/white"
+                            android:text="@string/perderPeso"
+                            android:textStyle="bold"
+                            android:color="@color/white"/>
+
+
+                        <Space
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0" />
+
+                        <RadioButton
+                            style="@style/textviewGeneral"
+                            android:id="@+id/rbMusculo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@color/white"
+                            android:textStyle="bold"
+                            android:text="@string/aumentarMasa" />
+                    </RadioGroup>
 
                 </LinearLayout>
 
-
-                <ImageView
-                    android:id="@+id/ivResultadoSuenio"
-                    android:layout_width="70dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/feliz" />
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <LinearLayout
-                android:id="@+id/llSuenio"
-                style="@style/container_info_settings"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/textviewGeneral"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:text="@string/humorEsperado"
-                        android:textStyle="bold" />
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp" />
-
-                    <TextView
-                        android:id="@+id/tvResultAnalisis"
-                        style="@style/textviewGeneral"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:ems="10"
-                        android:text=""
-                        android:textSize="14sp" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -178,14 +111,13 @@
                 android:layout_height="80dp"
                 android:gravity="center"
                 android:orientation="horizontal">
+
 
                 <TextView
-                    android:id="@+id/tvAnalisisSuenio"
                     style="@style/textviewGeneral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:text="@string/mediaSemanal"
+                    android:text="@string/objSuenio"
                     android:textStyle="bold" />
 
                 <Space
@@ -194,14 +126,98 @@
                     android:layout_weight="1" />
 
                 <EditText
-                    android:id="@+id/horasMediaSemana"
+                    android:id="@+id/objHorasSuenio"
                     android:layout_width="70dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="10dp"
                     android:ems="10"
                     android:inputType="number|numberDecimal" />
 
+
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                style="@style/container_info_settings"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/textviewGeneral"
+                    android:layout_width="236dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/objEntrenamiento"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/objHorasEntrenamiento"
+                    android:layout_width="70dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="number|numberDecimal"
+                   />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                style="@style/container_info_settings"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/textviewGeneral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/objPasos"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/objNumPasos"
+                    android:layout_width="70dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:inputType="number|numberDecimal"
+                   />
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+            <Button
+                android:id="@+id/bt_grabarObjetivos"
+                style="@style/BotonPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="grabarObjetivos"
+                android:text="@string/grabarObjetivos" />
 
         </LinearLayout>
 

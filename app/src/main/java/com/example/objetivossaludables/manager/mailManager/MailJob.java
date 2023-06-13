@@ -14,14 +14,12 @@ import javax.mail.internet.MimeMessage;
 
 public class MailJob{
 
-    private final String ADMIN = "diego.jimenezadm@gmail.com";
-    private final String ADMIN_PWD = "srxidszyqxaeyhnt";
+    private final String ADMIN = "dam2susanakatia@gmail.com";
+    private final String ADMIN_PWD = "krnmvmehznbicxrm";
     private Session session;
 
     public MailJob(String emailCliente, int otp) {
-        //DE MOMENTO ES EL ADMIN QUIEN LO RECIBE, HAY QUE PONER QUE COJA EL EMAIL DE LA PREFERENCE
-        // O DE OTRO LADO PARA QUE SE LO ENVÍE AL CLIENTE
-        buildMail().enviarMail(ADMIN,getContentEmail(otp));
+        buildMail().enviarMail(emailCliente,getContentEmail(otp));
     }
 
     private MailJob buildMail(){

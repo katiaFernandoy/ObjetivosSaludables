@@ -146,7 +146,7 @@
     <!--SUENIO-->
 
     <string name="suenioHoy">How much have you slept today?</string>
-    <string name="Puntuacion">Your score today has been:99</string>
+    <string name="Puntuacion">Your score today has been:</string>
     <string name="mediaSemanal">Your average hours for this week is:</string>
     <string name="humorEsperado">Depending on your rest, it is normal for you to feel:</string>
     <string name="estas">You are one</string>
@@ -156,6 +156,8 @@
 
 
     <!--TOOLBAR-->
+    <string name="pasosHoy">How many steps did you take today?</string>
+    <string name="mediaSemanalPasos">Your average number of steps for this week is:</string>
     <string name="titleToolBar">Be Healthy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -187,4 +189,22 @@
     <string name="suenioError">Must be a valid time</string>
     <string name="noHorasSuenio">No reported hours of sleep</string>
     <string name="bt_eliminar">Delete account</string>
+    <string name="bt_eliminar">Delete account</string>
+    <string name="pasosError">It must be a valid number</string>
+    <string name="noPasos">You have no number of steps reported</string>
+    <string name="humorEsperadoPasos">Depending on your activity, it is normal to feel:</string>
+    <string name="mediaSemanalEntrenamiento">Your average hours trained for this week is:</string>
+    <string name="humorEsperadoEntrenamiento">Depending on your activity, it is normal to feel:</string>
+    <string name="entrenamientpError">It must be a valid number</string>
+    <string name="noEntrenamiento">You have no number of hours reported</string>
+    <string name="entrenamientoHoy">How many hours have you trained today?</string>
+    <string name="objSuenio">What is your sleep goal?</string>
+    <string name="objPasos">What is your step goal?</string>
+    <string name="objEntrenamiento">What is your training goal?</string>
+    <string name="objPeso">What do you want to achieve?</string>
+    <string name="perderPeso">Losing weight</string>
+    <string name="aumentarMasa">Increasing muscle mass</string>
+    <string name="grabarObjetivos">Record Objectives</string>
+    <string name="ejercicioTitle">Exercises</string>
+    <string name="elegirEjercico">Here you can find your exercises according to your preferences</string>
 </resources>

@@ -4,6 +4,7 @@ import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsSuenio;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_OBTENERSUENIO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SUENIO;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getPuntuacion;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,14 +49,14 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
         horasSuenio = findViewById(R.id.horasSuenio);
         tvResultadoSuenio = findViewById(R.id.tvResultadoSuenio);
         ivResultadoSuenio = findViewById(R.id.ivResultadoSuenio);
-        tvResultAnalisis = findViewById(R.id.tvResultAnalisis);
+        tvResultAnalisis = findViewById(R.id.tvResultAnalisPasos);
         mediaHoras = findViewById(R.id.horasMediaSemana);
 
         preferences = new UserPreferences(this);
         getHorasSuenioInit();
     }
 
-    public String GetDay(){
+    public static String GetDay(){
         Calendar c = Calendar.getInstance();
         int dia =  c.get(Calendar.DAY_OF_WEEK);
        String d ="";
@@ -83,9 +84,9 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
 
     public void getAnimo(Double suenio){
         if(suenio < 6) {
-            tvResultAnalisis.setText(getResources().getText(R.string.humorMal));
+            tvResultAnalisis.setText(R.string.humorMal);
         }else{
-            tvResultAnalisis.setText(getResources().getText(R.string.humorBien));
+            tvResultAnalisis.setText(R.string.humorBien);
         }
     }
 
@@ -105,6 +106,15 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
         }
 
         getAnimo(suenio);
+
+        int porcentajeSuenio = getPuntuacion(Double.parseDouble(String.valueOf(suenio)),Double.parseDouble(preferences.getObjetivoSuenio()));
+        tvResultadoSuenio.setText(String.valueOf(porcentajeSuenio));
+
+        if(porcentajeSuenio < 50){
+            ivResultadoSuenio.setImageDrawable(getResources().getDrawable(R.drawable.triste));
+        }if(porcentajeSuenio > 90){
+            ivResultadoSuenio.setImageDrawable(getResources().getDrawable(R.drawable.feliz));
+        }
 
         final int id_usu = preferences.getUserId();
         final String day = GetDay();

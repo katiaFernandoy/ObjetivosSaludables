@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.pages.HomePages.ConsultarEntrenamientos;
 import com.example.objetivossaludables.pages.HomePages.EstablecerObjetivos;
+import com.example.objetivossaludables.pages.HomePages.GrabarEntrenamiento;
 import com.example.objetivossaludables.pages.HomePages.GrabarPasos;
 import com.example.objetivossaludables.pages.HomePages.GrabarSuenio;
 
@@ -22,6 +23,7 @@ public class HomeFragment extends Fragment {
     private LinearLayout llEntrenamiento;
     private LinearLayout llPasos;
     private LinearLayout llSuenio;
+    private LinearLayout llPlanSemanal;
 
 
     @SuppressLint("MissingInflatedId")
@@ -46,10 +48,10 @@ public class HomeFragment extends Fragment {
 
         llEntrenamiento.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                lanzarEntrenamientos();
+            public void onClick(View v) {lanzarHorasEntrenamiento();
             }
         });
+
 
         llPasos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +71,8 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+
+
     public void lanzarSuenio() {
         Intent intent = new Intent(getContext(), GrabarSuenio.class);
         startActivity(intent);
@@ -87,6 +91,12 @@ public class HomeFragment extends Fragment {
     public void lanzarObjetivos() {
             Intent intent = new Intent(getContext(), EstablecerObjetivos.class);
             startActivity(intent);
+
+    }
+
+    public void lanzarHorasEntrenamiento() {
+        Intent intent = new Intent(getContext(), GrabarEntrenamiento.class);
+        startActivity(intent);
 
     }
 }
