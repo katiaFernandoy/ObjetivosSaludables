@@ -5,6 +5,7 @@ import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsPasos;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_PASOS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_PASOS;
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getPuntuacion;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,6 +72,14 @@ public class GrabarPasos extends AppCompatActivity implements ApiInterface {
         }
 
         getAnimoPasos(pasos);
+        int porcentajePasos = getPuntuacion(Double.parseDouble(String.valueOf(pasos)),Double.parseDouble(preferences.getObjetivoPasos()));
+        tvResultadoPasos.setText(String.valueOf(porcentajePasos));
+
+        if(porcentajePasos < 50){
+            ivResultadoPasos.setImageDrawable(getResources().getDrawable(R.drawable.triste));
+        }if(porcentajePasos > 90){
+            ivResultadoPasos.setImageDrawable(getResources().getDrawable(R.drawable.feliz));
+        }
 
         final int id_usu = preferences.getUserId();
         final String day = GetDay();

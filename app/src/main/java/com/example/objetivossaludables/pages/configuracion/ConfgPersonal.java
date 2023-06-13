@@ -28,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -154,14 +155,23 @@ public class ConfgPersonal extends AppCompatActivity implements ApiInterface {
         }
 
         Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
-        oldInfo = new InformacionPersonal(
-                preferences.getUserEmail(),
-                json.getString("nombre"),
-                json.getDouble("peso"),
-                json.getInt("altura"),
-                json.getString("genero"),
-                DATE_FORMAT.parse(json.getString("fechaNacimiento")));
-
+        try {
+            oldInfo = new InformacionPersonal(
+                    preferences.getUserEmail(),
+                    json.getString("nombre"),
+                    json.getDouble("peso"),
+                    json.getInt("altura"),
+                    json.getString("genero"),
+                    DATE_FORMAT.parse(json.getString("fechaNacimiento")));
+        }catch(JSONException e){
+            oldInfo = new InformacionPersonal(
+                    preferences.getUserEmail(),
+                    json.getString("nombre"),
+                    0.0,
+                    0,
+                    "",
+                    DATE_FORMAT.parse("2000-01-01"));
+        }
         runOnUiThread(() -> {//función landa
             txt_nombreMod.setText(oldInfo.getNombre());
             txt_pesoMod.setText(String.valueOf(oldInfo.getPeso()));

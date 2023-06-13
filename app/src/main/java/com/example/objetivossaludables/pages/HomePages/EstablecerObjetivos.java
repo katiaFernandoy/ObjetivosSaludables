@@ -55,7 +55,7 @@ public class EstablecerObjetivos extends AppCompatActivity implements ApiInterfa
 
     public void grabarObjetivos(View view) {
 
-        final int entrenamiento = Integer.parseInt(getTexto(objHorasEntrenamiento));
+        final double entrenamiento = Double.parseDouble(getTexto(objHorasEntrenamiento));
 
         if (entrenamiento < 0 || entrenamiento >= 24) {
             Toast.makeText(this,getResources().getText(R.string.pasosError),Toast.LENGTH_SHORT).show();
@@ -71,7 +71,7 @@ public class EstablecerObjetivos extends AppCompatActivity implements ApiInterfa
 
         final int pasos = Integer.parseInt(getTexto(objNumPasos));
 
-        if (entrenamiento < 0 || entrenamiento > 90000) {
+        if (pasos < 0 || pasos > 90000) {
             Toast.makeText(this,getResources().getText(R.string.pasosError),Toast.LENGTH_SHORT).show();
             return;
         }
@@ -107,8 +107,9 @@ public class EstablecerObjetivos extends AppCompatActivity implements ApiInterfa
             String objEntrenamiento = json.getString("entrenamiento");
             String objSuenio = json.getString("suenio");
             String objPasos = json.getString("pasos");
+            boolean objPeso = rbPerderPeso.isChecked();
 
-            preferences.setObjectives(objEntrenamiento,objSuenio, objPasos);
+            preferences.setObjectives(objEntrenamiento,objSuenio, objPasos, objPeso);
 
         } catch (JSONException e) {
             throw new RuntimeException(e);

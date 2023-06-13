@@ -84,15 +84,18 @@ public class UserPreferences {
         return preferences.getString("pasos","10000");
     }
 
-    public String getObjetivoEntrenar(){
-        return preferences.getString("entrenamiento","2");
+    public String getObjetivoEntrenar(){ return preferences.getString("entrenamiento","2");
     }
 
-    public void setObjectives(String suenio, String entrenamiento, String pasos){
+    public Boolean getObjetivoPeso(){ return preferences.getBoolean("peso",true);
+    }
+
+    public void setObjectives(String suenio, String entrenamiento, String pasos, boolean objPeso){
         SharedPreferences.Editor edit = preferences.edit();
         edit.putString("suenio", suenio.equals("")?"8":suenio);
-        edit.putString("horasEntrenamiento", entrenamiento.equals("")?"2":entrenamiento);
+        edit.putString("entrenamiento", entrenamiento.equals("")?"2":entrenamiento);
         edit.putString("pasos", pasos.equals("")?"10000":pasos);
+        edit.putBoolean("peso", objPeso);
         edit.apply();
 
     }
