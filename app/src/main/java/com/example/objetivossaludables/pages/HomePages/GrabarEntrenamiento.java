@@ -3,11 +3,8 @@ package com.example.objetivossaludables.pages.HomePages;
 import static com.example.objetivossaludables.pages.HomePages.GrabarSuenio.GetDay;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsEntrenamiento;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsId;
-import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsPasos;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_ENTRENAMIENTO;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_GET_PASOS;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_ENTRENAMIENTO;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_PASOS;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getPuntuacion;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
@@ -68,7 +65,7 @@ public class GrabarEntrenamiento extends AppCompatActivity implements ApiInterfa
 
     public void grabarEntrenamiento(View view) {
 
-        final int entrenamiento = Integer.parseInt(getTexto(entrenamientoDia));
+        final double entrenamiento = Double.parseDouble(getTexto(entrenamientoDia));
 
         if (entrenamiento < 0 || entrenamiento >= 24) {
             Toast.makeText(this,getResources().getText(R.string.pasosError),Toast.LENGTH_SHORT).show();
@@ -97,7 +94,7 @@ public class GrabarEntrenamiento extends AppCompatActivity implements ApiInterfa
         new ApiHandler(this,URL_SET_ENTRENAMIENTO,params).start();
     }
 
-    private void getAnimoEntrenamiento(int entrenamiento) {
+    private void getAnimoEntrenamiento(double entrenamiento) {
         if(entrenamiento < 1) {
             tvResultAnalisEntrenamiento.setText(R.string.humorMal);
         }else{

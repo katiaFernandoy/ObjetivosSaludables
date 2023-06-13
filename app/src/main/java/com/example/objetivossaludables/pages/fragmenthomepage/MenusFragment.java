@@ -11,10 +11,10 @@ import com.example.objetivossaludables.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TrofeosFragemt#newInstance} factory method to
+ * Use the {@link MenusFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TrofeosFragemt extends Fragment {
+public class MenusFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class TrofeosFragemt extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TrofeosFragemt() {
+    public MenusFragment() {
         // Required empty public constructor
     }
 
@@ -38,8 +38,8 @@ public class TrofeosFragemt extends Fragment {
      * @return A new instance of fragment TrofeosFragemts.
      */
     // TODO: Rename and change types and number of parameters
-    public static TrofeosFragemt newInstance(String param1, String param2) {
-        TrofeosFragemt fragment = new TrofeosFragemt();
+    public static MenusFragment newInstance(String param1, String param2) {
+        MenusFragment fragment = new MenusFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

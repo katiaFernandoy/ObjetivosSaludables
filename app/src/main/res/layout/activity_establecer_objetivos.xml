@@ -151,7 +151,7 @@
                 <TextView
                     style="@style/textviewGeneral"
                     android:layout_width="236dp"
-                    android:layout_height="61dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/objEntrenamiento"
                     android:textStyle="bold" />
 
