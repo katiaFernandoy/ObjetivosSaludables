@@ -145,7 +145,10 @@
 
     <!--NOTIFICACIONES-->
 
-    <string name="recordatorios">Crear recordatorio</string>
+    <string name="EnviarComentario">Enviar Comentarios</string>
+    <string name="seccionComent">Aquí podras enviarnos tus comentario y decirnos que te ha parecido nuestra app y en que podemos mejorar</string>
+    <string name="comentarioEnviado">Comentario enviado</string>
+
 
     <!--SPINNERS-->
 
@@ -230,4 +233,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_establecer_objetivos">EstablecerObjetivos</string>
     <string name="cambiarTema">Cambia el tema de los botones</string>
+    <string name="recordatorios">Recordatorios</string>
 </resources>

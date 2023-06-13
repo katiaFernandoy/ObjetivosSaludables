@@ -24,6 +24,7 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import com.example.objetivossaludables.manager.api.ApiHandler;
 import com.example.objetivossaludables.manager.api.ApiInterface;
 import com.example.objetivossaludables.manager.progressdialog.PdLoading;
+import com.example.objetivossaludables.pages.configuracion.ConfgEnviar_Comentarios;
 import com.example.objetivossaludables.pages.configuracion.ConfgPersonal;
 import com.example.objetivossaludables.pages.configuracion.ConfgPreferencias;
 import com.example.objetivossaludables.pages.configuracion.ConfgSeguridad;
@@ -55,6 +56,7 @@ public class SettingsFragment extends Fragment implements ApiInterface {
         LinearLayout linearLayoutConfPersonal = root.findViewById(R.id.linearLayoutConfPersonal);
         LinearLayout linearLayoutPreferencias = root.findViewById(R.id.linearLayoutPreferencias);
         LinearLayout linearLayoutSeguridad = root.findViewById(R.id.linearLayoutSeguridad);
+        LinearLayout linearLayoutSobreNosotros = root.findViewById(R.id.linearLayoutSobreNosotros);
         preferences = new UserPreferences(getContext());
 
         linearLayoutConfPersonal.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,14 @@ public class SettingsFragment extends Fragment implements ApiInterface {
             }
         });
 
+        linearLayoutSobreNosotros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ConfgEnviar_Comentarios.class);
+                startActivity(intent);
+            }
+        });
+
         bt_cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,8 +105,12 @@ public class SettingsFragment extends Fragment implements ApiInterface {
             }
         });
 
+
+
         return root;
     }
+
+
 
     public void cerrarSesion() {
         preferences.clearPreferences();
