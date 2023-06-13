@@ -206,6 +206,8 @@
     <string name="perderPeso">Perder peso</string>
     <string name="aumentarMasa">Aumentar masa muscular</string>
     <string name="grabarObjetivos">Grabar Objetivos</string>
+    <string name="ejercicioTitle">Ejercicios</string>
+    <string name="elegirEjercico">Aquí puedes encontrar tus ejercicios según tus preferencias</string>
     <string name="EnviarComentario">Enviar Comentarios</string>
     <string name="seccionComent">Aquí podras enviarnos tus comentario y decirnos que te ha parecido nuestra app y en que podemos mejorar</string>
     <string name="comentarioEnviado">Comentario enviado</string>

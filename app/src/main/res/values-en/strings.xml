@@ -143,7 +143,7 @@
     <!--SUENIO-->
 
     <string name="suenioHoy">How much have you slept today?</string>
-    <string name="Puntuacion">Your score today has been:99</string>
+    <string name="Puntuacion">Your score today has been:</string>
     <string name="mediaSemanal">Your average hours for this week is:</string>
     <string name="humorEsperado">Depending on your rest, it is normal for you to feel:</string>
     <string name="estas">You are one</string>
@@ -204,4 +204,6 @@
     <string name="EnviarComentario">Post comments</string>
     <string name="seccionComent">Here you can send us yours comment and tell us what you thought of our app and how we can improve</string>
     <string name="comentarioEnviado">comment submitted</string>
+    <string name="ejercicioTitle">Exercises</string>
+    <string name="elegirEjercico">Here you can find your exercises according to your preferences</string>
 </resources>

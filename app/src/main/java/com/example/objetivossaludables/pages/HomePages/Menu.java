@@ -12,7 +12,7 @@ import com.example.objetivossaludables.databinding.ActivityMenuBinding;
 import com.example.objetivossaludables.pages.fragmenthomepage.HomeFragment;
 import com.example.objetivossaludables.pages.fragmenthomepage.NoticiasFrangment;
 import com.example.objetivossaludables.pages.fragmenthomepage.SettingsFragment;
-import com.example.objetivossaludables.pages.fragmenthomepage.TrofeosFragemt;
+import com.example.objetivossaludables.pages.fragmenthomepage.MenusFragment;
 
 public class Menu extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class Menu extends AppCompatActivity {
                     replaceFragment(new NoticiasFrangment());
                     break;
                 case R.id.trophyNav:
-                    replaceFragment(new TrofeosFragemt());
+                    replaceFragment(new MenusFragment());
                     break;
                 case R.id.profileNav:
                     replaceFragment(new SettingsFragment());

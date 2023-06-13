@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
     private LinearLayout llEntrenamiento;
     private LinearLayout llPasos;
     private LinearLayout llSuenio;
+    private LinearLayout llPlanSemanal;
 
 
     @SuppressLint("MissingInflatedId")
@@ -69,6 +70,8 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
+
 
     public void lanzarSuenio() {
         Intent intent = new Intent(getContext(), GrabarSuenio.class);
