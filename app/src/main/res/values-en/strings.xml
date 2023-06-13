@@ -127,9 +127,6 @@
     </string-array>
 
 
-
-
-
     <!--OBJETIVOS-->
 
     <string name="definObj">Define your goals</string>
@@ -204,6 +201,9 @@
     <string name="perderPeso">Losing weight</string>
     <string name="aumentarMasa">Increasing muscle mass</string>
     <string name="grabarObjetivos">Record Objectives</string>
+    <string name="EnviarComentario">Post comments</string>
+    <string name="seccionComent">Here you can send us yours comment and tell us what you thought of our app and how we can improve</string>
+    <string name="comentarioEnviado">comment submitted</string>
     <string name="ejercicioTitle">Exercises</string>
     <string name="elegirEjercico">Here you can find your exercises according to your preferences</string>
 </resources>
