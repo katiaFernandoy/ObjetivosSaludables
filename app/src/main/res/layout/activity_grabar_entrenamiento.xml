@@ -52,7 +52,7 @@
                 <TextView
                     android:id="@+id/textView"
                     style="@style/textviewGeneral"
-                    android:layout_width="wrap_content"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:text="@string/entrenamientoHoy"
                     android:textStyle="bold" />
@@ -95,7 +95,7 @@
                     <TextView
                         style="@style/textviewGeneral"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:ems="10"
                         android:text="@string/Puntuacion"
                         android:textStyle="bold" />
@@ -120,7 +120,7 @@
                     android:layout_width="70dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/feliz" />
+                    android:src="@drawable/neutral" />
 
             </LinearLayout>
 
@@ -152,13 +152,13 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="10dp" />
+                        android:layout_height="5dp" />
 
                     <TextView
                         android:id="@+id/tvResultAnalisEntrenamiento"
                         style="@style/textviewGeneral"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:ems="10"
                         android:text=""
                         android:textSize="14sp" />

@@ -45,4 +45,12 @@ public class Verificaciones {
     public static String getTexto(TextInputEditText txt){
         return Objects.requireNonNull(txt.getText()).toString().trim();
     }
+
+    public static int getPuntuacion(Double cantidad, Double objetivo){
+        try{
+        return (int) (cantidad/objetivo*100);}
+        catch(ArithmeticException e){
+            return 0;
+        }
+    }
 }
