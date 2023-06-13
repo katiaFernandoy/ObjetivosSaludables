@@ -31,7 +31,7 @@ public class MenusFragment extends Fragment {
         preferences = new UserPreferences(getContext());
 
         if(preferences.getObjetivoPeso()){ // Cambiar por el objetivo de ejercicio
-           listaMenus = getListMenusPerderPeso();
+            listaMenus = getListMenusPerderPeso();
         }else {
             listaMenus = getListMenusGanarMusculo();
         }
@@ -70,13 +70,13 @@ public class MenusFragment extends Fragment {
     }
 
     private void setearImagen(int imagen){
-        ivMenuSeleccionado.setBackground(getResources().getDrawable(imagen));
+        ivMenuSeleccionado.setImageDrawable(getResources().getDrawable(imagen));
     }
 
     private int sliderImagenes(int slide){
         if(actualPosicion == 0 && slide == -1){
-            return 5;
-        }else if(actualPosicion == 5 && slide == 1){
+            return listaMenus.size()-1;
+        }else if(actualPosicion == listaMenus.size()-1 && slide == 1){
             return 0;
         }
 

@@ -85,8 +85,9 @@
                             android:src="@drawable/baseline_arrow_back" />
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
+                            android:layout_width="0dp"
                             android:layout_height="370dp"
+                            android:layout_weight="1"
                             android:layout_marginHorizontal="5dp"
                             app:cardCornerRadius="15dp"
                             app:cardElevation="4dp">
