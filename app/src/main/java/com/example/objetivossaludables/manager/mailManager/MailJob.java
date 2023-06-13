@@ -19,7 +19,11 @@ public class MailJob{
     private Session session;
 
     public MailJob(String emailCliente, int otp) {
-        buildMail().enviarMail(emailCliente,getContentEmail(otp));
+        buildMail().enviarMail(emailCliente, getContentEmailOTP(otp));
+    }
+
+    public MailJob(String correo, String contenido){
+        buildMail().enviarMail(getContentEmailReview(correo,contenido));
     }
 
     private MailJob buildMail(){
@@ -53,7 +57,21 @@ public class MailJob{
         }
     }
 
-    private String getContentEmail(int otp){//plantilla HTML para el mail
+    private void enviarMail(String contenido){
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(ADMIN)); //El usuario ADMIN SIEMPRE
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(ADMIN));// El que quiere recuperar la contraseña
+            message.setSubject("Comentario sobre la APP");
+            message.setContent(contenido, "text/html; charset=utf-8");
+            Transport.send(message);
+
+        } catch (MessagingException e) {
+            Log.d("MailJob", e.getMessage());
+        }
+    }
+
+    private String getContentEmailOTP(int otp){//plantilla HTML para el mail OTP
         return "<html>\n" +
                 "<head>\n" +
                 "    <title>Recuperación de contraseña</title>\n" +
@@ -71,5 +89,38 @@ public class MailJob{
                 "    </div>\n" +
                 "</body>\n" +
                 "</html>";
+    }
+
+    private String getContentEmailReview(String email, String mensaje){//plantilla HTML para enviar un comentario
+        return "<html>"
+                + "<head>"
+                + "<style>"
+                + "body { font-family: Arial, sans-serif; }"
+                + ".container { max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f7f7f7; }"
+                + ".header { background-color: #4285f4; color: #fff; padding: 20px; text-align: center; }"
+                + ".content { padding: 20px; background-color: #fff; }"
+                + ".review { padding: 10px; margin-top: 20px; margin-bottom: 20px;background-color: #D1D0D0; }"
+                + "</style>"
+                + "</head>"
+                + "<body>"
+                + "<div class='container'>"
+                + "<div class='header'>"
+                + "<h1>¡Gracias por tu revisión!</h1>"
+                + "</div>"
+                + "<div class='content'>"
+                + "<p>Estimado equipo de Objetivos saludables,</p>"
+                + "<p>Recibido nuevo comentario:</p>"
+                + "<div class='review'>"
+                + "<p><strong>Email: </strong> " + email + "</p>"
+                + "<p><strong>Contenido de la revisión: </strong></p>"
+                + "<p>" + mensaje + "</p>"
+                + "</div>"
+                + "<p>Por favor, tengan en cuenta esta revisión y tomen las acciones necesarias.</p>"
+                + "<p>Gracias,</p>"
+                + "<p>Tu aplicación de Objetivos saludables</p>"
+                + "</div>"
+                + "</div>"
+                + "</body>"
+                + "</html>";
     }
 }

@@ -1,14 +1,19 @@
 package com.example.objetivossaludables.pages.configuracion;
 
 
+import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Looper;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
+import com.example.objetivossaludables.manager.mailManager.MailJob;
+import com.example.objetivossaludables.manager.progressdialog.PdLoading;
+import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class ConfgEnviar_Comentarios extends AppCompatActivity {
@@ -19,33 +24,28 @@ public class ConfgEnviar_Comentarios extends AppCompatActivity {
         setContentView(R.layout.enviarcomentarios);
 
         findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+        UserPreferences preferences = new UserPreferences(this);
 
         Button bt_enviarComentario = findViewById(R.id.bt_enviarComentario);
         TextInputEditText txt_escribirComentario = findViewById(R.id.txt_escribirComentario);
 
+        bt_enviarComentario.setOnClickListener(v -> {
+            String comentario = getTexto(txt_escribirComentario);
 
-        bt_enviarComentario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String comentario = txt_escribirComentario.getText().toString();
-
-                if(!comentario.isEmpty()){
-                    sendEmail(comentario);
-
-                }
+            if(comentario.isEmpty()){
+                Toast.makeText(this, "Por favor rellena el contenido", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            PdLoading pdLoading = new PdLoading(this);
+
+            new Thread(() -> {
+                Looper.prepare();
+                new MailJob(preferences.getUserEmail(),comentario);
+                pdLoading.dismiss();
+                Toast.makeText(this,"Mensaje enviado correctamente",Toast.LENGTH_SHORT).show();
+            }).start();
         });
 
     }
-
-    private void sendEmail(String comentario) {
-
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Asunto");
-        intent.putExtra(Intent.EXTRA_TEXT, comentario);
-        startActivity(intent);
-    }
-
-
 }
