@@ -128,7 +128,8 @@
     <string name="MenuLostPeso">Menús para bajar de peso</string>
     <string name="menusSemanal">Menús semanal</string>
     <string-array name="ganarMasaMuscular">Menús para ganar masa muscula</string-array>
-
+    <string name="ejercicioTitle">Ejercicios</string>
+    <string name="elegirEjercico">Aquí puedes encontrar tus ejercicios según tus preferencias</string>
 
     <!--FORMULARIO DATOS USUARIO-->
 

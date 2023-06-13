@@ -204,4 +204,6 @@
     <string name="perderPeso">Losing weight</string>
     <string name="aumentarMasa">Increasing muscle mass</string>
     <string name="grabarObjetivos">Record Objectives</string>
+    <string name="ejercicioTitle">Exercises</string>
+    <string name="elegirEjercico">Here you can find your exercises according to your preferences</string>
 </resources>
