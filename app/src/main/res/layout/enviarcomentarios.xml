@@ -23,8 +23,8 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,8 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:text="@string/EnviarComentario"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
             android:background="@drawable/edittext_rounded"
             android:drawableEnd="@drawable/baseline_edit_24"
             android:drawablePadding="12dp"
-            android:inputType="text"
+            android:inputType="text|textMultiLine"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:textColor="@color/white"
