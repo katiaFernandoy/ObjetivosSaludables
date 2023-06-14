@@ -40,6 +40,8 @@ public class SettingsFragment extends Fragment implements ApiInterface {
     private UserPreferences preferences;
     private PdLoading pdLoading;
 
+    private boolean isRestarted = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -164,11 +166,28 @@ public class SettingsFragment extends Fragment implements ApiInterface {
             preferences.cerrarSesion();
 
             Intent intent = new Intent(getContext(), Portada.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             ((Activity) getContext()).finish();
 
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(isRestarted){
+            ((Activity) getContext()).findViewById(R.id.profileNav).callOnClick();
+            isRestarted = false;
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isRestarted = true;
     }
 }

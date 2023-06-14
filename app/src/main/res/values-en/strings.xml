@@ -95,7 +95,7 @@
     <string name="nuevaPassWord">New Password </string>
     <string name="repeNuevaPassWord">Repeat password</string>
     <string name="btModifPassWord">modify</string>
-    <string name="idiomaCambiado">You must restart the application to display the new language</string>
+    <string name="idiomaCambiado">Language changed successfully!</string>
 
     <!--SEGURIDAD-->
     <string name="errorContraseña">password error </string>

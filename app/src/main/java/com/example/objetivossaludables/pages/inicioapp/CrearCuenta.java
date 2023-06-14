@@ -163,5 +163,11 @@ public class CrearCuenta extends AppCompatActivity implements ApiInterface {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(this,Portada.class));
+    }
 }
 

@@ -1,9 +1,7 @@
 package com.example.objetivossaludables.pages.HomePages;
 
-import static com.example.objetivossaludables.pages.HomePages.GrabarSuenio.GetDay;
-import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsEntrenamiento;
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.ParametrosHashMap.getParamsObjetivos;
-import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_ENTRENAMIENTO;
 import static com.example.objetivossaludables.valoresestaticos.URLs.URL_SET_OBJETIVOS;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
@@ -12,9 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.objetivossaludables.R;
@@ -26,13 +22,14 @@ import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.HashMap;
 
 public class EstablecerObjetivos extends AppCompatActivity implements ApiInterface {
 
     private UserPreferences preferences;
     private EditText objHorasSuenio, objHorasEntrenamiento, objNumPasos;
-    private RadioButton rbMusculo, rbPerderPeso;
+    private RadioButton rbPerderPeso;
     private PdLoading pdLoading;
 
 
@@ -41,12 +38,12 @@ public class EstablecerObjetivos extends AppCompatActivity implements ApiInterfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_establecer_objetivos);
 
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_grabarObjetivos)));
         findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
 
         objHorasSuenio = findViewById(R.id.objHorasSuenio);
         objHorasEntrenamiento = findViewById(R.id.objHorasEntrenamiento);
         objNumPasos = findViewById(R.id.objNumPasos);
-        rbMusculo = findViewById(R.id.rbMusculo);
         rbPerderPeso = findViewById(R.id.rbPerderPeso);
 
         preferences = new UserPreferences(this);
@@ -62,7 +59,7 @@ public class EstablecerObjetivos extends AppCompatActivity implements ApiInterfa
             return;
         }
 
-        final Double suenio = Double.parseDouble(getTexto(objHorasSuenio));
+        final double suenio = Double.parseDouble(getTexto(objHorasSuenio));
 
         if (suenio < 0 || suenio >= 24) {
             Toast.makeText(this,getResources().getText(R.string.pasosError),Toast.LENGTH_SHORT).show();

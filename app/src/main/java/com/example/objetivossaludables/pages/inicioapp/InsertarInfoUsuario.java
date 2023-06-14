@@ -108,6 +108,7 @@ public class InsertarInfoUsuario extends AppCompatActivity implements ApiInterfa
 
             Toast.makeText(this,json.getString("message"),Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, IniciarSesion.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
 

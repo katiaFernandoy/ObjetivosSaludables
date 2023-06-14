@@ -96,7 +96,7 @@
     <string name="nuevaPassWord">Nueva contraseña</string>
     <string name="repeNuevaPassWord">Repetir contraseña</string>
     <string name="btModifPassWord">Modificar</string>
-    <string name="idiomaCambiado">Debe reiniciar la aplicación para mostrar el nuevo idioma</string>
+    <string name="idiomaCambiado">Idioma cambiado correctamente</string>
     <string name="faltaCampoNombre">Debe insertar un nombre</string>
     <string name="faltaCampoPeso">Debe insertar un peso</string>
     <string name="faltaCampoFechaNacimiento">Debe insertar una fecha de nacimiento</string>

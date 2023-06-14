@@ -1,6 +1,7 @@
 package com.example.objetivossaludables.pages.configuracion;
 
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.example.objetivossaludables.manager.progressdialog.PdLoading;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Collections;
+
 public class ConfgEnviar_Comentarios extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,7 @@ public class ConfgEnviar_Comentarios extends AppCompatActivity {
         setContentView(R.layout.enviarcomentarios);
 
         findViewById(R.id.backNavigationButton).setOnClickListener(v -> onBackPressed());
+        setColorState(this, Collections.singletonList(findViewById(R.id.bt_enviarComentario)));
         UserPreferences preferences = new UserPreferences(this);
 
         Button bt_enviarComentario = findViewById(R.id.bt_enviarComentario);

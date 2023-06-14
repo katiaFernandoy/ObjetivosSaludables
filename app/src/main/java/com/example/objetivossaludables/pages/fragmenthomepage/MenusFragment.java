@@ -1,5 +1,7 @@
 package com.example.objetivossaludables.pages.fragmenthomepage;
 
+import static com.example.objetivossaludables.manager.media.ColorManager.setColorState;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,12 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 
 import com.example.objetivossaludables.R;
 import com.example.objetivossaludables.manager.sharedpreferences.UserPreferences;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MenusFragment extends Fragment {
@@ -27,6 +31,8 @@ public class MenusFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_menus_fragment, container, false);
+
+        setColorState(getContext(), Collections.singletonList(root.findViewById(R.id.tgMenuSeleccionado)));
 
         preferences = new UserPreferences(getContext());
 
@@ -70,7 +76,7 @@ public class MenusFragment extends Fragment {
     }
 
     private void setearImagen(int imagen){
-        ivMenuSeleccionado.setImageDrawable(getResources().getDrawable(imagen));
+        ivMenuSeleccionado.setImageDrawable(AppCompatResources.getDrawable(getContext(),imagen));
     }
 
     private int sliderImagenes(int slide){

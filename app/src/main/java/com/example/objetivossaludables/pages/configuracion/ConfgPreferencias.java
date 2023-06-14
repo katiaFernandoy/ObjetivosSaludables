@@ -90,7 +90,7 @@ public class ConfgPreferencias extends AppCompatActivity {
         });
     }
 
-    private void cambiarIdioma(int idioma) {
+    public void cambiarIdioma(int idioma) {
         Locale locale;
 
         // Determina el idioma seleccionado
@@ -113,6 +113,7 @@ public class ConfgPreferencias extends AppCompatActivity {
 
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
         preferences.setIdioma(idioma);
+        recreate();
     }
 
     private void iniciarSpinner() {
@@ -152,7 +153,8 @@ public class ConfgPreferencias extends AppCompatActivity {
                 break;
             case 2: // azul
                 ((RadioButton) findViewById(R.id.radioButtonAzul)).setChecked(true);
-            default: // azul
+                break;
+            default: // verde
                 ((RadioButton) findViewById(R.id.radioButtonVerde)).setChecked(true);
         }
     }
