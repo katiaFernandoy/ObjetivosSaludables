@@ -8,6 +8,7 @@ import static com.example.objetivossaludables.valoresestaticos.Verificaciones.ge
 import static com.example.objetivossaludables.valoresestaticos.Verificaciones.getTexto;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -111,9 +112,9 @@ public class GrabarSuenio extends AppCompatActivity implements ApiInterface {
         tvResultadoSuenio.setText(String.valueOf(porcentajeSuenio));
 
         if(porcentajeSuenio < 50){
-            ivResultadoSuenio.setImageDrawable(getResources().getDrawable(R.drawable.triste));
+            ivResultadoSuenio.setImageDrawable(AppCompatResources.getDrawable(this,R.drawable.triste));
         }if(porcentajeSuenio > 90){
-            ivResultadoSuenio.setImageDrawable(getResources().getDrawable(R.drawable.feliz));
+            ivResultadoSuenio.setImageDrawable(AppCompatResources.getDrawable(this,R.drawable.feliz));
         }
 
         final int id_usu = preferences.getUserId();
